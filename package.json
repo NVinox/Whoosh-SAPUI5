@@ -1,0 +1,17 @@
+{
+    "name": "whoosh-sapui5",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "gulp dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.29.3",
+        "gulp": "^4.0.2"
+    }
+}
+
