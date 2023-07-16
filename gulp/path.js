@@ -13,6 +13,6 @@ module.exports = {
     },
     watch: {
         scss: `src/scss/**/*.scss`,
-        server: `${srcPath}/**/*.{js,xml,html}`,
+        server: `${srcPath}/**/*.{js,xml,html,properties}`,
     },
 };
