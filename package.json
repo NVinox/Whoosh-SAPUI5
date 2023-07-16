@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "gulp build",
         "dev": "gulp dev"
     },
     "keywords": [],
@@ -17,11 +18,15 @@
         "gulp-autoprefixer": "^8.0.0",
         "gulp-cssbeautify": "^3.0.1",
         "gulp-csso": "^4.0.1",
+        "gulp-if": "^3.0.0",
         "gulp-notify": "^4.0.0",
         "gulp-plumber": "^1.2.1",
+        "gulp-pretty-data": "^0.1.2",
         "gulp-rename": "^2.0.0",
         "gulp-sass": "^5.1.0",
         "gulp-strip-css-comments": "^2.0.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-ui5-preload": "^1.3.1",
         "sass": "^1.63.6"
     }
 }
