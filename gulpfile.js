@@ -1,13 +1,15 @@
 const { gulp } = require("./gulp/plugins.js");
 const server = require("./gulp/tasks/server.js");
-const plugins = require("./gulp/plugins.js");
-const path = require("./gulp/path.js");
+const css = require("./gulp/tasks/css.js");
+const preload = require("./gulp/tasks/preload.js");
+const watcher = require("./gulp/watch.js");
+const { cleanCss, cleanPreload } = require("./gulp/tasks/clean.js");
+
+// Task для запуска основных задач
+const build = gulp.series(cleanCss, cleanPreload, css, preload);
 
 // Task для запуска в режиме разработки
-const dev = gulp.parallel(() => {
-    gulp.watch([path.watch.server], () => {
-        return gulp.src(path.watch.server).pipe(plugins.browserSync.reload({ stream: true }));
-    });
-}, server);
+const dev = gulp.series(cleanCss, css, gulp.parallel(watcher, server));
 
+gulp.task("build", build);
 gulp.task("dev", dev);

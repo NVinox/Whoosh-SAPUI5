@@ -4,7 +4,7 @@
         "id": "App",
         "type": "application",
         "i18n": "i18n/i18n.properties",
-        "title": "Whoosh",
+        "title": "Whoosh-SAPUI5",
         "description": "",
         "applicationVersion": {
             "version": "1.0.0"
@@ -20,7 +20,7 @@
     },
     "sap.ui5": {
         "dependencies": {
-            "minUI5Version": "1.85",
+            "minUI5Version": "1.109.1",
             "libs": {
                 "sap.m": {}
             }
@@ -41,9 +41,6 @@
                 "controlId": "app",
                 "controlAggregation": "pages",
                 "transition": "slide",
-                "bypassed": {
-                    "target": "NotFound"
-                },
                 "async": true
             },
             "routes": [],
