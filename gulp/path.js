@@ -4,7 +4,7 @@ const distPath = "webapp/assets";
 module.exports = {
     srcPath,
     src: {
-        scss: "src/scss/**/*.scss",
+        scss: "src/scss/index.scss",
         server: `${srcPath}/**/*.{js,xml,html}`,
         preload: `${srcPath}/**/*.{js,xml}`,
     },
@@ -13,6 +13,6 @@ module.exports = {
     },
     watch: {
         scss: `src/scss/**/*.scss`,
-        server: `${srcPath}/**/*.{js,xml,html,properties}`,
+        server: `${srcPath}/**/*.{js,xml,html,properties,json}`,
     },
 };
