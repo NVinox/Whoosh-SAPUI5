@@ -45,6 +45,13 @@
             },
             "routes": [],
             "targets": []
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "assets/styles/index.min.css"
+                }
+            ]
         }
     }
 }
