@@ -1,3 +1,9 @@
 
-@import './global/variables.scss';
+//GLOBAL
+@import "./global/variables.scss";
 
+//LAYOUT
+@import "./layout/tool-page.scss";
+
+//CUSTOM ELEMENTS
+@import "./custom/button.scss";

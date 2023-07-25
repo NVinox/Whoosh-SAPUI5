@@ -1,0 +1,121 @@
+.tool-page {
+    width: 1366px;
+    margin: 0 auto;
+    
+    &__header{
+        $_header-height: 80px;
+        
+        &-wrapper {
+            height: $_header-height;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-subwrapper{
+            height: $_header-height;
+            align-items: center;
+            padding: 0 32px;
+        }
+        &.sapContrast{
+            &.sapTntToolHeader{
+                &.sapMTB{
+                    border: 0;
+                    height: $_header-height;
+                    padding: 0;
+                    background-color: $white;
+                    justify-content: space-between;
+                }
+            }
+
+        }
+
+        &.sapMIBar{
+            &.sapMTB{
+                .sapMBarChild{
+                    margin: 0;
+                }
+                
+            }
+        }
+
+        &-logo{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        &-link{
+            color: $gray;
+            font-family: "Intro Book";
+            font-size: 16px;
+            padding: 0 18px;
+
+                &.sapMLnk{
+                    color: #666666;
+                    
+                    &:hover:not(.sapMLnkDsbl){
+                        color: $gray;
+                        text-decoration: dotted;
+                    }
+                }
+
+        }
+
+
+        &-search{
+            margin-right: 10px;
+
+            .sapMSFF{
+                border-color: $gray;
+                border-radius: 8px;
+                background-color: #F8FAFF;
+            }
+            
+            .sapMSFI{
+                font-family: "Intro Book";
+                color: $black;   
+
+            }
+
+            // .sapMSFS::before{
+            //     display: flex;
+            //     content: url(/webapp/assets/images/Search.svg);
+            //     background-image: url(/webapp/assets/images/Search.svg);
+            //     height: 16px;
+            //     width: 16px;
+            // }
+            // .sapMSFS::after{
+            //     display: flex;
+            //     content: url(/webapp/assets/images/Search.svg);
+            //     background-image: url(/webapp/assets/images/Search.svg);
+            //     height: 16px;
+            //     width: 16px;
+            // }
+        }
+
+        &-login{
+            margin-left: 14px;
+            
+            .sapMBtnInner{
+                display: flex;
+                align-items: center;
+                height: 40px;
+                background-color: $blue;
+                border: 0;
+                border-radius: 50%;
+                outline: 0;
+
+                &:hover{
+                    background-blend-mode: lighten;
+                }
+            }
+            .sapMBtnIcon{
+                &.sapMImg{
+                    height: 16px;
+                    align-self: center;
+                }
+            }
+        }
+    }
+}
