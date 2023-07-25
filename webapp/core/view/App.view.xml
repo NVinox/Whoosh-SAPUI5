@@ -8,14 +8,33 @@
     class="tool-page">
     <tnt:header>
       <tnt:ToolHeader class="tool-page__header">
-        <Image src="/assets/images/logo.svg" />
-        <Image src="/assets/images/pin.svg" />
-        <Text text="NY, Manhattan"/>
-        <SearchField class="tool-page__header-search" placeholder="Track a package" width="184px" />
-        <Text text="Send a Parcel"/>
-        <Text text="Become a Courier"/>
-        <Image src="/assets/images/lock.svg" />
+        <HBox class="tool-page__header-wrapper">
+          <HBox class="tool-page__header-subwrapper">
+            <Image 
+              class="tool-page__header-logo"
+              src="/assets/images/logo.svg" 
+              />
+            <ToolbarSpacer width="67px" />
+            <Image src="/assets/images/pin.svg" />
+            <Link text="NY, Manhattan" class="tool-page__header-link" />
+          </HBox>
+          <SearchField 
+            class="tool-page__header-search" 
+            placeholder="Track a package" 
+            width="184px" 
+          />
+          <HBox class="tool-page__header-subwrapper">
+            <Link text="Send a Parcel" class="tool-page__header-link" />
+            <Link text="Become a Courier" class="tool-page__header-link" />
+            <Button 
+              class="tool-page__header-login button"
+              icon="/assets/images/lock.svg"
+              
+            />
+          </HBox>
+        </HBox>
       </tnt:ToolHeader>
     </tnt:header>
+    
   </tnt:ToolPage>
 </mvc:View>
