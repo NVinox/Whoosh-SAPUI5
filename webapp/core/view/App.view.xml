@@ -2,5 +2,20 @@
   controllerName="App.core.controller.App"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
+  xmlns:tnt="sap.tnt"
   displayBlock="true">
+  <tnt:ToolPage
+    class="tool-page">
+    <tnt:header>
+      <tnt:ToolHeader class="tool-page__header">
+        <Image src="/assets/images/logo.svg" />
+        <Image src="/assets/images/pin.svg" />
+        <Text text="NY, Manhattan"/>
+        <SearchField class="tool-page__header-search" placeholder="Track a package" width="184px" />
+        <Text text="Send a Parcel"/>
+        <Text text="Become a Courier"/>
+        <Image src="/assets/images/lock.svg" />
+      </tnt:ToolHeader>
+    </tnt:header>
+  </tnt:ToolPage>
 </mvc:View>
