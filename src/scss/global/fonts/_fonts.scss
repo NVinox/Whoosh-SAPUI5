@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Intro';
-    src: url('/webapp/assets/fonts/Intro-Regular.eot');
+    src: url('/webapp/assets/fonts/Intro-Regular.woff2') format('woff2');
     src: local('Intro-Regular'),
-        url('/webapp/assets/fonts/Intro-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/webapp/assets/fonts/Intro-Regular.woff2') format('woff2'),
         url('/webapp/assets/fonts/Intro-Regular.woff') format('woff'),
+        url('/webapp/assets/fonts/Intro-Regular.eot'),
+        url('/webapp/assets/fonts/Intro-Regular.eot?#iefix') format('embedded-opentype'),
         url('/webapp/assets/fonts/Intro-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'Intro';
-    src: url('/webapp/assets/fonts/Intro-Bold.eot');
+    src: url('/webapp/assets/fonts/Intro-Bold.woff2') format('woff2');
     src: local('Intro-Bold'),
-        url('/webapp/assets/fonts/Intro-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/webapp/assets/fonts/Intro-Bold.woff2') format('woff2'),
         url('/webapp/assets/fonts/Intro-Bold.woff') format('woff'),
+        url('/webapp/assets/fonts/Intro-Bold.eot'),
+        url('/webapp/assets/fonts/Intro-Bold.eot?#iefix') format('embedded-opentype'),
         url('/webapp/assets/fonts/Intro-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
@@ -24,11 +24,11 @@
 
 @font-face {
     font-family: 'Intro Book';
-    src: url('/webapp/assets/fonts/Intro-Book.eot');
+    src: url('/webapp/assets/fonts/Intro-Book.woff2') format('woff2');
     src: local('Intro-Book'),
-        url('/webapp/assets/fonts/Intro-Book.eot?#iefix') format('embedded-opentype'),
-        url('/webapp/assets/fonts/Intro-Book.woff2') format('woff2'),
         url('/webapp/assets/fonts/Intro-Book.woff') format('woff'),
+        url('/webapp/assets/fonts/Intro-Book.eot'),
+        url('/webapp/assets/fonts/Intro-Book.eot?#iefix') format('embedded-opentype'),
         url('/webapp/assets/fonts/Intro-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
