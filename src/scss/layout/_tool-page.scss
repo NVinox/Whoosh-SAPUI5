@@ -112,6 +112,7 @@
 
             &:not(.sapMSFDisabled) > .sapMSFF:hover {
                 border-color: $gray;
+                background-color: #{$gray}10;
             }
 
             .sapMSFS::after {
