@@ -1,10 +1,10 @@
 .tool-page {
     width: 1366px;
     margin: 0 auto;
-    
-    &__header{
+
+    &__header {
         $_header-height: 80px;
-        
+
         &-wrapper {
             height: $_header-height;
             width: 100%;
@@ -12,14 +12,18 @@
             align-items: center;
             justify-content: space-between;
         }
-        &-subwrapper{
+        &-subwrapper {
             height: $_header-height;
             align-items: center;
             padding: 0 32px;
+            .sapMFlexItem {
+                height: 64px;
+                display: contents;
+            }
         }
-        &.sapContrast{
-            &.sapTntToolHeader{
-                &.sapMTB{
+        &.sapContrast {
+            &.sapTntToolHeader {
+                &.sapMTB {
                     border: 0;
                     height: $_header-height;
                     padding: 0;
@@ -27,77 +31,116 @@
                     justify-content: space-between;
                 }
             }
-
         }
 
-        &.sapMIBar{
-            &.sapMTB{
-                .sapMBarChild{
+        &.sapMIBar {
+            &.sapMTB {
+                .sapMBarChild {
                     margin: 0;
                 }
-                
             }
         }
 
-        &-logo{
-            &:hover{
+        &-logo {
+            &:hover {
                 cursor: pointer;
             }
         }
 
-        &-link{
-            color: $gray;
+        &-city {
+            &::before {
+                display: inline-block;
+                content: url(../images/Pin.svg);
+                margin-right: 10px;
+                padding-bottom: 0;
+                width: 12px;
+                height: 16px;
+            }
+        }
+
+        &-link {
             font-family: "Intro Book";
             font-size: 16px;
-            padding: 0 18px;
+            padding-bottom: 2px;
+            margin: auto 18px;
 
-                &.sapMLnk{
-                    color: #666666;
-                    
-                    &:hover:not(.sapMLnkDsbl){
-                        color: $gray;
-                        text-decoration: dotted;
+            &.sapMLnk {
+                position: relative;
+                color: $text-color;
+
+                &:hover:not(.sapMLnkDsbl) {
+                    color: $text-color;
+                    opacity: 70%;
+                    text-decoration: none !important;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        border-bottom: 1px dashed $text-color;
+                        opacity: 70%;
+                        display: block;
                     }
                 }
-
+                &:focus:not(.sapMLnkDsbl) {
+                    color: $text-color;
+                    text-decoration: none;
+                }
+            }
         }
 
+        &-search {
+            margin-right: 40px;
 
-        &-search{
-            margin-right: 10px;
-
-            .sapMSFF{
+            .sapMSFF {
                 border-color: $gray;
                 border-radius: 8px;
-                background-color: #F8FAFF;
+                background-color: #f8faff;
             }
-            
-            .sapMSFI{
+
+            .sapMSFI {
                 font-family: "Intro Book";
-                color: $black;   
-
+                color: $black;
             }
 
-            // .sapMSFS::before{
-            //     display: flex;
-            //     content: url(/webapp/assets/images/Search.svg);
-            //     background-image: url(/webapp/assets/images/Search.svg);
-            //     height: 16px;
-            //     width: 16px;
-            // }
-            // .sapMSFS::after{
-            //     display: flex;
-            //     content: url(/webapp/assets/images/Search.svg);
-            //     background-image: url(/webapp/assets/images/Search.svg);
-            //     height: 16px;
-            //     width: 16px;
-            // }
+            ::placeholder {
+                font-style: normal;
+            }
+
+            .sapMSFR {
+                display: none;
+            }
+
+            &:not(.sapMSFDisabled) > .sapMSFF:hover {
+                border-color: $gray;
+            }
+
+            .sapMSFS::after {
+                display: block;
+                content: url(../images/Search.svg);
+                margin: 0 auto;
+                height: 16px;
+                width: 16px;
+            }
         }
 
-        &-login{
+        &-login {
             margin-left: 14px;
-            
-            .sapMBtnInner{
+
+            &.sapContrast {
+                &.sapMBtn {
+                    &:hover {
+                        & > .sapMBtnHoverable {
+                            background-color: $yellow;
+                        }
+                    }
+                }
+            }
+            &.sapMBtn:hover > .sapMBtnHoverable {
+                background-color: $blue;
+                opacity: 70%;
+            }
+
+            .sapMBtnInner {
                 display: flex;
                 align-items: center;
                 height: 40px;
@@ -105,13 +148,10 @@
                 border: 0;
                 border-radius: 50%;
                 outline: 0;
-
-                &:hover{
-                    background-blend-mode: lighten;
-                }
             }
-            .sapMBtnIcon{
-                &.sapMImg{
+
+            .sapMBtnIcon {
+                &.sapMImg {
                     height: 16px;
                     align-self: center;
                 }
