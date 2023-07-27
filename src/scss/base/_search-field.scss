@@ -1,0 +1,69 @@
+.search-field {
+    margin-right: 40px;
+
+    //Form
+    .sapMSFF {
+        border-color: $gray;
+        border-radius: 8px;
+        background-color: #f8faff;
+
+        & > .sapMSFB:not(.sapMSFBF):active {
+            background-color: transparent;
+        }
+
+        &:active {
+            border-color: $blue;
+        }
+        &:focus-within {
+            border-color: $blue;
+
+            ::placeholder {
+                color: $black;
+            }
+        }
+
+        &::before {
+            content: "";
+            border-color: $blue;
+        }
+    }
+
+    // &:not(.sapMSFDisabled) > .sapMSFF:hover {
+    //     border-color: $gray;
+    //     background-color: #{$gray}10;
+    // }
+
+    &.sapMFocus {
+        &:active {
+            border-color: $blue;
+        }
+    }
+
+    //Inner
+    .sapMSFI {
+        color: $black;
+    }
+
+    ::placeholder {
+        font-style: normal;
+    }
+
+    //Refresh
+    .sapMSFR {
+        display: none;
+    }
+
+    //Search
+    .sapMSFS {
+        &:hover,
+        &:active {
+            background-color: transparent;
+        }
+
+        // &::after {
+        //     display: block;
+        //     content: url(../images/search.svg);
+        //     margin: 0 auto;
+        // }
+    }
+}

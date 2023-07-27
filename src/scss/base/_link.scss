@@ -1,0 +1,16 @@
+.link {
+    &.sapMLnk {
+        color: $text-color;
+
+        &:hover:not(.sapMLnkDsbl) {
+            color: $text-color;
+            opacity: 70%;
+            text-decoration: none !important;
+        }
+
+        &:focus:not(.sapMLnkDsbl) {
+            color: $text-color;
+            text-decoration: none !important;
+        }
+    }
+}
