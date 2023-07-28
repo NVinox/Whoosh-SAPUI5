@@ -3,9 +3,9 @@
 
     //Form
     .sapMSFF {
-        border-color: $gray;
+        border-color: $gray-blue;
         border-radius: 8px;
-        background-color: #f8faff;
+        background-color: $plain-white;
 
         & > .sapMSFB:not(.sapMSFBF):active {
             background-color: transparent;
@@ -14,6 +14,12 @@
         &:active {
             border-color: $blue;
         }
+
+        ::placeholder {
+            color: $placeholder;
+            font-style: normal;
+        }
+
         &:focus-within {
             border-color: $blue;
 
@@ -28,11 +34,6 @@
         }
     }
 
-    // &:not(.sapMSFDisabled) > .sapMSFF:hover {
-    //     border-color: $gray;
-    //     background-color: #{$gray}10;
-    // }
-
     &.sapMFocus {
         &:active {
             border-color: $blue;
@@ -42,10 +43,8 @@
     //Inner
     .sapMSFI {
         color: $black;
-    }
-
-    ::placeholder {
-        font-style: normal;
+        font-family: "Intro Book";
+        font-size: 16px;
     }
 
     //Refresh
@@ -59,11 +58,5 @@
         &:active {
             background-color: transparent;
         }
-
-        // &::after {
-        //     display: block;
-        //     content: url(../images/search.svg);
-        //     margin: 0 auto;
-        // }
     }
 }

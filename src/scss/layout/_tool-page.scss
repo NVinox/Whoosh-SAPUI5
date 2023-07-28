@@ -1,16 +1,35 @@
 .tool-page {
+    $_content-width: 1366px;
     width: 100%;
     margin: 0 auto;
 
+    .sapMIBar {
+        &.sapMTB {
+            .sapMBarChild:first-child[style*="width: 100%"] {
+                padding: 0;
+            }
+        }
+
+        .sapMBarChild:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .sapMTB {
+        padding-right: 0;
+    }
+
     &__header {
         $_header-height: 80px;
+        justify-content: center;
 
         &-wrapper {
             height: $_header-height;
+            max-width: $_content-width;
+            padding: 0;
         }
         &-subwrapper {
             height: $_header-height;
-            align-items: center;
             padding: 0 32px;
             .sapMFlexItem {
                 height: 64px;
@@ -24,7 +43,7 @@
                     height: $_header-height;
                     padding: 0;
                     background-color: $white;
-                    justify-content: space-between;
+                    justify-content: center;
                 }
             }
         }
@@ -73,7 +92,7 @@
                         display: block;
                         position: absolute;
                         width: 100%;
-                        border-bottom: 1px dashed $text-color;
+                        border-bottom: 1px dashed $link-dashes;
                         opacity: 70%;
                     }
                 }
@@ -94,11 +113,6 @@
                     display: block;
                     content: url(../images/search.svg);
                     margin: 0 auto;
-
-                    // &.svg-search:hover {
-                    //     width: 8px !important;
-                    //     fill: red;
-                    // }
                 }
             }
         }
@@ -107,8 +121,7 @@
             margin-left: 14px;
 
             &.sapMBtn:hover > .sapMBtnHoverable {
-                background-color: $blue;
-                opacity: 70%;
+                background-color: $blue-link-hover;
             }
 
             .sapMBtnIcon {

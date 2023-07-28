@@ -1,10 +1,11 @@
 .link {
     &.sapMLnk {
         color: $text-color;
+        font-family: "Intro Book";
+        font-size: 16px;
 
         &:hover:not(.sapMLnkDsbl) {
-            color: $text-color;
-            opacity: 70%;
+            color: $link-hover;
             text-decoration: none !important;
         }
 
@@ -12,5 +13,9 @@
             color: $text-color;
             text-decoration: none !important;
         }
+    }
+
+    &.sapMLnk:not(.sapMLnkDsbl) {
+        text-shadow: none;
     }
 }
