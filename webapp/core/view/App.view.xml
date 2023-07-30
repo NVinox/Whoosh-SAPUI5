@@ -2,5 +2,46 @@
   controllerName="App.core.controller.App"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
+  xmlns:tnt="sap.tnt"
   displayBlock="true">
+  <tnt:ToolPage
+    class="tool-page">
+    <tnt:header>
+      <tnt:ToolHeader class="tool-page__header">
+        <HBox 
+          class="tool-page__header-wrapper sapUiNoContentPadding"
+          width="100%"
+          justifyContent="SpaceBetween"
+          alignItems="Center"  
+        >
+          <HBox class="tool-page__header-subwrapper" alignItems="Center">
+            <Image 
+              class="tool-page__header-logo"
+              src="/assets/images/logo.svg" 
+              />
+            <ToolbarSpacer width="48px" />
+            <Link text="NY, Manhattan" class="tool-page__header-link tool-page__header-city link" />
+          </HBox>
+
+          <HBox class="tool-page__header-subwrapper" alignItems="Center">
+            <SearchField 
+              class="tool-page__header-search search-field" 
+              placeholder="Track a Package" 
+              width="184px" 
+            />
+          </HBox>
+
+          <HBox class="tool-page__header-subwrapper" alignItems="Center">
+            <Link text="Send a Parcel" class="tool-page__header-link link" />
+            <Link text="Become a Courier" class="tool-page__header-link link" />
+            <Button 
+              class="tool-page__header-login button"
+              icon="/assets/images/lock.svg"
+            />
+          </HBox>
+        </HBox>
+      </tnt:ToolHeader>
+    </tnt:header>
+    
+  </tnt:ToolPage>
 </mvc:View>

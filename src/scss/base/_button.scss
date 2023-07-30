@@ -1,0 +1,11 @@
+.button {
+  .sapMBtnInner {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: $blue;
+    border: 0;
+    border-radius: 50%;
+    outline: 0;
+  }
+}

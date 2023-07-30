@@ -12,22 +12,22 @@ const plumber = require("gulp-plumber");
 const ui5preload = require("gulp-ui5-preload");
 const uglify = require("gulp-uglify");
 const prettydata = require("gulp-pretty-data");
-const gulpif = require("gulp-if")
+const gulpif = require("gulp-if");
 
 module.exports = {
-    gulp,
-    del,
-    sass,
-    autoprefixer,
-    cssbeautify,
-    csso,
-    removeComments,
-    rename,
-    browserSync,
-    notify,
-    plumber,
-    ui5preload,
-    uglify,
-    prettydata,
-    gulpif,
+  gulp,
+  del,
+  sass,
+  autoprefixer,
+  cssbeautify,
+  csso,
+  removeComments,
+  rename,
+  browserSync,
+  notify,
+  plumber,
+  ui5preload,
+  uglify,
+  prettydata,
+  gulpif,
 };
