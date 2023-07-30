@@ -1,135 +1,135 @@
 .tool-page {
-    $_content-width: 1366px;
-    width: 100%;
-    margin: 0 auto;
+  $_content-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
 
-    .sapMIBar {
+  .sapMIBar {
+    &.sapMTB {
+      .sapMBarChild:first-child[style*="width: 100%"] {
+        padding: 0;
+      }
+    }
+
+    .sapMBarChild:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .sapMTB {
+    padding-right: 0;
+  }
+
+  &__header {
+    $_header-height: 80px;
+    justify-content: center;
+
+    &-wrapper {
+      height: $_header-height;
+      max-width: $_content-width;
+      padding: 0;
+    }
+    &-subwrapper {
+      height: $_header-height;
+      padding: 0 32px;
+      .sapMFlexItem {
+        height: 64px;
+        display: contents;
+      }
+    }
+    &.sapContrast {
+      &.sapTntToolHeader {
         &.sapMTB {
-            .sapMBarChild:first-child[style*="width: 100%"] {
-                padding: 0;
-            }
+          border: 0;
+          height: $_header-height;
+          padding: 0;
+          background-color: $white;
+          justify-content: center;
         }
-
-        .sapMBarChild:last-child {
-            margin-right: 0;
-        }
+      }
     }
 
-    .sapMTB {
-        padding-right: 0;
+    &.sapMIBar {
+      &.sapMTB {
+        .sapMBarChild {
+          margin: 0;
+        }
+      }
     }
 
-    &__header {
-        $_header-height: 80px;
-        justify-content: center;
-
-        &-wrapper {
-            height: $_header-height;
-            max-width: $_content-width;
-            padding: 0;
-        }
-        &-subwrapper {
-            height: $_header-height;
-            padding: 0 32px;
-            .sapMFlexItem {
-                height: 64px;
-                display: contents;
-            }
-        }
-        &.sapContrast {
-            &.sapTntToolHeader {
-                &.sapMTB {
-                    border: 0;
-                    height: $_header-height;
-                    padding: 0;
-                    background-color: $white;
-                    justify-content: center;
-                }
-            }
-        }
-
-        &.sapMIBar {
-            &.sapMTB {
-                .sapMBarChild {
-                    margin: 0;
-                }
-            }
-        }
-
-        &-logo {
-            &:hover {
-                cursor: pointer;
-            }
-            #logo {
-                width: 15px;
-            }
-        }
-        #logo {
-            width: 15px;
-        }
-
-        &-city {
-            &::before {
-                display: inline-block;
-                content: url(../images/pin.svg);
-                margin-right: 10px;
-                padding-bottom: 0;
-                width: 12px;
-                height: 16px;
-            }
-        }
-
-        &-link {
-            padding-bottom: 2px;
-            margin: auto 18px;
-
-            &.sapMLnk {
-                position: relative;
-
-                &:hover:not(.sapMLnkDsbl) {
-                    &::after {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        width: 100%;
-                        border-bottom: 1px dashed $link-dashes;
-                        opacity: 70%;
-                    }
-                }
-            }
-        }
-
-        &-search {
-            margin-right: 40px;
-
-            &:not(.sapMSFDisabled) > .sapMSFF:hover {
-                border-color: $gray;
-                background-color: #{$gray}10;
-            }
-
-            //Search
-            .sapMSFS {
-                &::after {
-                    display: block;
-                    content: url(../images/search.svg);
-                    margin: 0 auto;
-                }
-            }
-        }
-
-        &-login {
-            margin-left: 14px;
-
-            &.sapMBtn:hover > .sapMBtnHoverable {
-                background-color: $blue-link-hover;
-            }
-
-            .sapMBtnIcon {
-                &.sapMImg {
-                    height: 16px;
-                    align-self: center;
-                }
-            }
-        }
+    &-logo {
+      &:hover {
+        cursor: pointer;
+      }
+      #logo {
+        width: 15px;
+      }
     }
+    #logo {
+      width: 15px;
+    }
+
+    &-city {
+      &::before {
+        display: inline-block;
+        content: url(../images/pin.svg);
+        margin-right: 10px;
+        padding-bottom: 0;
+        width: 12px;
+        height: 16px;
+      }
+    }
+
+    &-link {
+      padding-bottom: 2px;
+      margin: auto 18px;
+
+      &.sapMLnk {
+        position: relative;
+
+        &:hover:not(.sapMLnkDsbl) {
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px dashed $link-dashes;
+            opacity: 70%;
+          }
+        }
+      }
+    }
+
+    &-search {
+      margin-right: 40px;
+
+      &:not(.sapMSFDisabled) > .sapMSFF:hover {
+        border-color: $gray;
+        background-color: #{$gray}10;
+      }
+
+      //Search
+      .sapMSFS {
+        &::after {
+          display: block;
+          content: url(../images/search.svg);
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &-login {
+      margin-left: 14px;
+
+      &.sapMBtn:hover > .sapMBtnHoverable {
+        background-color: $blue-link-hover;
+      }
+
+      .sapMBtnIcon {
+        &.sapMImg {
+          height: 16px;
+          align-self: center;
+        }
+      }
+    }
+  }
 }

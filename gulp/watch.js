@@ -4,6 +4,6 @@ const serverReload = require("./tasks/serverReload.js");
 const path = require("./path.js");
 
 module.exports = () => {
-    gulp.watch([path.watch.scss], css);
-    gulp.watch([path.watch.server], serverReload);
+  gulp.watch([path.watch.scss], css);
+  gulp.watch([path.watch.server], serverReload);
 };
