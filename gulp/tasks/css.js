@@ -1,5 +1,6 @@
 const plugins = require("../plugins.js");
 const path = require("../path.js");
+const serverReload = require("../tasks/serverReload.js");
 
 module.exports = () => {
   return plugins.gulp
@@ -29,5 +30,5 @@ module.exports = () => {
     .pipe(plugins.csso())
     .pipe(plugins.removeComments())
     .pipe(plugins.gulp.dest(path.dist.css))
-    .pipe(plugins.browserSync.reload({ stream: true }));
+    .pipe(serverReload());
 };
