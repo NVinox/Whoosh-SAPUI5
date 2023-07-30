@@ -2,8 +2,12 @@ jQuery.sap.registerPreloadedModules({
 	"name": "webapp.Component-preload",
 	"version": "2.0",
 	"modules": {
-		"webapp/Component.js": "",
-		"webapp/core/controller/App.controller.js": "sap.ui.define([\"sap/ui/core/mvc/Controller\"],function(e){return e.extend(\"App.core.controller.App\",{})});",
-		"webapp/core/view/App.view.xml": "<mvc:View\r\n  controllerName=\"App.core.controller.App\"\r\n  xmlns:mvc=\"sap.ui.core.mvc\"\r\n  xmlns=\"sap.m\"\r\n  displayBlock=\"true\"></mvc:View>"
+		"webapp/Component.js": "sap.ui.define([\"App/base/BaseComponent\"],function(e){\"use strict\";return e.extend(\"App.Compoment\",{metadata:{manifest:\"json\"},createContent(){return sap.ui.view({id:\"app\",viewName:\"App.core.view.App\",async:!0,type:\"XML\"})},init(){e.prototype.init.apply(this,arguments)}})});",
+		"webapp/base/BaseComponent.js": "sap.ui.define([\"sap/ui/core/UIComponent\"],e=>{\"use strict\";return e.extend(\"App.base.BaseComponent\",{init(){e.prototype.init.apply(this,arguments),this.getRouter().initialize()}})});",
+		"webapp/base/BaseController.js": "sap.ui.define([\"sap/ui/core/mvc/Controller\",\"sap/ui/core/Core\"],(e,t)=>e.extend(\"App.base.BaseController\",{getModel(e){return(\"i18n\"===e?t:this.getView()).getModel(e)},setModel(e,t){return this.getView().setModel(e,t)}}));",
+		"webapp/base/BaseModel.js": "sap.ui.define([\"sap/ui/model/json/JSONModel\"],t=>t.extend(\"App.base.BaseModel\",{_initialModel:null,constructor:function(){t.prototype.constructor.apply(this,arguments),this.init()},init(){this._setInitialModel()},_setInitialModel(){this._initialModel=JSON.stringify(this.getData())},getInitialModel(){return JSON.parse(this._initialModel)},getClearingItemInInitialModel(t,i,e){var l=e[0];1===e.length?this.setProperty(i,t[l]):this.getClearingItemInInitialModel(t[l],i,e.slice(1))},clear(t){var i,e;t?(i=t.split(\"/\").slice(1),e=this.getInitialModel(),this.getClearingItemInInitialModel(e,t,i)):this.setProperty(\"/\",this.getInitialModel())}}));",
+		"webapp/core/controller/App.controller.js": "sap.ui.define([\"App/base/BaseController\",\"App/core/model/App\"],function(e,o){return e.extend(\"App.core.controller.App\",{onInit(){this.setModels()},setModels(){this.setModel(o.main,\"AppMainModel\")}})});",
+		"webapp/core/model/App.js": "sap.ui.define([\"App/base/BaseModel\"],e=>({main:new e({})}));",
+		"webapp/core/view/App.view.xml": "<mvc:View\r\n  controllerName=\"App.core.controller.App\"\r\n  xmlns:mvc=\"sap.ui.core.mvc\"\r\n  xmlns=\"sap.m\"\r\n  xmlns:tnt=\"sap.tnt\"\r\n  displayBlock=\"true\"><tnt:ToolPage\r\n    class=\"tool-page\"><tnt:header><tnt:ToolHeader class=\"tool-page__header\"><Image src=\"/assets/images/logo.svg\" /><Image src=\"/assets/images/pin.svg\" /><Text text=\"NY, Manhattan\"/><SearchField \r\n          class=\"tool-page__header-search\" \r\n          placeholder=\"Track a package\" \r\n          width=\"184px\" \r\n        /><Text text=\"Send a Parcel\"/><Text text=\"Become a Courier\"/><Button \r\n          icon=\"/assets/images/lock.svg\"\r\n          type=\"Ghost\"\r\n        /></tnt:ToolHeader></tnt:header></tnt:ToolPage></mvc:View>"
 	}
 });

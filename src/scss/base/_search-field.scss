@@ -1,0 +1,62 @@
+.search-field {
+    margin-right: 40px;
+
+    //Form
+    .sapMSFF {
+        border-color: $gray-blue;
+        border-radius: 8px;
+        background-color: $plain-white;
+
+        & > .sapMSFB:not(.sapMSFBF):active {
+            background-color: transparent;
+        }
+
+        &:active {
+            border-color: $blue;
+        }
+
+        ::placeholder {
+            color: $placeholder;
+            font-style: normal;
+        }
+
+        &:focus-within {
+            border-color: $blue;
+
+            ::placeholder {
+                color: $black;
+            }
+        }
+
+        &::before {
+            content: "";
+            border-color: $blue;
+        }
+    }
+
+    &.sapMFocus {
+        &:active {
+            border-color: $blue;
+        }
+    }
+
+    //Inner
+    .sapMSFI {
+        color: $black;
+        font-family: "Intro Book";
+        font-size: 16px;
+    }
+
+    //Refresh
+    .sapMSFR {
+        display: none;
+    }
+
+    //Search
+    .sapMSFS {
+        &:hover,
+        &:active {
+            background-color: transparent;
+        }
+    }
+}

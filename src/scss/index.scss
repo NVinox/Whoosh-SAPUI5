@@ -1,2 +1,12 @@
+//GLOBAL
 @import "./global/variables.scss";
 @import "./global/fonts.scss";
+@import "./global/global.scss";
+
+//BASE ELEMENTS
+@import "./base/button.scss";
+@import "./base/link.scss";
+@import "./base/search-field";
+
+//LAYOUT
+@import "./layout/tool-page.scss";
