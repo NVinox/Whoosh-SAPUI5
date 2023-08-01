@@ -2,6 +2,7 @@
 @import "./global/variables.scss";
 @import "./global/fonts.scss";
 @import "./global/global.scss";
+@import "./components/core/text.scss";
 
 //BASE ELEMENTS
 @import "./base/button.scss";
@@ -10,4 +11,5 @@
 
 //LAYOUT
 @import "./layout/tool-page.scss";
+@import "./layout/offer.scss";
 @import "./layout/footer.scss";
