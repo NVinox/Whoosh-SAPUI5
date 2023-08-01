@@ -40,12 +40,14 @@
     .sapMText {
       font-family: "Intro";
       font-weight: 700;
+      color: $black;
       text-transform: uppercase;
       padding-bottom: 6px;
       letter-spacing: 1px;
     }
 
     &-underlined {
+      max-width: 200px;
       border-bottom: 2px solid $gray-blue;
       border-radius: 1px;
     }
@@ -97,15 +99,21 @@
   //MADE BY
 
   &-madeby {
-    width: 1160px;
+    max-width: 1160px;
+    width: 100%;
     text-align: center;
     overflow: hidden;
-    padding-top: 26px;
-    
+    padding-top: 24px;
+
     &-line {
       display: inline-block;
       position: relative;
       margin-bottom: 14px;
+
+      &.sapMText {
+        font-family: "Intro";
+        color: $gray-blue;
+      }
 
       &::before,
       &::after {
@@ -117,20 +125,22 @@
       }
 
       &::before {
-        right: 110%;
-        left: -1000%;
+        right: 115%;
+        left: -1015%;
       }
 
       &:after {
-        left: 110%;
-        right: -1000%;
+        left: 115%;
+        right: -1015%;
       }
     }
     &-text {
-      &-left{
+      padding-top: 3px;
+
+      &-left {
         padding-left: 14px;
       }
-      &-right{
+      &-right {
         padding-left: 6px;
       }
     }

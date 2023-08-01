@@ -125,15 +125,15 @@
         <!--Made by line-->
 
         <VBox class="footer-madeby">
-          <Text class="footer-madeby-line" text="Made By"/>
+          <Text class="footer-madeby-line" text="Made by"/>
           <HBox justifyContent="Center" alignItems="Center">
-            <HBox class="footer-madeby-text-left" justifyContent="Center" width="25%">
+            <HBox class="footer-madeby-text footer-madeby-text-left" justifyContent="Center" width="25%">
               <Text text="© 2022. All rights reserved." />
             </HBox>
             <HBox justifyContent="Center" width="50%">
               <Image src="/assets/images/pyrobyte.svg" />
             </HBox>
-            <HBox class="footer-madeby-text-right" justifyContent="Center" width="25%">
+            <HBox class="footer-madeby-text footer-madeby-text-right" justifyContent="Center" width="25%">
               <Image class="footer-icon" src="/assets/images/flower.svg" />
               <Text class="footer-icon-text" text="Privacy policy" />
             </HBox>
