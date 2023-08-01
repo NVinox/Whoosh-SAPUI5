@@ -6,6 +6,19 @@
     background-color: $blue;
     border: 0;
     border-radius: 50%;
+  }
+
+  .sapMBtn:focus > .sapMFocusable {
     outline: 0;
+  }
+
+  &.sapMBtn:hover > .sapMBtnHoverable {
+    background-color: $blue-link-hover;
+  }
+
+  .sapMBtnIcon {
+    &.sapMImg {
+      height: auto;
+    }
   }
 }

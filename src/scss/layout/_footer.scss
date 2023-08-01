@@ -1,0 +1,138 @@
+.footer {
+  height: 528px;
+  background-color: $white;
+
+  flex: 0 0 auto;
+
+  align-items: center;
+
+  &__content {
+    padding-top: 80px;
+    margin-left: 22px;
+
+    &-column {
+      margin: 0px 26px 0 37px;
+    }
+
+    &-content {
+      padding-top: 7px;
+      min-width: 232px;
+      justify-content: space-between;
+    }
+  }
+
+  .sapMText {
+    color: $footer-text;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &-links {
+    &-column {
+      min-width: 200px;
+      margin: 0 34px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 10px;
+
+    .sapMText {
+      font-family: "Intro";
+      font-weight: 700;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    &-underlined {
+      border-bottom: 2px solid $gray-blue;
+      border-radius: 1px;
+    }
+  }
+
+  .two-pins {
+    margin-right: 16px;
+    margin-left: -60px;
+  }
+
+  &-link {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    height: 32px;
+    width: fit-content;
+
+    .sapMSLITitleOnly {
+      font-family: "Intro Book";
+      font-size: 14px;
+      color: $footer-text;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .phone {
+    font-family: "Intro";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: $black;
+    padding-bottom: 24px;
+  }
+
+  &-icon {
+    padding-top: 3px;
+  }
+  &-icon-text {
+    padding-left: 12px;
+  }
+
+  &-social {
+    padding-top: 60px;
+  }
+
+  //MADE BY
+
+  &-madeby {
+    width: 1160px;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 26px;
+    
+    &-line {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 14px;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        height: 2px;
+        background: $gray-blue;
+      }
+
+      &::before {
+        right: 110%;
+        left: -1000%;
+      }
+
+      &:after {
+        left: 110%;
+        right: -1000%;
+      }
+    }
+    &-text {
+      &-left{
+        padding-left: 14px;
+      }
+      &-right{
+        padding-left: 6px;
+      }
+    }
+  }
+}

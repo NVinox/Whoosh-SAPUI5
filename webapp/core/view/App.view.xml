@@ -6,7 +6,7 @@
   displayBlock="true">
   <tnt:ToolPage
     class="tool-page">
-    <tnt:header>
+    <tnt:header  style="height:80px">
       <tnt:ToolHeader class="tool-page__header">
         <HBox 
           class="tool-page__header-wrapper sapUiNoContentPadding"
@@ -43,5 +43,105 @@
       </tnt:ToolHeader>
     </tnt:header>
     
+    <tnt:mainContents>
+
+    <!--MAIN CONTENT-->
+      <HBox class="main-content">
+      </HBox>
+    <!--/MAIN CONTENT-->
+    
+
+      <!--FOOTER-->
+      <VBox class="footer">
+        <HBox class="footer__content" alignItems="Start" justifyContent="Center">
+          <VBox class="footer__content-column">
+            <HBox class="footer-title">
+              <Text text="About Whoosh" />
+            </HBox>
+
+            <HBox class="footer__content-content">
+              <Image src="/assets/images/two-pins.svg" class="two-pins" />
+              <Text width="240px" text="Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases and other goods" />
+            </HBox>
+          </VBox>
+
+          <HBox class="footer-links">
+            <VBox class="footer-links-column">
+              <HBox class="footer-title footer-title-underlined" >
+                <Text text="Menu" />
+              </HBox>
+
+              <List items="{path:'AppMainModel>/footerMenu', templateShareable:false}">
+                <StandardListItem title="{AppMainModel>text}" class="footer-link"/>
+              </List>          
+            </VBox>
+
+            <VBox class="footer-links-column">
+              <HBox class="footer-title footer-title-underlined">
+                <Text text="Services" />
+              </HBox>
+
+              <List items="{AppMainModel>/footerServices}">
+                <StandardListItem title="{AppMainModel>text}" class="footer-link"/>
+
+              </List>
+
+            </VBox>
+          </HBox>
+
+          <VBox class="footer__content-column">
+            <HBox class="footer-title footer-title-underlined">
+              <Text text="Contact Us" />
+            </HBox>
+
+            <VBox class="footer__content-content">
+              <Text class="phone" text="8 800 934 5959" />
+              <HBox>
+                <Image class="footer-icon" src="/assets/images/pin-blue.svg"/>
+                <Text class="footer-icon-text" text="2545 W. Diversey Ave.&#13;&#10;3rd Floor Chicago, IL 60647"/>
+              </HBox>
+              <HBox class="footer-social" justifyContent="SpaceBetween">
+                <Button 
+                class="button"
+                icon="/assets/images/facebook.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/vk.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/youtube.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/instagram.svg"
+                />
+              </HBox>
+            </VBox>
+          </VBox>
+        </HBox>
+        
+        <!--Made by line-->
+
+        <VBox class="footer-madeby">
+          <Text class="footer-madeby-line" text="Made By"/>
+          <HBox justifyContent="Center" alignItems="Center">
+            <HBox class="footer-madeby-text-left" justifyContent="Center" width="25%">
+              <Text text="© 2022. All rights reserved." />
+            </HBox>
+            <HBox justifyContent="Center" width="50%">
+              <Image src="/assets/images/pyrobyte.svg" />
+            </HBox>
+            <HBox class="footer-madeby-text-right" justifyContent="Center" width="25%">
+              <Image class="footer-icon" src="/assets/images/flower.svg" />
+              <Text class="footer-icon-text" text="Privacy policy" />
+            </HBox>
+          </HBox>
+        </VBox>
+
+
+      </VBox>
+    </tnt:mainContents>
   </tnt:ToolPage>
 </mvc:View>
