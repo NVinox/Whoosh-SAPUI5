@@ -1,0 +1,28 @@
+.offer {
+  max-width: $container-width;
+
+  &-left {
+    margin: 59px 0 72px 103px;
+  }
+
+  &-right {
+    margin: 36px 32px 32px 0;
+    &-track {
+      padding: 25px 0 32px 40px;
+      background-color: $yellow;
+      border-radius: 8px;
+    }
+  }
+
+  .PLACEHOLDER {
+    background-color: $gray;
+
+    &_video {
+      margin-top: 22px;
+    }
+
+    &_form {
+      margin-bottom: 72px;
+    }
+  }
+}

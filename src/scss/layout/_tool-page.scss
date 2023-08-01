@@ -1,18 +1,19 @@
 .tool-page {
-  $_content-width: 1366px;
   width: 100%;
   margin: 0 auto;
   $_header-height: 80px;
 
   height: 100%;
 
-  .sapTntToolPageMainContentWrapper{
+  .sapTntToolPageMainContentWrapper {
     display: flex;
     flex-direction: column;
   }
 
-  .main-content{
+  .main-content {
     flex: 1 0 auto;
+    height: 100%;
+    overflow: auto;
   }
 
   .sapTntToolPageHeader {
@@ -40,7 +41,7 @@
 
     &-wrapper {
       height: $_header-height;
-      max-width: $_content-width;
+      max-width: $container-width;
       padding: 0;
     }
     &-subwrapper {
