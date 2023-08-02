@@ -1,0 +1,38 @@
+.partners {
+    width: 100%;
+    position: relative;
+
+    padding: 72px 0 60px;
+
+  &-collaborate {
+    position: absolute;
+    .sapMBtnInner {
+      background-color: $white;
+      border: 1px solid $another-gray;
+    }
+
+    &.sapMBtn:hover > .sapMBtnHoverable {
+    background-color: $white;
+    border-color: $light-another-gray;
+    color: $button-hover;
+  }
+  }
+  &-logos{
+    max-width: 1104px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &-monochrome {
+    background: $white;
+}
+
+&-logo{
+    mix-blend-mode: luminosity;
+    opacity: 10%;
+    &:hover{
+        mix-blend-mode: normal;
+        opacity: 100%;
+    }
+  }
+}

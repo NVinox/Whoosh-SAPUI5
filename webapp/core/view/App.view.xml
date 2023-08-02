@@ -112,10 +112,28 @@
           </f:GridList>
         </VBox>
         <HBox class="express-parcel" width="100%" justifyContent="Center">
-        <HBox class="express-parcel-line">
-          <Image src="/assets/images/parcel.svg"/>
+          <HBox class="express-parcel-line">
+            <Image src="/assets/images/parcel.svg"/>
+          </HBox>
         </HBox>
+
+        <!--PARTNERS-->
+        <VBox class="partners" alignItems="Center" height="320px" justifyContent="SpaceBetween">
+
+        <Text class="text text_h1" text="Our Partners" />
+        <Button 
+          class="partners-collaborate button" 
+          icon="/assets/images/collaborate.svg"
+          text="Let's collaborate"  
+        />
+
+        <HBox class="partners-logos" items="{AppMainModel>/partners}">
+          <HBox class="partners-monochrome" alignItems="Center">
+            <Image class="partners-logo" src="{AppMainModel>logo}" />
+          </HBox>
         </HBox>
+
+        </VBox>
 
       </VBox>
       <!--/MAIN CONTENT-->

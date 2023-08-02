@@ -65,6 +65,28 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           text: "Use our service and feel \nnew quality of this traditional service!",
         },
       ],
+      partners: [
+        {
+          title: "Alva",
+          logo: "/assets/images/alva.svg",
+        },
+        {
+          title: "Tendo",
+          logo: "/assets/images/tendo.svg",
+        },
+        {
+          title: "Fagor",
+          logo: "/assets/images/fagor.svg",
+        },
+        {
+          title: "RadioShack",
+          logo: "/assets/images/radioshack.svg",
+        },
+        {
+          title: "Guitar Center",
+          logo: "/assets/images/guitar-center.svg",
+        },
+      ],
     }),
   };
 });
