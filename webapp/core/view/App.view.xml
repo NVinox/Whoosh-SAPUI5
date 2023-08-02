@@ -51,10 +51,10 @@
 
         <HBox class="offer" justifyContent="SpaceBetween" width="100%" height="784px">
           <VBox class="offer-left" justifyContent="SpaceBetween" width="375px">
-            <VBox class="offer-left-info" justifyContent="SpaceBetween" height="284px">
+            <VBox class="offer-left-info" justifyContent="SpaceBetween">
               <Text class="text text_h1" text="Our service started work in New York" />
               <Text class="text" width="360px" text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
-              <Link text="Read more >" />
+              <Link class="link_blue read-more" text="Read more" />
             </VBox>
             <VBox class="offer-left-video">
               <Text class="text text_h3" text="How it works" />
@@ -63,6 +63,7 @@
               </HBox>
             </VBox>
           </VBox>
+          <Image class="offer-graphic" src="/assets/images/graphic.svg" />
           <VBox class="offer-right" width="360px">
             <!--SEND A PARCEL FORM-->
             <HBox class="PLACEHOLDER PLACEHOLDER_form" width="100%" height="500px">

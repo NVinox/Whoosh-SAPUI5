@@ -18,4 +18,18 @@
   &.sapMLnk:not(.sapMLnkDsbl) {
     text-shadow: none;
   }
+
+  &_blue {
+    &.sapMLnk {
+      font-family: "Intro";
+      font-size: 18px;
+      line-height: 24px;
+      color: $blue;
+
+      &:hover:not(.sapMLnkDsbl) {
+        color: $blue-link-hover;
+        text-decoration: none !important;
+      }
+    }
+  }
 }
