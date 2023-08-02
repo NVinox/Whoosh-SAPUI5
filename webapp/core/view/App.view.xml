@@ -114,7 +114,6 @@
         <HBox class="express-parcel" width="100%" justifyContent="Center">
         <HBox class="express-parcel-line">
           <Image src="/assets/images/parcel.svg"/>
-          <!-- <Text class="express-parcel-line" text="test"/> -->
         </HBox>
         </HBox>
 
