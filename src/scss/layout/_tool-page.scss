@@ -14,6 +14,7 @@
     flex: 1 0 auto;
     height: 100%;
     overflow: auto;
+    position: relative;
   }
 
   .sapTntToolPageHeader {
@@ -58,7 +59,7 @@
           border: 0;
           height: $_header-height;
           padding: 0;
-          background-color: $white;
+          background-color: $light-gray;
           justify-content: center;
         }
       }

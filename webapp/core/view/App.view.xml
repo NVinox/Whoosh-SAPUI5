@@ -3,6 +3,8 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:tnt="sap.tnt"
+  xmlns:f="sap.f"
+  xmlns:grid="sap.ui.layout.cssgrid"
   displayBlock="true">
   <tnt:ToolPage
     class="tool-page">
@@ -49,6 +51,8 @@
     <ScrollContainer vertical="true">
       <VBox class="main-content" alignItems="Center" justifyContent="Center">
 
+        <!--OFFER-->
+
         <HBox class="offer" justifyContent="SpaceBetween" width="100%" height="784px">
           <VBox class="offer-left" justifyContent="SpaceBetween" width="375px">
             <VBox class="offer-left-info" justifyContent="SpaceBetween">
@@ -79,8 +83,37 @@
           </VBox>
         </HBox>
 
+      <!--EXPRESS DELIVERY-->
+
+        <VBox class="express" width="100%" height="648px" alignItems="Center">
+          <Text class="text text_h1" text="Express delivery market revolution" />
+          <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+
+          <f:GridList
+            class="express-pads"
+            items="{AppMainModel>/expressPads}"
+            width="1000px"
+          >
+            <f:GridListItem class="express-item">
+              <VBox class="express-item-pad">
+              <layoutData>
+                <FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+              </layoutData>
+                <Text class="text text_h3" text="{AppMainModel>title}" />
+                <HBox class="express-item-image">
+                  <HBox class="circle-pad" >
+                    <Image src="{AppMainModel>icon}" />
+                  </HBox>
+                    <Image src="{AppMainModel>icon2}" />
+                </HBox>
+                <Text class="text" text="{AppMainModel>text}" />
+              </VBox>
+            </f:GridListItem>
+          </f:GridList>
+        </VBox>
+
       </VBox>
-    <!--/MAIN CONTENT-->
+      <!--/MAIN CONTENT-->
     
 
       <!--FOOTER-->

@@ -1,9 +1,11 @@
 .offer {
   max-width: $container-width;
   position: relative;
+  background-color: $light-gray;
 
   &-left {
     margin: 59px 0 72px 103px;
+    z-index: 2;
 
     &-info {
       .text {
@@ -14,6 +16,8 @@
 
   &-right {
     margin: 36px 32px 32px 0;
+    z-index: 2;
+
     &-track {
       padding: 25px 0 32px 40px;
       background-color: $yellow;
@@ -25,7 +29,7 @@
     position: absolute;
     left: -313px;
     bottom: 0;
-    z-index: -1;
+    z-index: 1;
   }
 
   .read-more {
