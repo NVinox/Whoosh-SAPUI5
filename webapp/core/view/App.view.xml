@@ -170,7 +170,7 @@
 
         <!--PAYMENT METHODS-->
 
-        <VBox class="payment" alignItems="Center" height="344px" justifyContent="SpaceBetween">
+        <VBox class="payment" alignItems="Center" height="339px" justifyContent="SpaceBetween">
           <Text class="text text_h1" text="Payment methods" />
           <Carousel
             height="56px"
