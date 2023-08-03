@@ -119,13 +119,17 @@
 
         <!--PARTNERS-->
         <VBox class="partners" alignItems="Center" height="320px" justifyContent="SpaceBetween">
-
-        <Text class="text text_h1" text="Our Partners" />
-        <Button 
-          class="partners-collaborate button" 
-          icon="/assets/images/collaborate.svg"
-          text="Let's collaborate"  
-        />
+        
+        <VBox class="partners-head">
+          <Text class="text text_h1" text="Our Partners" />
+          <HBox class="partners-collaborate">
+          <Button 
+            class="partners-collaborate-button button" 
+            icon="/assets/images/collaborate.svg"
+            text="Let's collaborate"  
+          />
+          </HBox>
+        </VBox>
 
         <HBox class="partners-logos" items="{AppMainModel>/partners}">
           <HBox class="partners-monochrome" alignItems="Center">
