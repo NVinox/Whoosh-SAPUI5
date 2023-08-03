@@ -37,20 +37,8 @@
     &-image{
         margin-top: 20px;
         margin-bottom: 25px;
+        margin-left: 8px;
     }
-  }
-
-  .circle-pad {
-    width: 80px;
-    height: 80px;
-    background-color: $white;
-    border-radius: 50%;
-    box-shadow: 0px 8px 16px 0px #{$blue}16;
-
-    margin: 0 8px; 
-
-    align-items: center;
-    justify-content: center;
   }
 
   &-parcel {

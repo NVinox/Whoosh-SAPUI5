@@ -120,22 +120,49 @@
         <!--PARTNERS-->
         <VBox class="partners" alignItems="Center" height="320px" justifyContent="SpaceBetween">
         
-        <VBox class="partners-head">
-          <Text class="text text_h1" text="Our Partners" />
-          <HBox class="partners-collaborate">
-          <Button 
-            class="partners-collaborate-button button" 
-            icon="/assets/images/collaborate.svg"
-            text="Let's collaborate"  
-          />
+          <VBox class="partners-head">
+            <Text class="text text_h1" text="Our Partners" />
+            <HBox class="partners-collaborate">
+            <Button 
+              class="partners-collaborate-button button" 
+              icon="/assets/images/collaborate.svg"
+              text="Let's collaborate"  
+            />
+            </HBox>
+          </VBox>
+
+          <HBox class="partners-logos" items="{AppMainModel>/partners}">
+            <HBox class="partners-monochrome" alignItems="Center">
+              <Image class="partners-logo" src="{AppMainModel>logo}" />
+            </HBox>
           </HBox>
+
         </VBox>
 
-        <HBox class="partners-logos" items="{AppMainModel>/partners}">
-          <HBox class="partners-monochrome" alignItems="Center">
-            <Image class="partners-logo" src="{AppMainModel>logo}" />
+        <!--WHAT WE DO-->
+
+        <VBox class="what-we-do" alignItems="Center" height="640px" justifyContent="SpaceBetween">
+          <HBox class="what-we-do_bgimage">
+            <Image src="/assets/images/city.png" />
           </HBox>
-        </HBox>
+          <Text class="text text_h1" text="What we do" />
+          <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+
+          <HBox class="what-we-do_pads" items="{AppMainModel>/whatWeDo}">
+            <VBox class="what-we-do_pad" justifyContent="SpaceBetween">
+              <HBox class="circle-pad">
+                <Image src="{AppMainModel>icon}" />
+              </HBox>
+              <HBox alignItems="Center">
+                <Text class="text text_h3" text="{AppMainModel>title}" />
+                <Link class="link link_blue link_blue_underlined" text="{AppMainModel>link}" />
+              </HBox>
+              <Text class="text" text="{AppMainModel>text}" />
+            </VBox>
+
+          </HBox>
+
+          <Button class="what-we-do_button button" text="Get started!" />
 
         </VBox>
 

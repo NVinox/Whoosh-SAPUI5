@@ -87,6 +87,25 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           logo: "/assets/images/guitar-center.svg",
         },
       ],
+      whatWeDo: [
+        {
+          title: "Online",
+          link: "calculation",
+          icon: "/assets/images/calculation.svg",
+          text: "Instant calculation of the cost in the order form, the price is updated in the process of filling out the form",
+        },
+        {
+          title: "Minimum paperwork",
+          icon: "/assets/images/paperwork.svg",
+          text: "You can place an order for courier or freight delivery without registration and contract.",
+        },
+        {
+          title: "Convenient payment",
+          icon: "/assets/images/payment.svg",
+          text: "You can pay for delivery by card or in cash at any of the order addresses. For legal entities non-cash is available.",
+          more: "/assets/images/arrow.svg",
+        },
+      ],
     }),
   };
 });
