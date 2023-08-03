@@ -19,14 +19,20 @@
       justify-content: center;
       gap: 32px 50px !important;
     }
+    .sapFGLI {
+      border: 1px solid $gray-blue;
+      border-radius: 8px;
+      &:hover {
+        cursor: pointer;
+        border: 2px solid $blue;
+      }
+    }
   }
 
   &-item {
     width: 300px;
     height: 280px;
     background-color: $light-gray;
-    border: 1px solid $gray-blue;
-    border-radius: 8px;
 
     &-pad{
         padding: 16px 23px 26px;
