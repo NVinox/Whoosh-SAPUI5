@@ -19,7 +19,7 @@
           <HBox class="tool-page__header-subwrapper" alignItems="Center">
             <Image 
               class="tool-page__header-logo"
-              src="/assets/images/logo.svg" 
+              src="/assets/images/header/logo.svg" 
               />
             <ToolbarSpacer width="48px" />
             <Link text="NY, Manhattan" class="tool-page__header-link tool-page__header-city link" />
@@ -38,7 +38,7 @@
             <Link text="Become a Courier" class="tool-page__header-link link" />
             <Button 
               class="tool-page__header-login button"
-              icon="/assets/images/lock.svg"
+              icon="/assets/images/header/lock.svg"
             />
           </HBox>
         </HBox>
@@ -67,7 +67,7 @@
               </HBox>
             </VBox>
           </VBox>
-          <Image class="offer-graphic" src="/assets/images/graphic.svg" />
+          <Image class="offer-graphic" src="/assets/images/offer/graphic.svg" />
           <VBox class="offer-right" width="360px">
             <!--SEND A PARCEL FORM-->
             <HBox class="PLACEHOLDER PLACEHOLDER_form" width="100%" height="500px">
@@ -125,7 +125,7 @@
             <HBox class="partners-collaborate">
             <Button 
               class="partners-collaborate-button button" 
-              icon="/assets/images/collaborate.svg"
+              icon="/assets/images/partners/collaborate.svg"
               text="Let's collaborate"  
             />
             </HBox>
@@ -143,7 +143,7 @@
 
         <VBox class="what-we-do" alignItems="Center" height="640px" justifyContent="SpaceBetween">
           <HBox class="what-we-do_bgimage">
-            <Image src="/assets/images/city.png" />
+            <Image src="/assets/images/what-we-do/city.png" />
           </HBox>
           <Text class="text text_h1" text="What we do" />
           <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
@@ -166,6 +166,28 @@
 
         </VBox>
 
+        <!--PAYMENT METHODS-->
+
+        <VBox class="payment" alignItems="Center" height="640px" justifyContent="SpaceBetween">
+        <Text class="text text_h1" text="Payment methods" />
+          <Carousel
+			height="56px"
+			pages="{
+				path: 'products>/ProductCollection'
+			}">
+			<ScrollContainer 
+				vertical="false" 
+				horizontal="false">
+
+				<f:Card>
+					<f:content>
+						
+					</f:content>
+				</f:Card>
+			</ScrollContainer>
+		</Carousel>
+        </Vbox>
+
       </VBox>
       <!--/MAIN CONTENT-->
     
@@ -179,7 +201,7 @@
             </HBox>
 
             <HBox class="footer__content-content">
-              <Image src="/assets/images/two-pins.svg" class="two-pins" />
+              <Image src="/assets/images/footer/two-pins.svg" class="two-pins" />
               <Text width="240px" text="Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases and other goods" />
             </HBox>
           </VBox>
@@ -216,25 +238,25 @@
             <VBox class="footer__content-content">
               <Text class="phone" text="8 800 934 5959" />
               <HBox>
-                <Image class="footer-icon" src="/assets/images/pin-blue.svg"/>
+                <Image class="footer-icon" src="/assets/images/footer/pin-blue.svg"/>
                 <Text class="footer-icon-text" text="2545 W. Diversey Ave.&#13;&#10;3rd Floor Chicago, IL 60647"/>
               </HBox>
               <HBox class="footer-social" justifyContent="SpaceBetween">
                 <Button 
                 class="button"
-                icon="/assets/images/facebook.svg"
+                icon="/assets/images/footer/facebook.svg"
                 />
                 <Button 
                   class="button"
-                  icon="/assets/images/vk.svg"
+                  icon="/assets/images/footer/vk.svg"
                 />
                 <Button 
                   class="button"
-                  icon="/assets/images/youtube.svg"
+                  icon="/assets/images/footer/youtube.svg"
                 />
                 <Button 
                   class="button"
-                  icon="/assets/images/instagram.svg"
+                  icon="/assets/images/footer/instagram.svg"
                 />
               </HBox>
             </VBox>
@@ -250,10 +272,10 @@
               <Text text="© 2022. All rights reserved." />
             </HBox>
             <HBox justifyContent="Center" width="50%">
-              <Image src="/assets/images/pyrobyte.svg" />
+              <Image src="/assets/images/footer/pyrobyte.svg" />
             </HBox>
             <HBox class="footer-madeby-text footer-madeby-text-right" justifyContent="Center" width="25%">
-              <Image class="footer-icon" src="/assets/images/flower.svg" />
+              <Image class="footer-icon" src="/assets/images/footer/flower.svg" />
               <Text class="footer-icon-text" text="Privacy policy" />
             </HBox>
           </HBox>

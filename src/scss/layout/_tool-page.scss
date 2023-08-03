@@ -88,7 +88,7 @@
     &-city {
       &::before {
         display: inline-block;
-        content: url(../images/pin.svg);
+        content: url(../images/header/pin.svg);
         margin-right: 10px;
         padding-bottom: 0;
         width: 12px;
@@ -128,7 +128,7 @@
       .sapMSFS {
         &::after {
           display: block;
-          content: url(../images/search.svg);
+          content: url(../images/header/search.svg);
           margin: 0 auto;
         }
       }
