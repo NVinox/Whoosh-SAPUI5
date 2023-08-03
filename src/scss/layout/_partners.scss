@@ -2,7 +2,7 @@
   max-width: $container-width;
   width: 100%;
 
-  padding: 72px 0 60px;
+  padding: 72px 0 45px;
 
   &-head {
     width: 100%;
@@ -15,14 +15,14 @@
     margin-right: 288px;
     &-button{
       position: absolute;
-      top: -45px;
+      top: -48px;
       width: 184px;
       .sapMBtnInner {
         background-color: $white;
         border: 1px solid $another-gray;
         color: $black;
         justify-content: left;
-        padding-left: 15px;
+        padding-left: 18px;
       }
   
       &.sapMBtn:hover > .sapMBtnHoverable {
