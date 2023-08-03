@@ -142,4 +142,32 @@
       }
     }
   }
+
+
+  .parcel {
+    margin-top: -12px;
+    &-line {
+      display: inline-block;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 35%;
+        height: 2px;
+        background: $gray-blue;
+      }
+
+      &::before {
+        right: 200%;
+        left: -2090%;
+      }
+
+      &:after {
+        left: 200%;
+        right: -2090%;
+      }
+    }
+  }
 }

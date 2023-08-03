@@ -111,8 +111,10 @@
             </f:GridListItem>
           </f:GridList>
         </VBox>
-        <HBox class="express-parcel" width="100%" justifyContent="Center">
-          <HBox class="express-parcel-line">
+
+        <!--PARCEL LINE-->
+        <HBox class="parcel" width="100%" justifyContent="Center">
+          <HBox class="parcel-line">
             <Image src="/assets/images/parcel.svg"/>
           </HBox>
         </HBox>
@@ -168,25 +170,29 @@
 
         <!--PAYMENT METHODS-->
 
-        <VBox class="payment" alignItems="Center" height="640px" justifyContent="SpaceBetween">
-        <Text class="text text_h1" text="Payment methods" />
+        <VBox class="payment" alignItems="Center" height="344px" justifyContent="SpaceBetween">
+          <Text class="text text_h1" text="Payment methods" />
           <Carousel
-			height="56px"
-			pages="{
-				path: 'products>/ProductCollection'
-			}">
-			<ScrollContainer 
-				vertical="false" 
-				horizontal="false">
+            height="56px"
+            pages="{path: 'AppMainModel>/payment'}"
+            showPageIndicator="false"
+            loop="true"
+          >
+            <customLayout>
+				      <CarouselLayout visiblePagesCount="6"/>
+			      </customLayout>
+            <HBox class="payment-card">
+              <Image src="{AppMainModel>logo}" />
+            </HBox>
+		      </Carousel>
+        </VBox>
 
-				<f:Card>
-					<f:content>
-						
-					</f:content>
-				</f:Card>
-			</ScrollContainer>
-		</Carousel>
-        </Vbox>
+        <!--PARCEL LINE-->
+        <HBox class="parcel" width="100%" justifyContent="Center">
+          <HBox class="parcel-line">
+            <Image src="/assets/images/parcel.svg"/>
+          </HBox>
+        </HBox>
 
       </VBox>
       <!--/MAIN CONTENT-->
