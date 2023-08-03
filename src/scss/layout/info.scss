@@ -1,0 +1,9 @@
+.info{
+    max-width: $container-width;
+    width: 100%;
+
+    &-text {
+        max-width: 1160px;
+        padding-top: 76px;
+    }
+}
