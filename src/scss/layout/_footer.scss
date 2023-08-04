@@ -1,24 +1,25 @@
 .footer {
-  height: 528px;
   background-color: $white;
 
   flex: 0 0 auto;
 
   align-items: center;
 
-  &__content {
-    padding-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 52px;
+
+  &__wrapper {
     margin-left: 22px;
+  }
 
-    &-column {
-      margin: 0px 26px 0 37px;
-    }
+  &__column {
+    margin: 0px 26px 0 37px;
+  }
 
-    &-content {
-      padding-top: 7px;
-      min-width: 232px;
-      justify-content: space-between;
-    }
+  &__content {
+    padding-top: 7px;
+    min-width: 232px;
+    justify-content: space-between;
   }
 
   .sapMText {
@@ -27,15 +28,16 @@
     line-height: 24px;
   }
 
-  &-links {
-    &-column {
-      min-width: 200px;
-      margin: 0 34px;
-    }
+  &__links-column {
+    min-width: 200px;
+    margin: 0 34px;
   }
 
-  &-title {
+  &__title {
     margin-bottom: 10px;
+    max-width: 200px;
+    border-bottom: 2px solid $gray-blue;
+    border-radius: 1px;
 
     .sapMText {
       font-family: "Intro";
@@ -45,11 +47,9 @@
       padding-bottom: 6px;
       letter-spacing: 1px;
     }
-
-    &-underlined {
-      max-width: 200px;
-      border-bottom: 2px solid $gray-blue;
-      border-radius: 1px;
+    
+    &_lineless {
+      border: 0;
     }
   }
 
@@ -58,7 +58,7 @@
     margin-left: -60px;
   }
 
-  &-link {
+  &__link {
     background-color: transparent;
     border: 0;
     padding: 0;
@@ -85,20 +85,20 @@
     padding-bottom: 24px;
   }
 
-  &-icon {
+  &__icon {
     padding-top: 3px;
   }
-  &-icon-text {
+  &__icon-text {
     padding-left: 12px;
   }
 
-  &-social {
+  &__social {
     padding-top: 60px;
   }
 
   //MADE BY
 
-  &-madeby {
+  &__madeby {
     max-width: 1160px;
     width: 100%;
     text-align: center;
@@ -137,10 +137,10 @@
     &-text {
       padding-top: 3px;
 
-      &-left {
+      &_left {
         padding-left: 14px;
       }
-      &-right {
+      &_right {
         padding-left: 6px;
       }
     }
