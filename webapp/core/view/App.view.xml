@@ -122,18 +122,18 @@
         
         <VBox class="partners-head">
           <Text class="text text_h1" text="Our Partners" />
-          <HBox class="partners-collaborate">
-          <Button 
-            class="partners-collaborate-button button" 
-            icon="/assets/images/collaborate.svg"
-            text="Let's collaborate"  
-          />
+          <HBox class="collaborate">
+            <Button 
+              class="collaborate__button button" 
+              icon="/assets/images/collaborate.svg"
+              text="Let's collaborate"  
+            />
           </HBox>
         </VBox>
 
-        <HBox class="partners-logos" items="{AppMainModel>/partners}">
-          <HBox class="partners-monochrome" alignItems="Center">
-            <Image class="partners-logo" src="{AppMainModel>logo}" />
+        <HBox class="logos" items="{AppMainModel>/partners}">
+          <HBox class="logos_monochrome" alignItems="Center">
+            <Image class="logos__logo" src="{AppMainModel>logo}" />
           </HBox>
         </HBox>
 

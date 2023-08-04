@@ -10,10 +10,10 @@
     align-items: center;
   }
 
-  &-collaborate {
+  .collaborate {
     align-self: end;
     margin-right: 288px;
-    &-button{
+    &__button{
       position: absolute;
       top: -48px;
       width: 184px;
@@ -37,23 +37,25 @@
       }
     }
   }
-  &-logos {
+  .logos {
     max-width: 1104px;
     width: 100%;
     margin-left: -43px;
     justify-content: space-between;
-  }
-
-  &-monochrome {
-    background: $white;
-  }
-
-  &-logo {
-    mix-blend-mode: luminosity;
-    opacity: 10%;
-    &:hover {
-      mix-blend-mode: normal;
-      opacity: 100%;
+    
+    &_monochrome {
+      background: $white;
+    }
+    
+    &__logo {
+      mix-blend-mode: luminosity;
+      opacity: 10%;
+      &:hover {
+        mix-blend-mode: normal;
+        opacity: 100%;
+      }
     }
   }
+
+
 }
