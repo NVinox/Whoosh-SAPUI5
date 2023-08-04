@@ -181,7 +181,7 @@
             <customLayout>
 				      <CarouselLayout visiblePagesCount="6"/>
 			      </customLayout>
-            <HBox class="payment-card">
+            <HBox class="payment__card">
               <Image src="{AppMainModel>logo}" />
             </HBox>
 		      </Carousel>
