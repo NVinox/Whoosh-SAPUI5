@@ -8,18 +8,23 @@
   padding-top: 80px;
   padding-bottom: 52px;
 
-  &__wrapper {
+  .wrapper {
     margin-left: 22px;
   }
-
-  &__column {
+  
+  .column {
     margin: 0px 26px 0 37px;
   }
-
-  &__content {
+  
+  .content {
     padding-top: 7px;
     min-width: 232px;
     justify-content: space-between;
+    
+    &__two-pins {
+      margin-right: 16px;
+      margin-left: -60px;
+    }
   }
 
   .sapMText {
@@ -28,12 +33,12 @@
     line-height: 24px;
   }
 
-  &__links-column {
+  .links-column {
     min-width: 200px;
     margin: 0 34px;
   }
 
-  &__title {
+  .title {
     margin-bottom: 10px;
     max-width: 200px;
     border-bottom: 2px solid $gray-blue;
@@ -53,12 +58,8 @@
     }
   }
 
-  .two-pins {
-    margin-right: 16px;
-    margin-left: -60px;
-  }
 
-  &__link {
+  .link {
     background-color: transparent;
     border: 0;
     padding: 0;
@@ -92,20 +93,20 @@
     padding-left: 12px;
   }
 
-  &__social {
+  .social {
     padding-top: 60px;
   }
 
   //MADE BY
 
-  &__madeby {
+  .madeby {
     max-width: 1160px;
     width: 100%;
     text-align: center;
     overflow: hidden;
     padding-top: 24px;
 
-    &-line {
+    &__line {
       display: inline-block;
       position: relative;
       margin-bottom: 14px;
@@ -134,7 +135,7 @@
         right: -1015%;
       }
     }
-    &-text {
+    &__text {
       padding-top: 3px;
 
       &_left {
