@@ -49,29 +49,29 @@
     <ScrollContainer vertical="true">
       <VBox class="main-content" alignItems="Center" justifyContent="Center">
 
-        <HBox class="offer" justifyContent="SpaceBetween" width="100%" height="784px">
-          <VBox class="offer-left" justifyContent="SpaceBetween" width="375px">
-            <VBox class="offer-left-info" justifyContent="SpaceBetween">
+        <HBox class="offer" justifyContent="SpaceBetween" width="100%">
+          <VBox class="left" width="375px">
+            <VBox class="info">
               <Text class="text text_h1" text="Our service started work in New York" />
               <Text class="text" width="360px" text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
-              <Link class="link_blue read-more" text="Read more" />
+              <Link class="link_blue info__link" text="Read more" />
             </VBox>
-            <VBox class="offer-left-video">
+            <VBox>
               <Text class="text text_h3" text="How it works" />
               <!--VIDEO-->
-              <HBox class="PLACEHOLDER PLACEHOLDER_video" width="374px" height="232px">
+              <HBox class="blank info__video" width="374px" height="232px">
               </HBox>
             </VBox>
           </VBox>
-          <Image class="offer-graphic" src="/assets/images/graphic.svg" />
-          <VBox class="offer-right" width="360px">
+          <Image class="offer__graphic" src="/assets/images/graphic.svg" />
+          <VBox class="right" width="360px">
             <!--SEND A PARCEL FORM-->
-            <HBox class="PLACEHOLDER PLACEHOLDER_form" width="100%" height="500px">
+            <HBox class="blank form" width="100%" height="500px">
               </HBox>
-            <VBox class="offer-right-track" justifyContent="SpaceBetween" width="100%" height="144px">
+            <VBox class="track" width="100%" height="144px">
               <Text class="text text_h3" text="Track a package" />
               <SearchField 
-                class="offer-right-track-search search-field"
+                class="track__search search-field"
                 placeholder="Enter code"  
                 width="280px"
               />
@@ -80,7 +80,7 @@
         </HBox>
 
       </VBox>
-    <!--/MAIN CONTENT-->
+      <!--/MAIN CONTENT-->
     
 
       <!--FOOTER-->
