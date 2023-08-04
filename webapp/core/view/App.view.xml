@@ -88,17 +88,17 @@
           <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
 
           <f:GridList
-            class="express-pads"
+            class="pads"
             items="{AppMainModel>/expressPads}"
             width="1000px"
           >
-            <f:GridListItem class="express-item">
-              <VBox class="express-item-pad">
+            <f:GridListItem class="item">
+              <VBox class="item__pad">
               <layoutData>
                 <FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
               </layoutData>
                 <Text class="text text_h3" text="{AppMainModel>title}" />
-                <HBox class="express-item-image">
+                <HBox class="item__image">
                   <HBox class="circle-pad" >
                     <Image src="{AppMainModel>icon}" />
                   </HBox>

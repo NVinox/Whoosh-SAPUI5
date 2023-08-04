@@ -14,7 +14,7 @@
     }
   }
 
-  &-pads {
+  .pads {
     .sapMListUl {
       justify-content: center;
       gap: 32px 50px !important;
@@ -29,18 +29,18 @@
     }
   }
 
-  &-item {
+  .item {
     width: 300px;
     height: 280px;
     background-color: $light-gray;
 
-    &-pad{
+    &__pad{
         padding: 16px 23px 26px;
         height: 100%;
         justify-content: space-between;
     }
 
-    &-image{
+    &__image{
         margin-top: 20px;
         margin-bottom: 25px;
     }
