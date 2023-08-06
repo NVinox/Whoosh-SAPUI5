@@ -52,7 +52,7 @@
     
 
       <!--FOOTER-->
-      <VBox class="footer">
+      <VBox class="footer" justifyContent="Center" alignItems="Center">
         <HBox class="wrapper" alignItems="Start" justifyContent="Center">
           <VBox class="column">
             <HBox class="title title_lineless">
