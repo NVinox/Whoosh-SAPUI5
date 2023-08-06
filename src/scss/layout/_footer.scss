@@ -1,23 +1,29 @@
 .footer {
-  height: 528px;
-  background-color: $light-gray;
+  background-color: $white;
 
   flex: 0 0 auto;
 
   align-items: center;
 
-  &__content {
-    padding-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 52px;
+
+  .wrapper {
     margin-left: 22px;
-
-    &-column {
-      margin: 0px 26px 0 37px;
-    }
-
-    &-content {
-      padding-top: 7px;
-      min-width: 232px;
-      justify-content: space-between;
+  }
+  
+  .column {
+    margin: 0px 26px 0 37px;
+  }
+  
+  .content {
+    padding-top: 7px;
+    min-width: 232px;
+    justify-content: space-between;
+    
+    &__two-pins {
+      margin-right: 16px;
+      margin-left: -60px;
     }
   }
 
@@ -27,15 +33,16 @@
     line-height: 24px;
   }
 
-  &-links {
-    &-column {
-      min-width: 200px;
-      margin: 0 34px;
-    }
+  .links-column {
+    min-width: 200px;
+    margin: 0 34px;
   }
 
-  &-title {
+  .title {
     margin-bottom: 10px;
+    max-width: 200px;
+    border-bottom: 2px solid $gray-blue;
+    border-radius: 1px;
 
     .sapMText {
       font-family: "Intro";
@@ -45,20 +52,14 @@
       padding-bottom: 6px;
       letter-spacing: 1px;
     }
-
-    &-underlined {
-      max-width: 200px;
-      border-bottom: 2px solid $gray-blue;
-      border-radius: 1px;
+    
+    &_lineless {
+      border: 0;
     }
   }
 
-  .two-pins {
-    margin-right: 16px;
-    margin-left: -60px;
-  }
 
-  &-link {
+  .link {
     background-color: transparent;
     border: 0;
     padding: 0;
@@ -85,27 +86,27 @@
     padding-bottom: 24px;
   }
 
-  &-icon {
+  &__icon {
     padding-top: 3px;
   }
-  &-icon-text {
+  &__icon-text {
     padding-left: 12px;
   }
 
-  &-social {
+  .social {
     padding-top: 60px;
   }
 
   //MADE BY
 
-  &-madeby {
+  .madeby {
     max-width: 1160px;
     width: 100%;
     text-align: center;
     overflow: hidden;
     padding-top: 24px;
 
-    &-line {
+    &__line {
       display: inline-block;
       position: relative;
       margin-bottom: 14px;
@@ -134,13 +135,13 @@
         right: -1015%;
       }
     }
-    &-text {
+    &__text {
       padding-top: 3px;
 
-      &-left {
+      &_left {
         padding-left: 14px;
       }
-      &-right {
+      &_right {
         padding-left: 6px;
       }
     }

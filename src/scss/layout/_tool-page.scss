@@ -37,15 +37,16 @@
     padding-right: 0;
   }
 
-  &__header {
+  .header {
+    $_header-height: 80px;
     justify-content: center;
 
-    &-wrapper {
+    .wrapper {
       height: $_header-height;
       max-width: $container-width;
       padding: 0;
     }
-    &-subwrapper {
+    .subwrapper {
       height: $_header-height;
       padding: 0 32px;
       .sapMFlexItem {
@@ -73,30 +74,13 @@
       }
     }
 
-    &-logo {
+    &__logo {
       &:hover {
         cursor: pointer;
       }
-      #logo {
-        width: 15px;
-      }
-    }
-    #logo {
-      width: 15px;
     }
 
-    &-city {
-      &::before {
-        display: inline-block;
-        content: url(../images/header/pin.svg);
-        margin-right: 10px;
-        padding-bottom: 0;
-        width: 12px;
-        height: 16px;
-      }
-    }
-
-    &-link {
+    &__link {
       padding-bottom: 2px;
       margin: auto 18px;
 
@@ -114,9 +98,19 @@
           }
         }
       }
+      &_pin {
+        &::before {
+          display: inline-block;
+          content: url("../images/header/pin.svg");
+          margin-right: 10px;
+          padding-bottom: 0;
+          width: 12px;
+          height: 16px;
+        }
+      }
     }
 
-    &-search {
+    &__search {
       margin-right: 40px;
 
       &:not(.sapMSFDisabled) > .sapMSFF:hover {
@@ -134,7 +128,7 @@
       }
     }
 
-    &-login {
+    &__login {
       margin-left: 14px;
 
       &.sapMBtn:hover > .sapMBtnHoverable {
@@ -142,7 +136,6 @@
       }
     }
   }
-
 
   .parcel {
     margin-top: -12px;
