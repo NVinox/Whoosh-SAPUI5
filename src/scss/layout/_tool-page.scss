@@ -2,6 +2,22 @@
   $_content-width: 1366px;
   width: 100%;
   margin: 0 auto;
+  $_header-height: 80px;
+
+  height: 100%;
+
+  .sapTntToolPageMainContentWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content{
+    flex: 1 0 auto;
+  }
+
+  .sapTntToolPageHeader {
+    height: $_header-height;
+  }
 
   .sapMIBar {
     &.sapMTB {
@@ -116,13 +132,6 @@
 
       &.sapMBtn:hover > .sapMBtnHoverable {
         background-color: $blue-link-hover;
-      }
-
-      .sapMBtnIcon {
-        &.sapMImg {
-          height: 16px;
-          align-self: center;
-        }
       }
     }
   }
