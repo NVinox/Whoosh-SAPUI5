@@ -1,0 +1,57 @@
+.offer {
+  max-width: $container-width;
+  position: relative;
+  background-color: $light-gray;
+
+  .left {
+    margin: 59px 0 72px 103px;
+    z-index: 2;
+
+    .info {
+      margin-bottom: 79px;
+      .text {
+        margin-bottom: 36px;
+      }
+
+      &__link {
+        margin-top: -5px;
+
+        &::after {
+          content: url("../images/offer/gt.svg");
+          padding-left: 8px;
+        }
+      }
+      &_video {
+        margin-top: 23px;
+      }
+    }
+  }
+
+  .right {
+    margin: 36px 32px 32px 0;
+    .track {
+      padding: 25px 0 32px 40px;
+      background-color: $yellow;
+      border-radius: 8px;
+
+      &__search {
+        margin-top: 7px;
+      }
+    }
+  }
+
+  &__graphic {
+    position: absolute;
+    left: -313px;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .form {
+    margin-bottom: 72px;
+  }
+
+  .blank {
+    background-color: $gray;
+  }
+}

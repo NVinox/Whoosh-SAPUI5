@@ -2,12 +2,22 @@
 @import "./global/variables.scss";
 @import "./global/fonts.scss";
 @import "./global/global.scss";
+@import "./components/core/text.scss";
 
 //BASE ELEMENTS
 @import "./base/button.scss";
 @import "./base/link.scss";
 @import "./base/search-field";
 
+//CUSTOM ELEMENTS
+@import "./custom/circle-pad.scss";
+
 //LAYOUT
 @import "./layout/tool-page.scss";
+@import "./layout/offer.scss";
+@import "./layout/express-delivery.scss";
+@import "./layout/partners.scss";
+@import "./layout/what-we-do.scss";
+@import "./layout/payment.scss";
+@import "./layout/info.scss";
 @import "./layout/footer.scss";

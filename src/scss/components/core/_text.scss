@@ -1,0 +1,77 @@
+.text {
+  &.sapMText {
+    font-family: "Intro Book";
+    font-weight: 400;
+    font-size: 16px;
+    color: $text-color;
+    line-height: 24px;
+  }
+
+  &_h1 {
+    &.sapMText {
+      font-family: "Intro";
+      font-weight: 700;
+      font-size: 40px;
+      color: $black;
+      line-height: 48px;
+    }
+  }
+
+  &_h2 {
+    &.sapMText {
+      font-family: "Intro";
+      font-weight: 700;
+      font-size: 24px;
+      color: $black;
+    }
+  }
+
+  &_h3 {
+    &.sapMText {
+      font-family: "Intro";
+      font-size: 22px;
+      color: $black;
+      line-height: 32px;
+    }
+  }
+
+  &_h4 {
+    &.sapMText {
+      font-size: 22px;
+      color: $text-gray;
+      line-height: 32px;
+    }
+  }
+
+  &_h5 {
+    &.sapMText {
+      font-family: "Intro";
+      font-size: 18px;
+      color: $black;
+    }
+  }
+
+  &_txt2 {
+    &.sapMText {
+      font-size: 14px;
+      color: $black;
+    }
+  }
+
+  &_txt-menu {
+    &.sapMText {
+      font-size: 18px;
+      color: $black;
+      line-height: 48px;
+    }
+  }
+
+  &_price {
+    &.sapMText {
+      font-family: "Intro";
+      font-size: 32px;
+      color: $black;
+      line-height: 40px;
+    }
+  }
+}

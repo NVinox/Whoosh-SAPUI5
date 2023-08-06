@@ -5,7 +5,7 @@
   .sapMSFF {
     border-color: $gray-blue;
     border-radius: 8px;
-    background-color: $plain-white;
+    background-color: $white;
 
     & > .sapMSFB:not(.sapMSFBF):active {
       background-color: transparent;
@@ -16,7 +16,7 @@
     }
 
     ::placeholder {
-      color: $placeholder;
+      color: $gray;
       font-style: normal;
     }
 
