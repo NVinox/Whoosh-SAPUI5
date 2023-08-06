@@ -3,45 +3,307 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:tnt="sap.tnt"
+  xmlns:f="sap.f"
+  xmlns:grid="sap.ui.layout.cssgrid"
   displayBlock="true">
   <tnt:ToolPage
     class="tool-page">
     <tnt:header>
-      <tnt:ToolHeader class="tool-page__header">
+      <tnt:ToolHeader class="header">
         <HBox 
-          class="tool-page__header-wrapper sapUiNoContentPadding"
+          class="wrapper sapUiNoContentPadding"
           width="100%"
           justifyContent="SpaceBetween"
           alignItems="Center"  
         >
-          <HBox class="tool-page__header-subwrapper" alignItems="Center">
+          <HBox class="subwrapper" alignItems="Center">
             <Image 
-              class="tool-page__header-logo"
-              src="/assets/images/logo.svg" 
+              class="header__logo"
+              src="/assets/images/header/logo.svg" 
               />
             <ToolbarSpacer width="48px" />
-            <Link text="NY, Manhattan" class="tool-page__header-link tool-page__header-city link" />
+            <Link text="NY, Manhattan" class="header__link header__link_pin link" />
           </HBox>
 
-          <HBox class="tool-page__header-subwrapper" alignItems="Center">
+          <HBox class="subwrapper" alignItems="Center">
             <SearchField 
-              class="tool-page__header-search search-field" 
+              class="header__search search-field" 
               placeholder="Track a Package" 
               width="184px" 
             />
           </HBox>
 
-          <HBox class="tool-page__header-subwrapper" alignItems="Center">
-            <Link text="Send a Parcel" class="tool-page__header-link link" />
-            <Link text="Become a Courier" class="tool-page__header-link link" />
+          <HBox class="subwrapper" alignItems="Center">
+            <Link text="Send a Parcel" class="header__link link" />
+            <Link text="Become a Courier" class="header__link link" />
             <Button 
-              class="tool-page__header-login button"
-              icon="/assets/images/lock.svg"
+              class="header__login button"
+              icon="/assets/images/header/lock.svg"
             />
           </HBox>
         </HBox>
       </tnt:ToolHeader>
     </tnt:header>
     
+    <tnt:mainContents>
+
+    <!--MAIN CONTENT-->
+    <ScrollContainer vertical="true">
+      <VBox class="main-content" alignItems="Center" justifyContent="Center">
+
+        <HBox class="offer" justifyContent="SpaceBetween" width="100%">
+          <VBox class="left" width="375px">
+            <VBox class="info">
+              <Text class="text text_h1" text="Our service started work in New York" />
+              <Text class="text" width="360px" text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
+              <Link class="link_blue info__link" text="Read more" />
+            </VBox>
+            <VBox>
+              <Text class="text text_h3" text="How it works" />
+              <!--VIDEO-->
+              <HBox class="blank info__video" width="374px" height="232px">
+              </HBox>
+            </VBox>
+          </VBox>
+          <Image class="offer__graphic" src="/assets/images/offer/graphic.svg" />
+          <VBox class="right" width="360px">
+            <!--SEND A PARCEL FORM-->
+            <HBox class="blank form" width="100%" height="500px">
+              </HBox>
+            <VBox class="track" width="100%" height="144px">
+              <Text class="text text_h3" text="Track a package" />
+              <SearchField 
+                class="track__search search-field"
+                placeholder="Enter code"  
+                width="280px"
+              />
+            </VBox>
+          </VBox>
+        </HBox>
+
+      <!--EXPRESS DELIVERY-->
+
+        <VBox class="express" width="100%" height="648px" alignItems="Center">
+          <Text class="text text_h1" text="Express delivery market revolution" />
+          <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+
+          <f:GridList
+            class="pads"
+            items="{AppMainModel>/expressPads}"
+            width="1000px"
+          >
+            <f:GridListItem class="item">
+              <VBox class="item__pad">
+              <layoutData>
+                <FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+              </layoutData>
+                <Text class="text text_h3" text="{AppMainModel>title}" />
+                <HBox class="item__image">
+                  <HBox class="circle-pad" >
+                    <Image src="{AppMainModel>icon}" />
+                  </HBox>
+                    <Image src="{AppMainModel>icon2}" />
+                </HBox>
+                <Text class="text" text="{AppMainModel>text}" />
+              </VBox>
+            </f:GridListItem>
+          </f:GridList>
+        </VBox>
+
+        <!--PARCEL LINE-->
+        <HBox class="parcel" width="100%" justifyContent="Center">
+          <HBox class="parcel-line">
+            <Image src="/assets/images/parcel.svg"/>
+          </HBox>
+        </HBox>
+
+        <!--PARTNERS-->
+        <VBox class="partners" alignItems="Center" height="320px" justifyContent="SpaceBetween">
+        
+          <VBox class="partners-head">
+            <Text class="text text_h1" text="Our Partners" />
+            <HBox class="collaborate">
+            <Button 
+              class="collaborate__button button" 
+              icon="/assets/images/partners/collaborate.svg"
+              text="Let's collaborate"  
+            />
+            </HBox>
+          </VBox>
+
+          <HBox class="logos" items="{AppMainModel>/partners}">
+            <HBox class="logos_monochrome" alignItems="Center">
+              <Image class="logos__logo" src="{AppMainModel>logo}" />
+            </HBox>
+          </HBox>
+
+        </VBox>
+
+        <!--WHAT WE DO-->
+
+        <VBox class="what-we-do" alignItems="Center" height="640px" justifyContent="SpaceBetween">
+          <HBox class="what-we-do__bgimage">
+            <Image src="/assets/images/what-we-do/city.png" />
+          </HBox>
+          <Text class="text text_h1" text="What we do" />
+          <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+
+          <HBox class="pads" items="{AppMainModel>/whatWeDo}">
+            <VBox class="pad" justifyContent="SpaceBetween">
+              <HBox class="circle-pad">
+                <Image src="{AppMainModel>icon}" />
+              </HBox>
+              <HBox alignItems="Center">
+                <Text class="text text_h3" text="{AppMainModel>title}" />
+                <Link class="link link_blue link_blue_underlined" text="{AppMainModel>link}" />
+              </HBox>
+              <Text class="text" text="{AppMainModel>text}" />
+            </VBox>
+
+          </HBox>
+
+          <Button class="what-we-do__button button" text="Get started!" />
+
+        </VBox>
+
+        <!--PAYMENT METHODS-->
+
+        <VBox class="payment" alignItems="Center" height="339px" justifyContent="SpaceBetween">
+          <Text class="text text_h1" text="Payment methods" />
+          <Carousel
+            height="56px"
+            pages="{path: 'AppMainModel>/payment'}"
+            showPageIndicator="false"
+            loop="true"
+          >
+            <customLayout>
+				      <CarouselLayout visiblePagesCount="6"/>
+			      </customLayout>
+            <HBox class="payment__card">
+              <Image src="{AppMainModel>logo}" />
+            </HBox>
+		      </Carousel>
+        </VBox>
+
+        <!--PARCEL LINE-->
+        <HBox class="parcel" width="100%" justifyContent="Center">
+          <HBox class="parcel-line">
+            <Image src="/assets/images/parcel.svg"/>
+          </HBox>
+        </HBox>
+
+        <!--INFO-->
+
+        <VBox class="info" alignItems="Center" height="333px">
+          <HBox class="info__text" width="100%">
+            <Text class="text" text="Since 2019, LibertyWalk has successfully provided express courier delivery services in the city for both individuals and legal entities, and is also a reliable logistics partner for delivery services for online stores and restaurants!
+Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases, flowers, food, gifts and goods up to 1.5 tons - the most frequent orders in our company.&#13;&#10;
+&#13;&#10;
+But at the same time, we do not limit the range of courier services and without problems we can buy and bring goods and products from the online store, arrange delivery for the online store, cafe, supermarket, restaurant or any other business. Around the clock on our website you can call a courier in just a minute and arrange an express courier delivery without unnecessary bureaucracy, negotiations and calls to the call center." />
+          <!-- <CheckBox class="info__etc" /> -->
+          <layoutData>
+            <FlexItemData maxWidth="1160px" />
+          </layoutData>
+          </HBox>
+        </VBox>
+
+
+      </VBox>
+      <!--/MAIN CONTENT-->
+    
+
+      <!--FOOTER-->
+      <VBox class="footer" justifyContent="Center" alignItems="Center">
+        <HBox class="wrapper" alignItems="Start" justifyContent="Center">
+          <VBox class="column">
+            <HBox class="title title_lineless">
+              <Text text="About Whoosh" />
+            </HBox>
+
+            <HBox class="content">
+              <Image src="/assets/images/footer/two-pins.svg" class="content__two-pins" />
+              <Text width="240px" text="Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases and other goods" />
+            </HBox>
+          </VBox>
+
+          <HBox class="links">
+            <VBox class="links-column">
+              <HBox class="title" >
+                <Text text="Menu" />
+              </HBox>
+
+              <List items="{path:'AppMainModel>/footerMenu'}">
+                <StandardListItem title="{AppMainModel>text}" class="link"/>
+              </List>          
+            </VBox>
+
+            <VBox class="links-column">
+              <HBox class="title">
+                <Text text="Services" />
+              </HBox>
+
+              <List items="{AppMainModel>/footerServices}">
+                <StandardListItem title="{AppMainModel>text}" class="link"/>
+
+              </List>
+
+            </VBox>
+          </HBox>
+
+          <VBox class="column">
+            <HBox class="title">
+              <Text text="Contact Us" />
+            </HBox>
+
+            <VBox class="content">
+              <Text class="phone" text="8 800 934 5959" />
+              <HBox>
+                <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
+                <Text class="footer__icon-text" text="2545 W. Diversey Ave.&#13;&#10;3rd Floor Chicago, IL 60647"/>
+              </HBox>
+              <HBox class="social" justifyContent="SpaceBetween">
+                <Button 
+                class="button"
+                icon="/assets/images/footer/facebook.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/footer/vk.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/footer/youtube.svg"
+                />
+                <Button 
+                  class="button"
+                  icon="/assets/images/footer/instagram.svg"
+                />
+              </HBox>
+            </VBox>
+          </VBox>
+        </HBox>
+        
+        <!--Made by line-->
+
+        <VBox class="madeby">
+          <Text class="madeby__line" text="Made by"/>
+          <HBox justifyContent="Center" alignItems="Center">
+            <HBox class="madeby__text madeby__text_left" justifyContent="Center" width="25%">
+              <Text text="© 2022. All rights reserved." />
+            </HBox>
+            <HBox justifyContent="Center" width="50%">
+              <Image src="/assets/images/footer/pyrobyte.svg" />
+            </HBox>
+            <HBox class="madeby__text madeby__text_right" justifyContent="Center" width="25%">
+              <Image class="footer__icon" src="/assets/images/footer/flower.svg" />
+              <Text class="footer__icon-text" text="Privacy policy" />
+            </HBox>
+          </HBox>
+        </VBox>
+
+
+      </VBox>
+      </ScrollContainer>
+    </tnt:mainContents>
   </tnt:ToolPage>
 </mvc:View>

@@ -1,7 +1,25 @@
 .tool-page {
-  $_content-width: 1366px;
   width: 100%;
   margin: 0 auto;
+  $_header-height: 80px;
+
+  height: 100%;
+
+  .sapTntToolPageMainContentWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    flex: 1 0 auto;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+  }
+
+  .sapTntToolPageHeader {
+    height: $_header-height;
+  }
 
   .sapMIBar {
     &.sapMTB {
@@ -19,16 +37,16 @@
     padding-right: 0;
   }
 
-  &__header {
+  .header {
     $_header-height: 80px;
     justify-content: center;
 
-    &-wrapper {
+    .wrapper {
       height: $_header-height;
-      max-width: $_content-width;
+      max-width: $container-width;
       padding: 0;
     }
-    &-subwrapper {
+    .subwrapper {
       height: $_header-height;
       padding: 0 32px;
       .sapMFlexItem {
@@ -42,7 +60,7 @@
           border: 0;
           height: $_header-height;
           padding: 0;
-          background-color: $white;
+          background-color: $light-gray;
           justify-content: center;
         }
       }
@@ -56,30 +74,13 @@
       }
     }
 
-    &-logo {
+    &__logo {
       &:hover {
         cursor: pointer;
       }
-      #logo {
-        width: 15px;
-      }
-    }
-    #logo {
-      width: 15px;
     }
 
-    &-city {
-      &::before {
-        display: inline-block;
-        content: url(../images/pin.svg);
-        margin-right: 10px;
-        padding-bottom: 0;
-        width: 12px;
-        height: 16px;
-      }
-    }
-
-    &-link {
+    &__link {
       padding-bottom: 2px;
       margin: auto 18px;
 
@@ -97,9 +98,19 @@
           }
         }
       }
+      &_pin {
+        &::before {
+          display: inline-block;
+          content: url("../images/header/pin.svg");
+          margin-right: 10px;
+          padding-bottom: 0;
+          width: 12px;
+          height: 16px;
+        }
+      }
     }
 
-    &-search {
+    &__search {
       margin-right: 40px;
 
       &:not(.sapMSFDisabled) > .sapMSFF:hover {
@@ -111,24 +122,44 @@
       .sapMSFS {
         &::after {
           display: block;
-          content: url(../images/search.svg);
+          content: url(../images/header/search.svg);
           margin: 0 auto;
         }
       }
     }
 
-    &-login {
+    &__login {
       margin-left: 14px;
 
       &.sapMBtn:hover > .sapMBtnHoverable {
         background-color: $blue-link-hover;
       }
+    }
+  }
 
-      .sapMBtnIcon {
-        &.sapMImg {
-          height: 16px;
-          align-self: center;
-        }
+  .parcel {
+    margin-top: -12px;
+    &-line {
+      display: inline-block;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 35%;
+        height: 2px;
+        background: $gray-blue;
+      }
+
+      &::before {
+        right: 200%;
+        left: -2090%;
+      }
+
+      &:after {
+        left: 200%;
+        right: -2090%;
       }
     }
   }
