@@ -144,14 +144,14 @@
         <!--WHAT WE DO-->
 
         <VBox class="what-we-do" alignItems="Center" height="640px" justifyContent="SpaceBetween">
-          <HBox class="what-we-do_bgimage">
-            <Image src="/assets/images/what-we-do/city.png" />
+          <HBox class="what-we-do__bgimage">
+            <Image src="/assets/images/city.png" />
           </HBox>
           <Text class="text text_h1" text="What we do" />
           <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
 
-          <HBox class="what-we-do_pads" items="{AppMainModel>/whatWeDo}">
-            <VBox class="what-we-do_pad" justifyContent="SpaceBetween">
+          <HBox class="pads" items="{AppMainModel>/whatWeDo}">
+            <VBox class="pad" justifyContent="SpaceBetween">
               <HBox class="circle-pad">
                 <Image src="{AppMainModel>icon}" />
               </HBox>
@@ -164,7 +164,7 @@
 
           </HBox>
 
-          <Button class="what-we-do_button button" text="Get started!" />
+          <Button class="what-we-do__button button" text="Get started!" />
 
         </VBox>
 
