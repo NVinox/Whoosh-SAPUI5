@@ -1,9 +1,11 @@
 .offer {
   max-width: $container-width;
   position: relative;
+  background-color: $light-gray;
 
   .left {
     margin: 59px 0 72px 103px;
+    z-index: 2;
 
     .info {
       margin-bottom: 79px;
@@ -15,7 +17,7 @@
         margin-top: -5px;
 
         &::after {
-          content: url("../images/GT.svg");
+          content: url("../images/offer/gt.svg");
           padding-left: 8px;
         }
       }
@@ -42,7 +44,7 @@
     position: absolute;
     left: -313px;
     bottom: 0;
-    z-index: -1;
+    z-index: 1;
   }
 
   .form {

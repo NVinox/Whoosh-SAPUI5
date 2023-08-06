@@ -30,6 +30,18 @@
         color: $blue-link-hover;
         text-decoration: none !important;
       }
+      &:focus:not(.sapMLnkDsbl) {
+        color: $blue;
+        text-decoration: none !important;
+      }
+    }
+
+    &_underlined {
+      &.sapMLnk {
+        font-size: 22px;
+        line-height: 32px;
+        text-decoration: underline;
+      }
     }
   }
 }
