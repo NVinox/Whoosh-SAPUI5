@@ -1,0 +1,17 @@
+.info {
+  &__text {
+    padding-top: 76px;
+
+    .text {
+      &::after {
+        content: url("../images/info/etc.svg");
+        margin-left: 15px;
+      }
+      &:hover {
+        &::after {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
