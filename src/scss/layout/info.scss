@@ -1,9 +1,5 @@
 .info {
-  max-width: $container-width;
-  width: 100%;
-
   &__text {
-    max-width: 1160px;
     padding-top: 76px;
 
     .text {
@@ -16,7 +12,6 @@
           cursor: pointer;
         }
       }
-      
     }
   }
 }
