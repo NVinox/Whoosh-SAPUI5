@@ -43,46 +43,7 @@
     &__image{
         margin-top: 20px;
         margin-bottom: 25px;
-    }
-  }
-
-  .circle-pad {
-    width: 80px;
-    height: 80px;
-    background-color: $white;
-    border-radius: 50%;
-    box-shadow: 0px 8px 16px 0px #{$blue}16;
-
-    margin: 0 8px; 
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-parcel {
-    margin-top: -12px;
-    &-line {
-      display: inline-block;
-      position: relative;
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 35%;
-        height: 2px;
-        background: $gray-blue;
-      }
-
-      &::before {
-        right: 200%;
-        left: -2090%;
-      }
-
-      &:after {
-        left: 200%;
-        right: -2090%;
-      }
+        margin-left: 8px;
     }
   }
 }

@@ -80,14 +80,13 @@
       }
     }
 
-    
     &__link {
       padding-bottom: 2px;
       margin: auto 18px;
-      
+
       &.sapMLnk {
         position: relative;
-        
+
         &:hover:not(.sapMLnkDsbl) {
           &::after {
             content: "";
@@ -102,7 +101,7 @@
       &_pin {
         &::before {
           display: inline-block;
-          content: url(../images/pin.svg);
+          content: url("../images/header/pin.svg");
           margin-right: 10px;
           padding-bottom: 0;
           width: 12px;
@@ -123,7 +122,7 @@
       .sapMSFS {
         &::after {
           display: block;
-          content: url(../images/search.svg);
+          content: url(../images/header/search.svg);
           margin: 0 auto;
         }
       }
@@ -134,6 +133,33 @@
 
       &.sapMBtn:hover > .sapMBtnHoverable {
         background-color: $blue-link-hover;
+      }
+    }
+  }
+
+  .parcel {
+    margin-top: -12px;
+    &-line {
+      display: inline-block;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 35%;
+        height: 2px;
+        background: $gray-blue;
+      }
+
+      &::before {
+        right: 200%;
+        left: -2090%;
+      }
+
+      &:after {
+        left: 200%;
+        right: -2090%;
       }
     }
   }
