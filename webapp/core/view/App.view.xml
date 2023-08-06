@@ -213,15 +213,15 @@ But at the same time, we do not limit the range of courier services and without 
     
 
       <!--FOOTER-->
-      <VBox class="footer">
+      <VBox class="footer" justifyContent="Center" alignItems="Center">
         <HBox class="wrapper" alignItems="Start" justifyContent="Center">
           <VBox class="column">
             <HBox class="title title_lineless">
               <Text text="About Whoosh" />
             </HBox>
 
-            <HBox class="footer__content-content">
-              <Image src="/assets/images/footer/two-pins.svg" class="two-pins" />
+            <HBox class="content">
+              <Image src="/assets/images/footer/two-pins.svg" class="content__two-pins" />
               <Text width="240px" text="Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases and other goods" />
             </HBox>
           </VBox>

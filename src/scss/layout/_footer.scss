@@ -1,26 +1,20 @@
 .footer {
   background-color: $white;
-
-  flex: 0 0 auto;
-
-  align-items: center;
-
   padding-top: 80px;
   padding-bottom: 52px;
 
   .wrapper {
     margin-left: 22px;
   }
-  
+
   .column {
     margin: 0px 26px 0 37px;
   }
-  
+
   .content {
     padding-top: 7px;
     min-width: 232px;
-    justify-content: space-between;
-    
+
     &__two-pins {
       margin-right: 16px;
       margin-left: -60px;
@@ -52,12 +46,10 @@
       padding-bottom: 6px;
       letter-spacing: 1px;
     }
-    
     &_lineless {
       border: 0;
     }
   }
-
 
   .link {
     background-color: transparent;
