@@ -1,12 +1,11 @@
 .what-we-do {
   max-width: $container-width;
-  width: 100%;
 
   border-radius: 250px 0 0 250px;
   background: linear-gradient(to right, $darker-light-gray, $light-gray);
 
-  padding-top: 62px;
-  padding-bottom: 81px;
+  padding-top: 67px;
+  padding-bottom: 105px;
 
   &__bgimage {
     position: absolute;
@@ -14,12 +13,13 @@
     top: -12%;
   }
 
-  .text_h4{
+  .text_h4 {
+    padding-top: 30px;
     margin-left: -16px;
   }
 
   .pads {
-    margin-top: 15px;
+    padding-top: 42px;
     margin-left: -2px;
   }
 
@@ -30,33 +30,34 @@
     margin: 0 25px;
     padding-bottom: 8px;
 
-    .link{
-        padding-left: 8px;
-        margin-bottom: -6px;
+    .link {
+      padding-left: 8px;
+      margin-bottom: -6px;
     }
   }
 
   &__button {
-      width: 296px;
-      .sapMBtnInner {
-        height: 48px;
+    padding-top: 33px;
+    width: 296px;
+    .sapMBtnInner {
+      height: 48px;
 
-        background-color: $yellow;
-        color: $black;
+      background-color: $yellow;
+      color: $black;
 
-        font-family: "Intro";
-        font-size: 18px;
-      }
-  
-      &.sapMBtn:hover > .sapMBtnHoverable {
-        background-color: $yellow;
-        border: 0;
-        color: $white;
-      }
-  
-      &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
-        > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
-        color: $white;
-      }
+      font-family: "Intro";
+      font-size: 18px;
+    }
+
+    &.sapMBtn:hover > .sapMBtnHoverable {
+      background-color: $yellow;
+      border: 0;
+      color: $white;
+    }
+
+    &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
+      > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
+      color: $white;
+    }
   }
 }
