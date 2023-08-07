@@ -2,11 +2,10 @@
   max-width: $container-width;
   position: relative;
 
-  .text {
-    &_h1 {
-      padding-top: 91px;
-    }
+  padding-top: 91px;
+  padding-bottom: 86px;
 
+  .text {
     &_h4 {
       padding-top: 31px;
       padding-bottom: 40px;
@@ -34,16 +33,14 @@
     height: 280px;
     background-color: $light-gray;
 
-    &__pad{
-        padding: 16px 23px 26px;
-        height: 100%;
-        justify-content: space-between;
+    &__pad {
+      padding: 14px 23px 26px;
     }
 
-    &__image{
-        margin-top: 20px;
-        margin-bottom: 25px;
-        margin-left: 8px;
+    &__image {
+      margin-top: 20px;
+      margin-bottom: 25px;
+      margin-left: 8px;
     }
   }
 }

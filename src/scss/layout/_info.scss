@@ -1,7 +1,8 @@
 .info {
-  &__text {
-    padding-top: 76px;
+  padding-top: 76px;
+  padding-bottom: 89px;
 
+  &__text {
     .text {
       &::after {
         content: url("../images/info/etc.svg");
