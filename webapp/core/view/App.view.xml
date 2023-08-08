@@ -196,7 +196,7 @@
 
         <VBox class="info" alignItems="Center">
           <VBox class="info__text" width="100%" alignItems="End">
-            <Text id="info__test" class="text" binding="{AppMainModel>/infoText}" text="{= ${AppMainModel>text} + (!!${AppMainModel>isVisible} ? ('\n\n' + ${AppMainModel>text}) : '' )}" />
+            <Text id="info__test" class="text" binding="{AppMainModel>/infoText}" text="{= ${AppMainModel>text} + (!!${AppMainModel>isVisible} ? ('\n\n' + ${AppMainModel>textHideable}) : '' )}" />
             <Button class="info__etc" width="25px" icon="/assets/images/info/etc.svg" press="onInfoToggle"/>
             <layoutData>
               <FlexItemData maxWidth="1160px" />
