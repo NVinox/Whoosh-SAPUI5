@@ -2,13 +2,11 @@
   max-width: $container-width;
   position: relative;
 
-  padding-top: 91px;
-  padding-bottom: 86px;
+  padding: 91px 0 86px;
 
   .text {
     &_h4 {
-      padding-top: 31px;
-      padding-bottom: 40px;
+      padding: 31px 0 40px;
       margin-left: -14px;
     }
   }
