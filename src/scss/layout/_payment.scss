@@ -2,11 +2,26 @@
   padding-top: 91px;
   padding-bottom: 92px;
 
-  .carousel{
-    padding-top: 52px;
+  .slider {
+    margin-top: 52px;
 
-    &__card {
-      margin: 0 40px;
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+
+      &_left {
+        margin-right: 0;
+      }
+
+      &_right {
+        margin-left: 0;
+      }
     }
   }
 }

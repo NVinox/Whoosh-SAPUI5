@@ -170,19 +170,14 @@
 
         <VBox class="payment" width="100%" alignItems="Center">
           <Text class="text text_h1" text="Payment methods" />
-          <Carousel
-            class="carousel"
-            pages="{path: 'AppMainModel>/payment'}"
-            showPageIndicator="false"
-            loop="true"
-          >
-            <customLayout>
-				      <CarouselLayout visiblePagesCount="6"/>
-			      </customLayout>
-            <HBox class="carousel__card">
-              <Image src="{AppMainModel>logo}" />
-            </HBox>
-		      </Carousel>
+
+          <HBox class="slider" width="100%" items="{AppMainModel>/payment}">
+            <layoutData>
+              <FlexItemData maxWidth="1172px" />
+            </layoutData>
+            <Image src="{AppMainModel>logo}" width="84px" />
+          </HBox>
+
         </VBox>
 
         <!--PARCEL LINE-->
