@@ -9,15 +9,12 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App"], function (BaseC
       this.setModel(AppModel.main, "AppMainModel");
     },
 
+    // Метод показа/скрытия дополнительной информации
     onInfoToggle() {
       let mainModel = this.getModel("AppMainModel");
       let isSelected = mainModel.getProperty("/infoText/isVisible");
 
       mainModel.setProperty("/infoText/isVisible", !isSelected);
-    },
-
-    onInfoPress() {
-      alert("pressed");
     },
   });
 });
