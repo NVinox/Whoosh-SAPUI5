@@ -1,7 +1,6 @@
 .footer {
   background-color: $light-gray;
-  padding-top: 80px;
-  padding-bottom: 52px;
+  padding: 80px 0 52px;
 
   .wrapper {
     margin-left: 22px;
@@ -16,8 +15,7 @@
     min-width: 232px;
 
     &__two-pins {
-      margin-right: 16px;
-      margin-left: -60px;
+      margin: 0 16px 0 -60px;
     }
   }
 
@@ -92,7 +90,6 @@
   //MADE BY
 
   .madeby {
-    max-width: 1160px;
     text-align: center;
     overflow: hidden;
     padding-top: 24px;
