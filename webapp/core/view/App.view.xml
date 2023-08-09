@@ -149,7 +149,7 @@
           <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
 
           <HBox class="pads" items="{AppMainModel>/whatWeDo}">
-            <VBox class="pad" justifyContent="SpaceBetween">
+            <VBox class="pad" justifyContent="SpaceBetween" width="300px" height="236px">
               <HBox class="circle-pad">
                 <Image src="{AppMainModel>icon}" />
               </HBox>
@@ -162,7 +162,7 @@
 
           </HBox>
 
-          <Button class="what-we-do__button button" text="Get started!" />
+          <Button class="what-we-do__button button" text="Get started!" width="296px" />
 
         </VBox>
 

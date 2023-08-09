@@ -1,11 +1,11 @@
 .payment {
   padding-top: 91px;
   padding-bottom: 92px;
-  
-  .slider{
+
+  .slider {
     margin-top: 52px;
 
-    .slick-slide{
+    .slick-slide {
       display: flex;
       justify-content: center;
     }
@@ -15,11 +15,11 @@
       border: 0;
       cursor: pointer;
 
-      &_left{
+      &_left {
         margin-right: 0;
       }
 
-      &_right{
+      &_right {
         margin-left: 0;
       }
     }

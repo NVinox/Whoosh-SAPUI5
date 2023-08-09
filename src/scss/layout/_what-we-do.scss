@@ -4,8 +4,7 @@
   border-radius: 250px 0 0 250px;
   background: linear-gradient(to right, $darker-light-gray, $light-gray);
 
-  padding-top: 67px;
-  padding-bottom: 105px;
+  padding: 67px 0 78px;
 
   &__bgimage {
     position: absolute;
@@ -24,9 +23,6 @@
   }
 
   .pad {
-    width: 300px;
-    height: 236px;
-
     margin: 0 25px;
     padding-bottom: 8px;
 
@@ -37,8 +33,7 @@
   }
 
   &__button {
-    padding-top: 33px;
-    width: 296px;
+    margin-top: 28px;
     .sapMBtnInner {
       height: 48px;
 
