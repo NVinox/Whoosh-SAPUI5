@@ -1,9 +1,27 @@
 .payment {
-  width: 100%;
-  padding-top: 87px;
-  padding-bottom: 95px;
+  padding-top: 91px;
+  padding-bottom: 92px;
 
-  &__card {
-    margin: 0 40px;
+  .slider {
+    margin-top: 52px;
+
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button {
+      background: none;
+      border: 0;
+      cursor: pointer;
+
+      &_left {
+        margin-right: 0;
+      }
+
+      &_right {
+        margin-left: 0;
+      }
+    }
   }
 }
