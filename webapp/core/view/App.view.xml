@@ -19,6 +19,7 @@
           <HBox class="subwrapper" alignItems="Center">
             <Image 
               class="header__logo"
+              mode="InlineSvg"
               src="/assets/images/header/logo.svg" 
               />
             <ToolbarSpacer width="48px" />
