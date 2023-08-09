@@ -171,7 +171,10 @@
         <VBox class="payment" width="100%" alignItems="Center">
           <Text class="text text_h1" text="Payment methods" />
 
-          <HBox class="slider" width="1172px" items="{AppMainModel>/payment}">
+          <HBox class="slider" width="100%" items="{AppMainModel>/payment}">
+            <layoutData>
+              <FlexItemData maxWidth="1172px" />
+            </layoutData>
             <Image src="{AppMainModel>logo}" width="84px" />
           </HBox>
 
