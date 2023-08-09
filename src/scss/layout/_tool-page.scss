@@ -73,8 +73,24 @@
     }
 
     &__logo {
+      .pin {
+        &_blue,
+        &_yellow {
+          transition: 0.3s all;
+        }
+      }
       &:hover {
         cursor: pointer;
+        .pin {
+          &_blue {
+            transform: translate(28px, -12px);
+            fill: $yellow;
+          }
+          &_yellow {
+            transform: translate(-28px, 12px);
+            fill: $blue;
+          }
+        }
       }
     }
 
