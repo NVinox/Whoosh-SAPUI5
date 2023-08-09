@@ -21,9 +21,15 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App"], function (BaseC
 
         prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
         nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
-
-
       });
+    },
+
+    // Метод показа/скрытия дополнительной информации
+    onInfoToggle() {
+      let mainModel = this.getModel("AppMainModel");
+      let isSelected = mainModel.getProperty("/infoText/isVisible");
+
+      mainModel.setProperty("/infoText/isVisible", !isSelected);
     },
   });
 });
