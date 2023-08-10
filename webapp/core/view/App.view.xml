@@ -44,35 +44,46 @@
             />
           </HBox>
         </HBox>
+
+        <!--HEADER FOR ADAPTIVE-->
         <HBox class="header-small" width="100%" alignItems="Center" justifyContent="SpaceBetween" height="64px">
           <Image class="header-small__profile" src="/assets/images/header/profile.svg" press=""/>
           <Image class="header-small__logo" width="120px" src="/assets/images/header/logo.svg" />
-          <Image class="header-small__menu" src="/assets/images/header/menu.svg" press=""/>
+          <Image class="header-small__menu-btn" src="/assets/images/header/menu.svg" press=""/>
         </HBox>
+
+      <!--SIDE MENU-->
+      <VBox class="menu" width="274px" height="100vh" justifyContent="SpaceBetween" alignItems="Center">
+        <VBox class="menu__wrapper" width="100%">
+          
+          <HBox class="menu-header" width="100%" height="64px" alignItems="Center" justifyContent="SpaceBetween">
+            <Link text="NY, Manhattan" class="menu-header__link menu-header__link_pin link" />
+            <Image class="menu__menu-btn" src="/assets/images/header/x.svg" press=""/>
+          </HBox>
+        
+          <VBox class="menu__subwrapper" width="100%">
+            <SearchField 
+              class="menu__search search-field" 
+              placeholder="Track a Package" 
+              width="242px" 
+            />
+            <Link text="Send a Parcel" class="header__link link" />
+            <Link text="Become a Courier" class="header__link link" />
+            <Link text="Affiliate Program" class="header__link link" />
+            <Link text="Help &amp; Support" class="header__link link" />
+          </VBox>
+        </VBox>
+
+        <Button 
+              class="menu__button button text_h5"
+              width="242px"
+              text="Take a complex order"
+            />
+      </VBox>
       </tnt:ToolHeader>
     </tnt:header>
     
     <tnt:mainContents>
-
-      <!--SIDE MENU-->
-      <VBox class="menu" width="274px" height="100%" justifyContent="SpaceBetween" alignItems="Center">
-        <VBox class="wrapper">
-          <SearchField 
-            class="menu__search search-field" 
-            placeholder="Track a Package" 
-            width="242px" 
-          />
-          <Link text="Send a Parcel" class="header__link link" />
-          <Link text="Become a Courier" class="header__link link" />
-          <Link text="Affiliate Program" class="header__link link" />
-          <Link text="Help &amp; Support" class="header__link link" />
-        </VBox>
-
-        <Button 
-              class="button"
-              text="Take a complex order"
-            />
-      </VBox>
 
     <!--MAIN CONTENT-->
     <ScrollContainer vertical="true">
