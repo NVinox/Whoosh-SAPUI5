@@ -28,3 +28,43 @@ $button-hover: #9ca0aa;
 $link-dashes: #d4def4;
 $footer-text: #7d8392;
 $blue-link-hover: #6b98f7;
+
+// screens
+$screen-s-min: 360px;
+$screen-xs-min: 500px;
+$screen-sm-min: 768px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1240px;
+$screen-xl-min: 1366px;
+
+$screen-s-max: $screen-s-min - 1;
+$screen-xs-max: $screen-xs-min - 1;
+$screen-sm-max: $screen-sm-min - 1;
+$screen-md-max: $screen-md-min - 1;
+$screen-lg-max: $screen-lg-min - 1;
+
+$breakpoints: (
+    xl: (
+        min: $screen-xl-min,
+    ),
+    lg: (
+        min: $screen-lg-min,
+        max: $screen-lg-max,
+    ),
+    md: (
+        min: $screen-md-min,
+        max: $screen-md-max,
+    ),
+    sm: (
+        min: $screen-sm-min,
+        max: $screen-sm-max,
+    ),
+    xs: (
+        min: 0,
+        max: $screen-xs-max,
+    ),
+    s: (
+        min: 0,
+        max: $screen-s-max,
+    ),
+);
