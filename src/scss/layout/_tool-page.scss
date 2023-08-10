@@ -147,12 +147,20 @@
   }
 
   //Меню адаптива
-  .menu {
+  .side-menu {
     position: absolute;
-    right: 0;
     top: 0;
+    right: -$side-menu-width;
     background: $white;
     padding-bottom: 32px;
+    transition: 0.5s all;
+
+    &_closed {
+      right: -$side-menu-width;
+    }
+    &_opened {
+      right: 0;
+    }
 
     &-header {
       padding: 3px 11px 0 15px;
@@ -163,13 +171,13 @@
 
         &_pin {
           @extend .header__link_pin;
-          &::before{
+          &::before {
             margin-right: 18px;
           }
         }
       }
     }
- 
+
     &__menu-btn {
       cursor: pointer;
     }
@@ -177,7 +185,7 @@
     &__subwrapper {
       padding: 0 16px;
     }
-    
+
     &__search {
       margin: 20px 0 25px;
       .sapMSFF {
@@ -196,7 +204,7 @@
       height: 48px;
       padding: 0;
 
-      .sapMBtnInner{
+      .sapMBtnInner {
         height: 48px;
         font-size: 18px;
       }
