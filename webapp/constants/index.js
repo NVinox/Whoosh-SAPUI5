@@ -4,6 +4,7 @@ sap.ui.define([], () => {
       DIALOG: "dialog",
       POPOVER: "popover",
     },
+    
     SCREEN: {
       XS: "XS",
       S: "S",
