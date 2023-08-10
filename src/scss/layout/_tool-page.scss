@@ -23,12 +23,11 @@
 
   //Header
   .header {
-    justify-content: center;
+    justify-content: end;
     position: relative;
     overflow: visible;
 
     .wrapper {
-      display: none;
       max-width: $container-width;
     }
     .subwrapper {
@@ -45,7 +44,6 @@
           padding: 0;
           height: fit-content;
           background-color: $light-gray;
-          justify-content: end;
         }
       }
     }
