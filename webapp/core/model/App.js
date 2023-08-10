@@ -2,6 +2,9 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
   return {
     main: new BaseModel({
       typeSize: "",
+      sideMenu: {
+        isClosed: true,
+      },
       footerMenu: [
         {
           text: "About company",

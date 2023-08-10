@@ -1,14 +1,4 @@
-sap.ui.define(
-  [
-    "App/base/BaseController", 
-    "App/core/model/App",
-    "sap/ui/Device",
-  ], function 
-  (
-    BaseController, 
-    AppModel,
-    Device,
-    ) {
+sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"], function (BaseController, AppModel, Device) {
   return BaseController.extend("App.core.controller.App", {
     onInit() {
       this.setModels();
@@ -49,6 +39,18 @@ sap.ui.define(
       let isSelected = mainModel.getProperty("/infoText/isVisible");
 
       mainModel.setProperty("/infoText/isVisible", !isSelected);
+    },
+
+    // Метод показа/скрытия бокового меню
+    onToggleSideMenu() {
+      let mainModel = this.getModel("AppMainModel");
+      let sideMenu = this.byId("side-menu");
+      let isClosed = mainModel.getProperty("/sideMenu/isClosed");
+      let currentClass = (state) => (state ? "side-menu_opened" : "side-menu_closed");
+
+      mainModel.setProperty("/sideMenu/isClosed", !isClosed);
+      sideMenu.addStyleClass(currentClass(!isClosed));
+      sideMenu.removeStyleClass(currentClass(isClosed));
     },
   });
 });
