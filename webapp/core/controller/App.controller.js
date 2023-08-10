@@ -10,6 +10,11 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
 
     onAfterRendering() {
       this.sliderInit();
+      let tapBox = this.byId("tapBox");
+      let delegateObject = {
+        onclick: () => this.onToggleSideMenu(),
+      };
+      tapBox.addEventDelegate(delegateObject);
     },
 
     // Метод установки моделей
@@ -44,13 +49,14 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     // Метод показа/скрытия бокового меню
     onToggleSideMenu() {
       let mainModel = this.getModel("AppMainModel");
-      let sideMenu = this.byId("side-menu");
+      let sideMenu = this.byId("sideMenu");
+
       let isClosed = mainModel.getProperty("/sideMenu/isClosed");
-      let currentClass = (state) => (state ? "side-menu_opened" : "side-menu_closed");
+      let sideMenuClass = (state) => (state ? "side-menu_closed" : "side-menu_opened");
 
       mainModel.setProperty("/sideMenu/isClosed", !isClosed);
-      sideMenu.addStyleClass(currentClass(!isClosed));
-      sideMenu.removeStyleClass(currentClass(isClosed));
+      sideMenu.addStyleClass(sideMenuClass(!isClosed));
+      sideMenu.removeStyleClass(sideMenuClass(isClosed));
     },
   });
 });

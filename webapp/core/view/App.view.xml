@@ -53,33 +53,42 @@
         </HBox>
 
       <!--SIDE MENU-->
-      <VBox class="side-menu" id="side-menu" width="274px" height="100vh" justifyContent="SpaceBetween" alignItems="Center">
-        <VBox class="side-menu__wrapper" width="100%">
-          
-          <HBox class="side-menu-header" width="100%" height="64px" alignItems="Center" justifyContent="SpaceBetween">
-            <Link text="NY, Manhattan" class="side-menu-header__link side-menu-header__link_pin link" />
-            <Image class="side-menu__menu-btn" src="/assets/images/header/x.svg" press="onToggleSideMenu"/>
-          </HBox>
-        
-          <VBox class="side-menu__subwrapper" width="100%">
-            <SearchField 
-              class="side-menu__search search-field" 
-              placeholder="Track a Package" 
-              width="242px" 
-            />
-            <Link text="Send a Parcel" class="header__link link" />
-            <Link text="Become a Courier" class="header__link link" />
-            <Link text="Affiliate Program" class="header__link link" />
-            <Link text="Help &amp; Support" class="header__link link" />
-          </VBox>
+      <HBox id="screenWrapper" class="screen-wrapper" width="{= ${AppMainModel>/sideMenu/isClosed} ? '0' : '100%'}" height="100%">
+        <VBox 
+          id="tapBox"
+          class="tap-box"
+          width="100%"
+          height="100vh">
         </VBox>
 
-        <Button 
-              class="side-menu__button button text_h5"
-              width="242px"
-              text="Take a complex order"
-            />
-      </VBox>
+        <VBox id="sideMenu" class="side-menu" width="274px" height="100vh" justifyContent="SpaceBetween" alignItems="Center">
+          <VBox class="side-menu__wrapper" width="100%">
+            
+            <HBox class="side-menu-header" width="100%" height="64px" alignItems="Center" justifyContent="SpaceBetween">
+              <Link text="NY, Manhattan" class="side-menu-header__link side-menu-header__link_pin link" />
+              <Image class="side-menu__menu-btn" src="/assets/images/header/x.svg" press="onToggleSideMenu"/>
+            </HBox>
+          
+            <VBox class="side-menu__subwrapper" width="100%">
+              <SearchField 
+                class="side-menu__search search-field" 
+                placeholder="Track a Package" 
+                width="242px" 
+              />
+              <Link text="Send a Parcel" class="header__link link" />
+              <Link text="Become a Courier" class="header__link link" />
+              <Link text="Affiliate Program" class="header__link link" />
+              <Link text="Help &amp; Support" class="header__link link" />
+            </VBox>
+          </VBox>
+
+          <Button 
+                class="side-menu__button button text_h5"
+                width="242px"
+                text="Take a complex order"
+              />
+        </VBox>
+      </HBox>
       </tnt:ToolHeader>
     </tnt:header>
     
