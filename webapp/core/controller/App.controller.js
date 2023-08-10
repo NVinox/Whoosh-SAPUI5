@@ -1,7 +1,21 @@
-sap.ui.define(["App/base/BaseController", "App/core/model/App"], function (BaseController, AppModel) {
+sap.ui.define(
+  [
+    "App/base/BaseController", 
+    "App/core/model/App",
+    "sap/ui/Device",
+  ], function 
+  (
+    BaseController, 
+    AppModel,
+    Device,
+    ) {
   return BaseController.extend("App.core.controller.App", {
     onInit() {
       this.setModels();
+
+      Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
+
+      this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
     },
 
     onAfterRendering() {
@@ -11,6 +25,11 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App"], function (BaseC
     // Метод установки моделей
     setModels() {
       this.setModel(AppModel.main, "AppMainModel");
+    },
+
+    // Метод изменения размера экрана
+    sizeChanged(params) {
+      this.getModel("AppMainModel").setProperty("/typeSize", params.from);
     },
 
     // Инициализация slick

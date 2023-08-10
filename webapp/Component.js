@@ -1,4 +1,14 @@
-sap.ui.define(["App/base/BaseComponent"], function (BaseComponent) {
+sap.ui.define(
+  [
+    "App/base/BaseComponent", 
+    "App/constants/index",
+    "sap/ui/Device",
+  ], function 
+  (
+    BaseComponent, 
+    constants,
+    Device,
+    ) {
   "use strict";
 
   return BaseComponent.extend("App.Compoment", {
@@ -18,6 +28,33 @@ sap.ui.define(["App/base/BaseComponent"], function (BaseComponent) {
 
     init() {
       BaseComponent.prototype.init.apply(this, arguments);
+
+      Device.media.initRangeSet(
+        "MainRangeSet",
+        [
+          constants.BREAKPOINT.X,
+          constants.BREAKPOINT.XS,
+          constants.BREAKPOINT.S,
+          constants.BREAKPOINT.M,
+          constants.BREAKPOINT.L,
+          constants.BREAKPOINT.XL,
+        ],
+        "px",
+        ["X", "XS", "S", "M", "L", "XL"],
+      );
+
+      Device.media.initRangeSet(
+        "WhooshRangeSet",
+        [
+          constants.BREAKPOINT.XS, 
+          constants.BREAKPOINT.S, 
+          constants.BREAKPOINT.M, 
+          constants.BREAKPOINT.L, 
+          constants.BREAKPOINT.XL,
+        ],
+        "px",
+        ["XS", "S", "M", "L", "XL", "XXL"],
+      );
     },
   });
 });
