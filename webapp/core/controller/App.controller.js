@@ -10,6 +10,7 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
 
     onAfterRendering() {
       this.sliderInit();
+      this.setSliderSlidesToShow();
       let tapBox = this.byId("tapBox");
       let delegateObject = {
         onclick: () => this.onToggleSideMenu(),
@@ -25,6 +26,7 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     // Метод изменения размера экрана
     sizeChanged(params) {
       this.getModel("AppMainModel").setProperty("/typeSize", params.from);
+      this.setSliderSlidesToShow();
     },
 
     // Инициализация slick
@@ -36,6 +38,17 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
         prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
         nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
       });
+    },
+
+    setSliderSlidesToShow() {
+      let mainModel = this.getModel("AppMainModel");
+      let typeSize = mainModel.getProperty("/typeSize");
+
+      if (typeSize < 1024) {
+        $(".slider").slick("setOption", "slidesToShow", 3);
+      } else {
+        $(".slider").slick("setOption", "slidesToShow", 5);
+      }
     },
 
     // Метод показа/скрытия дополнительной информации
