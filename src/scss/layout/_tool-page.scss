@@ -3,6 +3,10 @@
   height: 100%;
   margin: 0 auto;
 
+  .sapTntToolPageHeader {
+    height: fit-content;
+  }
+
   .sapTntToolPageMainContentWrapper {
     display: flex;
     flex-direction: column;
@@ -29,6 +33,7 @@
 
     .wrapper {
       max-width: $container-width;
+      padding: 0 32px;
     }
     .subwrapper {
       .sapMFlexItem {
@@ -114,6 +119,12 @@
       &:not(.sapMSFDisabled) > .sapMSFF:hover {
         border-color: $gray;
         background-color: #{$gray}10;
+      }
+
+      .sapMSFF {
+        ::placeholder {
+          font-size: 14px;
+        }
       }
 
       //Search
