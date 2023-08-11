@@ -146,7 +146,7 @@
       <!--EXPRESS DELIVERY-->
 
         <VBox class="express" width="100%" alignItems="Center">
-          <Text class="text text_h1" text="Express delivery market revolution" />
+          <Text class="text text_h1" textAlign="Center" text="Express delivery market revolution" />
           <Text class="text text_h4" textAlign="Center" width="100%" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
 
           <f:GridList

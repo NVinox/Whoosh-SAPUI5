@@ -50,6 +50,10 @@
       font-size: 22px;
       color: $text-gray;
       line-height: 32px;
+
+      @include media(md) {
+        font-size: 20px;
+      }
     }
   }
 
