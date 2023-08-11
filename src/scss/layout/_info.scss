@@ -1,6 +1,10 @@
 .info {
   &__text {
     padding-top: 76px;
+
+    @include media(md) {
+      padding: 45px 16px 38px;
+    }
   }
 
   &__etc {
