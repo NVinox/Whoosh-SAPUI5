@@ -1,9 +1,9 @@
 //GLOBAL
 @import "./global/variables.scss";
+@import "./global/mixins/media.scss";
 @import "./global/fonts.scss";
 @import "./global/global.scss";
 @import "./components/core/text.scss";
-@import "./global/mixins/media.scss";
 
 //BASE ELEMENTS
 @import "./base/button.scss";
