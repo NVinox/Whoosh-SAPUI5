@@ -4,11 +4,22 @@
 
   .content-wrapper {
     max-width: $container-width;
+    background-image: url("/assets/images/offer/graphic.svg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    @include media(md) {
+      flex-direction: column-reverse;
+    }
   }
 
   .left {
     margin: 59px 0 72px 103px;
     z-index: 2;
+
+    @include media(md) {
+      margin-left: 0;
+    }
 
     &__text {
       margin-top: 36px;
@@ -35,6 +46,11 @@
   .right {
     margin: 36px 32px 32px 0;
     z-index: 2;
+
+    @include media(md) {
+      margin-right: 0;
+    }
+
     .track {
       padding: 25px 0 32px 40px;
       background-color: $yellow;

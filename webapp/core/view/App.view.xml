@@ -116,7 +116,7 @@
         <!--OFFER-->
 
         <HBox class="offer" justifyContent="Center" width="100%">
-          <HBox class="content-wrapper" width="100%" justifyContent="SpaceBetween">
+          <HBox class="content-wrapper" width="100%" alignItems="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}" justifyContent="SpaceBetween">
             <VBox class="left" width="375px">
                 <Text class="text text_h1" text="Our service started work in New York" />
                 <Text class="left__text text" width="360px" text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
@@ -126,7 +126,7 @@
                 <HBox class="blank left__video" width="374px" height="232px">
                 </HBox>
             </VBox>
-            <Image class="offer__graphic" src="/assets/images/offer/graphic.svg" />
+            
             <VBox class="right" width="360px">
               <!--SEND A PARCEL FORM-->
               <HBox class="blank form" width="100%" height="500px">
