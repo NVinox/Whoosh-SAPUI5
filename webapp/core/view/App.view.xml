@@ -275,7 +275,12 @@
 
       <!--FOOTER-->
       <VBox class="footer" justifyContent="Center" alignItems="Center">
-        <HBox class="wrapper" alignItems="Start" justifyContent="Center">
+        <HBox 
+          class="wrapper" 
+          width="100%" 
+          alignItems="{= ${AppMainModel>/typeSize} &lt; 1240 ? 'Center' : 'Start'}" 
+          justifyContent="SpaceBetween"
+        >
           <VBox class="column">
             <HBox class="title title_lineless">
               <Text text="About Whoosh" />
@@ -311,7 +316,7 @@
             </VBox>
           </HBox>
 
-          <VBox class="column">
+          <VBox class="column" width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : 'auto'}">
             <HBox class="title">
               <Text text="Contact Us" />
             </HBox>
@@ -322,7 +327,7 @@
                 <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
                 <Text class="footer__icon-text" text="2545 W. Diversey Ave.&#13;&#10;3rd Floor Chicago, IL 60647"/>
               </HBox>
-              <HBox class="social" justifyContent="SpaceBetween">
+              <HBox class="social" width="100%" justifyContent="SpaceBetween">
                 <Button 
                 class="button"
                 icon="/assets/images/footer/facebook.svg"
@@ -350,15 +355,33 @@
           <layoutData>
             <FlexItemData maxWidth="1160px" />
           </layoutData>
+          <HBox 
+              justifyContent="Center" 
+              alignItems="Center"
+              width="100%"
+              visible="{= ${AppMainModel>/typeSize} &lt; 1240 ? true : false}">
+              <Image src="/assets/images/footer/pyrobyte_red.svg" />
+            </HBox>
           <Text class="madeby__line" text="Made by"/>
-          <HBox justifyContent="Center" alignItems="Center">
-            <HBox class="madeby__text madeby__text_left" justifyContent="Center" width="25%">
+          <HBox class="madeby__content" justifyContent="Center" alignItems="Center">
+            <HBox 
+              class="madeby__text madeby__text_left" 
+              justifyContent="Center" 
+              width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}"
+            >
               <Text text="© 2022. All rights reserved." />
             </HBox>
-            <HBox justifyContent="Center" width="50%">
+            <HBox 
+              justifyContent="Center" 
+              width="50%"
+              visible="{= ${AppMainModel>/typeSize} &lt; 1240 ? false : true}">
               <Image src="/assets/images/footer/pyrobyte.svg" />
             </HBox>
-            <HBox class="madeby__text madeby__text_right" justifyContent="Center" width="25%">
+            <HBox 
+              class="madeby__text madeby__text_right" 
+              justifyContent="Center" 
+              width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}"
+            >
               <Image class="footer__icon" src="/assets/images/footer/flower.svg" />
               <Text class="footer__icon-text" text="Privacy policy" />
             </HBox>

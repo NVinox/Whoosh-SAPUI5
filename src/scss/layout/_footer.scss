@@ -3,20 +3,42 @@
   padding: 80px 0 52px;
   border-top: 1px solid $gray-blue;
 
+  @include media(lg) {
+    padding: 39px 16px 52px;
+  }
+
   .wrapper {
-    margin-left: 22px;
+    max-width: 1103px;
+    padding-left: 20px;
+
+    @include media(lg) {
+      flex-direction: column;
+      padding: 0;
+      align-items: start;
+    }
   }
 
   .column {
-    margin: 0px 26px 0 37px;
+    padding-left: 10px;
+
+    @include media(lg) {
+      padding: 0;
+    }
   }
 
   .content {
     padding-top: 7px;
     min-width: 232px;
 
+    @include media(lg) {
+      padding-top: 6px;
+    }
+
     &__two-pins {
       margin: 0 16px 0 -60px;
+      @include media(lg) {
+        margin: 0 16px 0 0;
+      }
     }
   }
 
@@ -26,9 +48,20 @@
     line-height: 24px;
   }
 
+  .links {
+    @include media(lg) {
+      margin: 32px 0 30px;
+    }
+  }
+
   .links-column {
     min-width: 200px;
     margin: 0 34px;
+
+    @include media(lg) {
+      min-width: 156px;
+      margin: 0 16px 0 0;
+    }
   }
 
   .title {
@@ -36,6 +69,10 @@
     max-width: 200px;
     border-bottom: 2px solid $gray-blue;
     border-radius: 1px;
+
+    @include media(lg) {
+      max-width: none;
+    }
 
     .sapMText {
       font-family: "Intro";
@@ -74,7 +111,7 @@
     font-size: 24px;
     line-height: 32px;
     color: $black;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 
   &__icon {
@@ -86,6 +123,13 @@
 
   .social {
     padding-top: 60px;
+
+    max-width: 300px;
+
+    @include media(lg) {
+      max-width: 301px;
+      padding: 28px 0 0 27px;
+    }
   }
 
   //MADE BY
@@ -94,6 +138,11 @@
     text-align: center;
     overflow: hidden;
     padding-top: 24px;
+
+    @include media(lg) {
+      flex-direction: column-reverse;
+      padding-top: 44px;
+    }
 
     &__line {
       display: inline-block;
@@ -124,14 +173,29 @@
         right: -1015%;
       }
     }
+
+    &__content {
+      @include media(lg) {
+        flex-direction: column-reverse;
+      }
+    }
+
     &__text {
       padding-top: 3px;
 
       &_left {
         padding-left: 14px;
+
+        @include media(lg) {
+          margin: 22px 0 25px;
+        }
       }
       &_right {
         padding-left: 6px;
+
+        @include media(lg) {
+          padding: 0;
+        }
       }
     }
   }
