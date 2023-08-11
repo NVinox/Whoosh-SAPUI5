@@ -210,19 +210,23 @@
           <HBox class="what-we-do__bgimage">
             <Image src="/assets/images/what-we-do/city.png" />
           </HBox>
-          <Text class="text text_h1" text="What we do" />
-          <Text class="text text_h4" textAlign="Center" width="754px" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+          <Text class="text text_h1" textAlign="Center" text="What we do" />
+          <Text class="text text_h4" textAlign="Center" width="100%" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
 
           <HBox class="pads" items="{AppMainModel>/whatWeDo}">
-            <VBox class="pad" justifyContent="SpaceBetween" width="300px" height="236px">
+            <VBox 
+              class="pad" 
+              width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
+              height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}"
+            >
               <HBox class="circle-pad">
-                <Image src="{AppMainModel>icon}" />
+                <Image src="{AppMainModel>icon}" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
               </HBox>
-              <HBox alignItems="Center">
+              <HBox class="pad__title" alignItems="Center">
                 <Text class="text text_h3" text="{AppMainModel>title}" />
                 <Link class="link link_blue link_blue_underlined" text="{AppMainModel>link}" />
               </HBox>
-              <Text class="text" text="{AppMainModel>text}" />
+              <Text class="text" textAlign="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Left'}" text="{AppMainModel>text}" />
             </VBox>
 
           </HBox>
