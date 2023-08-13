@@ -1,0 +1,53 @@
+.tabs {
+  border: none;
+
+  .sapUiMedia-Std-Desktop {
+    .sapMITH {
+      padding: 0;
+    }
+  }
+
+  .sapMITH,
+  .sapMITBHead {
+    padding: 0;
+  }
+
+  .sapMITBHead {
+    .sapMITBFilter {
+      padding: 0;
+
+      .sapMITBFilterWrapper,
+      .sapMITBText {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+
+  .sapMITH {
+    background-color: #eff4ff;
+    border: none;
+    overflow: hidden;
+  }
+
+  .sapMITH:not(.sapMITBTextOnly) .sapMITBHead {
+    padding-top: 0;
+  }
+
+  .sapMITBContent,
+  .sapMITBContainerContent {
+    display: none;
+  }
+
+  .sapMITBFilterIcon {
+    border-color: transparent;
+  }
+
+  .sapMITBTab {
+    width: 100%;
+  }
+
+  .sapMITBContentArrow {
+    border: none;
+  }
+}

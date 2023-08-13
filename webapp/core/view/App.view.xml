@@ -130,13 +130,12 @@
             <VBox class="right" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
               <!--SEND A PARCEL FORM-->
               <VBox class="offer__form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
-                <HBox class="offer__title" alignItems="Center">
+                <HBox class="offer__form-title" alignItems="Center">
                   <Text class="text text_h3 sapUiTinyMarginEnd" text="Send a Parcel" />
                   <Button class="button-clue" icon="/assets/images/offer/clue.svg" />
                 </HBox>
-
-                <VBox>
-                  <IconTabBar class="">
+                <VBox class="offer__tabs">
+                  <IconTabBar class="tabs">
                     <items>
                       <IconTabFilter
                         key="Bike"
@@ -155,8 +154,8 @@
                       />
                     </items>
                   </IconTabBar>
-
                 </VBox>
+
               </VBox>
               <VBox class="track" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
                 <Text class="text text_h3" text="Track a package" />

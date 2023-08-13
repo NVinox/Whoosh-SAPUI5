@@ -122,7 +122,48 @@
     }
   }
 
-  &__title {
+  &__form-title {
     padding: 40px 32px 20px;
+  }
+
+  &__tabs {
+    padding: 0 32px;
+
+    .sapMITBSelected {
+      .sapMITBFilterDefault {
+        background-color: $white;
+      }
+    }
+
+    .sapMITBFilter {
+      &:first-child {
+        border-radius: 8px 0 0 8px;
+      }
+
+      &:last-child {
+        border-radius: 0 8px 8px 0;
+      }
+
+      &.sapMITBItem {
+        width: 33.2%;
+      }
+
+      &.sapMITBSelected {
+        &.sapMITBItem {
+          border: 2px solid $blue;
+          background-color: $white;
+        }
+      }
+
+      .sapMITBText {
+        font-size: 12px;
+        color: $black;
+      }
+    }
+
+    .sapMITH {
+      border: 1px solid #b7c6e7;
+      border-radius: 8px;
+    }
   }
 }
