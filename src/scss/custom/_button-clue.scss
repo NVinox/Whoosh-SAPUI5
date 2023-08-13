@@ -7,4 +7,8 @@
     min-width: 0;
     background-color: $another-gray;
   }
+
+  &.sapMBtn:hover > .sapMBtnHoverable {
+    background-color: $black;
+  }
 }
