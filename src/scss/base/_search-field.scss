@@ -1,6 +1,4 @@
 .search-field {
-  margin-right: 40px;
-
   //Form
   .sapMSFF {
     border-color: $gray-blue;
@@ -18,6 +16,8 @@
     ::placeholder {
       color: $gray;
       font-style: normal;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     &:focus-within {

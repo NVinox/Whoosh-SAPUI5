@@ -1,5 +1,6 @@
 //GLOBAL
 @import "./global/variables.scss";
+@import "./global/mixins/media.scss";
 @import "./global/fonts.scss";
 @import "./global/global.scss";
 @import "./components/core/text.scss";
@@ -8,9 +9,11 @@
 @import "./base/button.scss";
 @import "./base/link.scss";
 @import "./base/search-field";
+@import "./base/tabs";
 
 //CUSTOM ELEMENTS
 @import "./custom/circle-pad.scss";
+@import "custom/button-clue";
 
 //LAYOUT
 @import "./layout/tool-page.scss";

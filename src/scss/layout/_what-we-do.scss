@@ -1,62 +1,94 @@
 .what-we-do {
   max-width: $container-width;
-  width: 100%;
 
   border-radius: 250px 0 0 250px;
   background: linear-gradient(to right, $darker-light-gray, $light-gray);
 
-  padding-top: 62px;
-  padding-bottom: 81px;
+  padding: 67px 0 78px;
+
+  @include media(md) {
+    border-radius: 0;
+    background: $light-another-gray;
+
+    padding: 48px 16px 52px;
+  }
 
   &__bgimage {
     position: absolute;
     right: 0;
     top: -12%;
+
+    @include media(md) {
+      display: none;
+    }
   }
 
-  .text_h4{
-    margin-left: -16px;
+  .text_h4 {
+    max-width: 750px;
+    margin: 30px 0 0 -7px;
+
+    @include media(md) {
+      margin: 10px 0 0;
+    }
   }
 
   .pads {
-    margin-top: 15px;
-    margin-left: -2px;
+    margin: 42px 0 0 -2px;
+
+    @include media(md) {
+      flex-direction: column;
+      margin: 34px 0 0 0;
+    }
   }
 
   .pad {
-    width: 300px;
-    height: 236px;
-
     margin: 0 25px;
-    padding-bottom: 8px;
 
-    .link{
-        padding-left: 8px;
-        margin-bottom: -6px;
+    @include media(md) {
+      align-items: center;
+      padding: 0 2px;
+      margin: 6px 25px 30px;
+    }
+
+    &__title {
+      margin: 22px 0;
+
+      @include media(md) {
+        margin: 27px 0 18px;
+      }
+    }
+
+    .link {
+      padding-left: 8px;
+      margin-bottom: -6px;
     }
   }
 
   &__button {
-      width: 296px;
-      .sapMBtnInner {
-        height: 48px;
+    margin-top: 28px;
 
-        background-color: $yellow;
-        color: $black;
+    @include media(md) {
+      margin: 0;
+    }
+    .sapMBtnInner {
+      height: 48px;
 
-        font-family: "Intro";
-        font-size: 18px;
-      }
-  
-      &.sapMBtn:hover > .sapMBtnHoverable {
-        background-color: $yellow;
-        border: 0;
-        color: $white;
-      }
-  
-      &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
-        > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
-        color: $white;
-      }
+      background-color: $yellow;
+      color: $black;
+
+      font-family: "Intro";
+      font-size: 18px;
+    }
+
+    &.sapMBtn:hover > .sapMBtnHoverable {
+      background-color: $yellow;
+      border: 0;
+      color: $white;
+    }
+
+    &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
+      > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
+      color: $white;
+    }
   }
 }

@@ -1,0 +1,41 @@
+.info {
+  &__text {
+    padding: 76px 0 69px;
+
+    @include media(md) {
+      padding: 45px 16px 38px;
+    }
+  }
+
+  &__etc {
+    height: 15px;
+    padding: 0;
+
+    .sapMBtn {
+      padding: 0;
+      min-width: 25px;
+    }
+
+    .sapMBtnInner {
+      background: none;
+      border: 0;
+      margin: 0;
+      width: 25px;
+      height: 15px;
+      min-width: 25px;
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    &.sapMBtn:hover > .sapMBtnHoverable {
+      background: none;
+    }
+  }
+  .sapMBtnIcon {
+    &.sapMImg {
+      height: 15px;
+    }
+  }
+}

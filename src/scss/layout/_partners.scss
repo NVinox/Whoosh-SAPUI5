@@ -1,22 +1,17 @@
 .partners {
   max-width: $container-width;
-  width: 100%;
 
-  padding: 72px 0 45px;
-
-  &-head {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
+  padding: 72px 0 41px;
 
   .collaborate {
     align-self: end;
     margin-right: 288px;
-    &__button{
+
+    &__button {
       position: absolute;
       top: -48px;
       width: 184px;
+
       .sapMBtnInner {
         background-color: $white;
         border: 1px solid $another-gray;
@@ -24,38 +19,37 @@
         justify-content: left;
         padding-left: 18px;
       }
-  
+
       &.sapMBtn:hover > .sapMBtnHoverable {
         background-color: $white;
         border-color: $light-another-gray;
         color: $button-hover;
       }
-  
+
       &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
         > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
         color: $button-hover;
       }
     }
   }
+
   .logos {
-    max-width: 1104px;
-    width: 100%;
+    padding-top: 80px;
     margin-left: -43px;
     justify-content: space-between;
-    
+
     &_monochrome {
       background: $white;
     }
-    
+
     &__logo {
       mix-blend-mode: luminosity;
       opacity: 10%;
+
       &:hover {
         mix-blend-mode: normal;
         opacity: 100%;
       }
     }
   }
-
-
 }

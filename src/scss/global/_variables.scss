@@ -1,28 +1,73 @@
 //GLOBAL COLORS
-$black:         #1d253c;
-$white:         #ffffff;
-$light-gray:    #f8faff;
-$darker-light-gray:  #F2F6FF;
-$gray-blue:     #c2d2f4;
-$gray:          #818592;
-$another-gray:  #DDE7FD;
-$light-another-gray: #F6F9FF;
-$yet-another-gray: #D7DFF2;
-$yellow:        #ffdd2d;
-$blue:          #2b6bf3;
-$dark-blue:     #1252db;
-$pink:          #fd466e;
-$light-green:   #6fcf97;
-$green:         #27ae60;
+$black: #1d253c;
+$white: #ffffff;
+$light-gray: #f8faff;
+$gray-blue: #c2d2f4;
+$yellow: #ffdd2d;
+$blue: #2b6bf3;
+$pink: #fd466e;
+$light-green: #6fcf97;
+$green: #27ae60;
+
+//ADDITIONAL COLORS
+$dark-blue: #1252db;
+$gray: #818592;
+$darker-light-gray: #f2f6ff;
+$another-gray: #dde7fd;
+$light-another-gray: #f6f9ff;
+$yet-another-gray: #d7dff2;
 
 //GLOBAL WIDTH
 $container-width: 1366px;
 
 //TEXT VARIABLES
-$text-color:    #666666;
-$text-gray:     #9396A1;
-$link-hover:    #9B9B9B;
-$button-hover:  #9CA0AA;
-$link-dashes:   #d4def4;
-$footer-text:   #7D8392;
+$text-color: #666666;
+$text-gray: #9396a1;
+$link-hover: #9b9b9b;
+$button-hover: #9ca0aa;
+$link-dashes: #d4def4;
+$footer-text: #7d8392;
 $blue-link-hover: #6b98f7;
+
+//side menu
+$side-menu-width: 274px;
+
+// screens
+$screen-s-min: 360px;
+$screen-xs-min: 500px;
+$screen-sm-min: 768px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1240px;
+$screen-xl-min: 1366px;
+
+$screen-s-max: $screen-s-min - 1;
+$screen-xs-max: $screen-xs-min - 1;
+$screen-sm-max: $screen-sm-min - 1;
+$screen-md-max: $screen-md-min - 1;
+$screen-lg-max: $screen-lg-min - 1;
+
+$breakpoints: (
+    xl: (
+        min: $screen-xl-min,
+    ),
+    lg: (
+        min: $screen-lg-min,
+        max: $screen-lg-max,
+    ),
+    md: (
+        min: $screen-md-min,
+        max: $screen-md-max,
+    ),
+    sm: (
+        min: $screen-sm-min,
+        max: $screen-sm-max,
+    ),
+    xs: (
+        min: 0,
+        max: $screen-xs-max,
+    ),
+    s: (
+        min: 0,
+        max: $screen-s-max,
+    ),
+);

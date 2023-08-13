@@ -1,0 +1,14 @@
+.button-clue {
+  @extend .button;
+
+  .sapMBtnInner {
+    height: 24px;
+    width: 24px;
+    min-width: 0;
+    background-color: $another-gray;
+  }
+
+  &.sapMBtn:hover > .sapMBtnHoverable {
+    background-color: $black;
+  }
+}
