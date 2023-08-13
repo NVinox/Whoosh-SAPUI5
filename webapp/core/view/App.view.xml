@@ -129,8 +129,34 @@
             <Image class="offer__graphic" src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : '/assets/images/offer/graphic.svg'}" />
             <VBox class="right" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
               <!--SEND A PARCEL FORM-->
-              <HBox class="blank form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
+              <VBox class="offer__form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
+                <HBox class="offer__form-title" alignItems="Center">
+                  <Text class="text text_h3 sapUiTinyMarginEnd" text="Send a Parcel" />
+                  <Button class="button-clue" icon="/assets/images/offer/clue.svg" />
                 </HBox>
+                <VBox class="offer__tabs">
+                  <IconTabBar class="tabs">
+                    <items>
+                      <IconTabFilter
+                        key="Bike"
+                        icon="assets/images/tabs/onFoot.svg"
+                        text="up to 10lb"
+                      />
+                      <IconTabFilter
+                        key="Car"
+                        icon="assets/images/tabs/car.svg"
+                        text="up to 130lb"
+                      />
+                      <IconTabFilter
+                        key="Truck"
+                        icon="assets/images/tabs/truck.svg"
+                        text="over 130lb"
+                      />
+                    </items>
+                  </IconTabBar>
+                </VBox>
+
+              </VBox>
               <VBox class="track" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
                 <Text class="text text_h3" text="Track a package" />
                 <SearchField 
