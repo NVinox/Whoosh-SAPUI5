@@ -4,14 +4,33 @@
 
   padding: 91px 0 86px;
 
+  @include media(md) {
+    padding: 48px 16px 53px;
+  }
+
   .text {
+    &_h1 {
+      @include media(md) {
+        padding: 0 27px;
+      }
+    }
+
     &_h4 {
-      padding: 31px 0 40px;
-      margin-left: -14px;
+      max-width: 766px;
+      margin: 31px 0 40px -7px;
+
+      @include media(md) {
+        margin: 10px 0 22px;
+      }
     }
   }
 
   .pads {
+    @include media(md) {
+      display: flex;
+      justify-content: center;
+    }
+
     .sapMListUl {
       justify-content: center;
       gap: 32px 50px !important;
@@ -33,10 +52,18 @@
 
     &__pad {
       padding: 14px 23px 26px;
+
+      @include media(md) {
+        padding: 20px 23px 24px;
+      }
     }
 
     &__image {
       margin: 20px 0 25px 8px;
+
+      @include media(md) {
+        margin-top: 24px;
+      }
     }
   }
 }

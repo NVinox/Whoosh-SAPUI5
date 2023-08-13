@@ -16,6 +16,8 @@
     ::placeholder {
       color: $gray;
       font-style: normal;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     &:focus-within {

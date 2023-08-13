@@ -14,6 +14,11 @@
       font-size: 40px;
       color: $black;
       line-height: 48px;
+
+      @include media(md) {
+        font-size: 24px;
+        line-height: 32px;
+      }
     }
   }
 
@@ -32,6 +37,11 @@
       font-size: 22px;
       color: $black;
       line-height: 32px;
+
+      @include media(md) {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
   }
 
@@ -40,6 +50,10 @@
       font-size: 22px;
       color: $text-gray;
       line-height: 32px;
+
+      @include media(md) {
+        font-size: 20px;
+      }
     }
   }
 

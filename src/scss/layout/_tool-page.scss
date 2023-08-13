@@ -1,9 +1,11 @@
 .tool-page {
   width: 100%;
-  margin: 0 auto;
-  $_header-height: 80px;
-
   height: 100%;
+  margin: 0 auto;
+
+  .sapTntToolPageHeader {
+    height: fit-content;
+  }
 
   .sapTntToolPageMainContentWrapper {
     display: flex;
@@ -15,38 +17,25 @@
     position: relative;
   }
 
-  .sapTntToolPageHeader {
-    height: $_header-height;
-  }
-
   .sapMIBar {
     &.sapMTB {
       .sapMBarChild:first-child[style*="width: 100%"] {
-        padding: 0;
+        padding: 0 32px;
       }
     }
-
-    .sapMBarChild:last-child {
-      margin-right: 0;
-    }
   }
 
-  .sapMTB {
-    padding-right: 0;
-  }
-
+  //Header
   .header {
-    $_header-height: 80px;
-    justify-content: center;
+    justify-content: end;
+    position: relative;
+    overflow: visible;
 
     .wrapper {
-      height: $_header-height;
       max-width: $container-width;
-      padding: 0;
+      padding: 0 32px;
     }
     .subwrapper {
-      height: $_header-height;
-      padding: 0 32px;
       .sapMFlexItem {
         height: 64px;
         display: contents;
@@ -56,10 +45,10 @@
       &.sapTntToolHeader {
         &.sapMTB {
           border: 0;
-          height: $_header-height;
+          border-bottom: 1px solid $gray-blue;
           padding: 0;
+          height: fit-content;
           background-color: $light-gray;
-          justify-content: center;
         }
       }
     }
@@ -132,6 +121,12 @@
         background-color: #{$gray}10;
       }
 
+      .sapMSFF {
+        ::placeholder {
+          font-size: 14px;
+        }
+      }
+
       //Search
       .sapMSFS {
         &::after {
@@ -149,8 +144,92 @@
         background-color: $blue-link-hover;
       }
     }
+
+    //Header адаптива
+    &-small {
+      padding: 0 16px;
+
+      .sapMImg {
+        cursor: pointer;
+      }
+    }
   }
 
+  .screen-wrapper {
+    position: absolute;
+  }
+  //tap-box
+  .tap-box {
+    position: absolute;
+    right: $side-menu-width;
+  }
+
+  //Меню адаптива
+  .side-menu {
+    position: absolute;
+    top: 0;
+    right: -$side-menu-width;
+    background: $white;
+    padding-bottom: 32px;
+    transition: 0.5s all;
+
+    &_closed {
+      right: -$side-menu-width;
+    }
+    &_opened {
+      right: 0;
+    }
+
+    &-header {
+      padding: 3px 11px 0 15px;
+
+      &__link {
+        @extend .header__link;
+        padding-top: 5px;
+
+        &_pin {
+          @extend .header__link_pin;
+          &::before {
+            margin-right: 18px;
+          }
+        }
+      }
+    }
+
+    &__menu-btn {
+      cursor: pointer;
+    }
+
+    &__subwrapper {
+      padding: 0 16px;
+    }
+
+    &__search {
+      margin: 20px 0 25px;
+      .sapMSFF {
+        ::placeholder {
+          padding-left: 4px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .link {
+      margin: 12px 0 11px;
+    }
+
+    &__button {
+      height: 48px;
+      padding: 0;
+
+      .sapMBtnInner {
+        height: 48px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  //Разделитель на странице в виде линии с посылкой
   .parcel {
     margin-top: -12px;
     &-line {

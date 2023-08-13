@@ -1,8 +1,16 @@
 .payment {
   padding: 91px 0 92px;
 
+  @include media(md) {
+    padding: 48px 0 62px;
+  }
+
   .slider {
     margin-top: 52px;
+
+    @include media(md) {
+      margin-top: 40px;
+    }
 
     .slick-slide {
       display: flex;
@@ -13,6 +21,10 @@
       background: none;
       border: 0;
       cursor: pointer;
+
+      @include media(md) {
+        display: none !important;
+      }
 
       &_left {
         margin-right: 0;

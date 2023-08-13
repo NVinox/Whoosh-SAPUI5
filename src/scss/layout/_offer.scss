@@ -4,18 +4,48 @@
 
   .content-wrapper {
     max-width: $container-width;
+    // background-image: url("/assets/images/offer/graphic.svg");
+    // background-repeat: no-repeat;
+    // background-position: center bottom;
+
+    @include media(md) {
+      flex-direction: column-reverse;
+      //   background-image: url("/assets/images/offer/city.svg");
+      //   background-position: center calc(bottom - 218px);
+    }
   }
 
   .left {
     margin: 59px 0 72px 103px;
     z-index: 2;
 
+    @include media(md) {
+      margin: 40px 0 80px;
+    }
+
     &__text {
       margin-top: 36px;
+      max-width: 360px;
+
+      @include media(md) {
+        margin-top: 14px;
+        max-width: 326px;
+      }
+    }
+    .text {
+      &_h1 {
+        @include media(md) {
+          max-width: 225px;
+        }
+      }
     }
 
     &__link {
       margin-top: 31px;
+
+      @include media(md) {
+        margin-top: 16px;
+      }
 
       &::after {
         content: url("../images/offer/gt.svg");
@@ -25,23 +55,47 @@
 
     .text_h3 {
       margin-top: 79px;
+
+      @include media(md) {
+        margin-top: 35px;
+      }
     }
 
     &__video {
       margin-top: 23px;
+
+      @include media(md) {
+        margin-top: 19px;
+      }
     }
   }
 
   .right {
     margin: 36px 32px 32px 0;
     z-index: 2;
+
+    @include media(md) {
+      margin: 31px 0 0 0;
+    }
+
     .track {
-      padding: 25px 0 32px 40px;
+      padding: 25px 40px 32px;
       background-color: $yellow;
       border-radius: 8px;
 
+      @include media(md) {
+        padding: 17px 16px 24px;
+
+        .text_h3 {
+          &.sapMText {
+            font-size: 22px;
+            line-height: 32px;
+          }
+        }
+      }
+
       &__search {
-        margin-top: 7px;
+        margin-top: 11px;
       }
     }
   }
@@ -51,10 +105,19 @@
     left: -313px;
     bottom: 0;
     z-index: 1;
+
+    @include media(md) {
+      left: -164px;
+      bottom: -398px;
+    }
   }
 
   .form {
     margin-bottom: 72px;
+
+    @include media(md) {
+      margin-bottom: 32px;
+    }
   }
 
   .blank {

@@ -1,0 +1,27 @@
+@mixin media($resolution-max, $resolution-min: null) {
+  $breakpoint-max: map-get($breakpoints, $resolution-max);
+
+  @if map-has-key($breakpoint-max, max) {
+    @if $resolution-min {
+      $breakpoint-min: map-get($breakpoints, $resolution-min);
+
+      @media (max-width: map-get($breakpoint-max, max)) and (min-width: map-get($breakpoint-min, min)) {
+        @content;
+      }
+    } @else {
+      @media (max-width: map-get($breakpoint-max, max)) {
+        @content;
+      }
+    }
+  } @else {
+    @if $resolution-min {
+      $breakpoint-min: map-get($breakpoints, $resolution-min);
+
+      @media (min-width: map-get($breakpoint-min, min)) {
+        @content;
+      }
+    } @else {
+      @error "Select correct breakpoint!";
+    }
+  }
+}
