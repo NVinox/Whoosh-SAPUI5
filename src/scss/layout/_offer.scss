@@ -112,15 +112,17 @@
     }
   }
 
-  .form {
+  &__form {
     margin-bottom: 72px;
+    border: 2px solid $gray-blue;
+    border-radius: 5px;
 
     @include media(md) {
       margin-bottom: 32px;
     }
   }
 
-  .blank {
-    background-color: $gray;
+  &__title {
+    padding: 40px 32px 20px;
   }
 }
