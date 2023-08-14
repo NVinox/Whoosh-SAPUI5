@@ -4,14 +4,9 @@
 
   .content-wrapper {
     max-width: $container-width;
-    // background-image: url("/assets/images/offer/graphic.svg");
-    // background-repeat: no-repeat;
-    // background-position: center bottom;
 
     @include media(md) {
       flex-direction: column-reverse;
-      //   background-image: url("/assets/images/offer/city.svg");
-      //   background-position: center calc(bottom - 218px);
     }
   }
 
