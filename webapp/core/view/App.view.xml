@@ -156,6 +156,21 @@
                   </IconTabBar>
                 </VBox>
 
+                <VBox class="offer__form-inputs">
+                  <VBox>
+                    <Text class="text" text="Pickup location" />
+                    <Input class="input" placeholder="location" />
+                  </VBox>
+                  <VBox>
+                    <Text class="text" text="Drop location" />
+                    <Input class="input" placeholder="location" />
+                  </VBox>
+
+                  <VBox class="offer__form-buttons">
+                    <Button class="button" text="Order" width="100%" />
+                    <Button class="button" text="Clear All" width="100%" />
+                  </VBox>
+                </VBox>
               </VBox>
               <VBox class="track" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
                 <Text class="text text_h3" text="Track a package" />
