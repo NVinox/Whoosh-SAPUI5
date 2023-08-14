@@ -147,7 +147,11 @@
 
     //Header адаптива
     &-small {
-      padding: 0 16px;
+      padding: 3px 16px 0;
+
+      &__logo {
+        margin-left: -12px;
+      }
 
       .sapMImg {
         cursor: pointer;
@@ -230,6 +234,7 @@
   }
 
   .parcel {
+    max-width: $container-width;
     border-bottom: 2px solid $gray-blue;
 
     &__image {

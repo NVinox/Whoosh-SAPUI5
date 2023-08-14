@@ -13,7 +13,7 @@
         <HBox 
           width="100%" 
           justifyContent="Center"
-          visible="{= ${AppMainModel>/typeSize} &lt; 1366 ? false : true}"  
+          visible="{= ${AppMainModel>/typeSize} &gt; 1366}"  
           >
           <HBox 
             class="wrapper"
@@ -58,7 +58,7 @@
           height="64px"
           alignItems="Center" 
           justifyContent="SpaceBetween" 
-          visible="{= ${AppMainModel>/typeSize} &lt; 1366 ? true : false}">
+          visible="{= ${AppMainModel>/typeSize} &lt; 1366}">
           <Image class="header-small__profile" src="/assets/images/header/profile.svg" press=""/>
           <Image class="header-small__logo" width="120px" src="/assets/images/header/logo.svg" />
           <Image class="header-small__menu-btn" src="/assets/images/header/menu.svg" press="onToggleSideMenu"/>
@@ -183,7 +183,7 @@
             <f:GridListItem class="item">
               <VBox class="item__pad" height="100%" justifyContent="SpaceBetween">
               <layoutData>
-                <FlexItemData growFactor="1" shrinkFactor="0" /><!-- Don't shrink below minimum size. Fill space if available. -->
+                <FlexItemData growFactor="1" shrinkFactor="0" />
               </layoutData>
                 <Text class="text text_h3" text="{AppMainModel>title}" />
                 <HBox class="item__image">
@@ -207,38 +207,35 @@
 
         <!--PARTNERS-->
         <VBox class="partners" width="100%" alignItems="Center">
-        
-          <!-- <VBox width="100%" justifyContent="Center" alignItems="Center"> -->
-            <Text class="text text_h1" text="Our Partners" />
-            
-            <HBox 
-              class="partners-slider" 
-              width="100%" 
-              items="{AppMainModel>/partners}">
-              <HBox 
-                class="monochrome"
-                width="188px" 
-                height="56px" 
-                justifyContent="Center"
-                alignItems="Center">
-                <Image class="partners-slider__logo" src="{AppMainModel>logo}" />
-              </HBox>
-            </HBox>
+          <Text class="text text_h1" text="Our Partners" />
 
-            <HBox class="collaborate">
-            <Button 
-              class="collaborate__button button" 
-              icon="/assets/images/partners/collaborate.svg"
-              text="Let's collaborate"  
-            />
+          <HBox 
+            class="partners-slider" 
+            width="100%" 
+            items="{AppMainModel>/partners}">
+            <HBox 
+              class="monochrome"
+              width="188px" 
+              height="56px" 
+              justifyContent="Center"
+              alignItems="Center">
+              <Image class="partners-slider__logo" src="{AppMainModel>logo}" />
             </HBox>
-          <!-- </VBox> -->
+          </HBox>
+
+          <HBox class="collaborate">
+          <Button 
+            class="collaborate__button button" 
+            icon="/assets/images/partners/collaborate.svg"
+            text="Let's collaborate"  
+          />
+          </HBox>
 
           <HBox 
             class="logos" 
             width="100%" 
             items="{AppMainModel>/partners}"
-            visible="{= ${AppMainModel>/typeSize} &lt; 1024 ? false : true}">
+            visible="{= ${AppMainModel>/typeSize} &gt; 1024}">
           <layoutData>
             <FlexItemData maxWidth="1104px" />
           </layoutData>
@@ -264,7 +261,7 @@
               width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
               height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}"
             >
-              <HBox class="circle-pad">
+              <HBox class="circle-pad circle-pad_small">
                 <Image src="{AppMainModel>icon}" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
               </HBox>
               <HBox class="pad__title" alignItems="Center">
@@ -404,7 +401,7 @@
               justifyContent="Center" 
               alignItems="Center"
               width="100%"
-              visible="{= ${AppMainModel>/typeSize} &lt; 1240 ? true : false}">
+              visible="{= ${AppMainModel>/typeSize} &lt; 1240}">
               <Image src="/assets/images/footer/pyrobyte_red.svg" />
             </HBox>
           <Text class="madeby__line" text="Made by"/>
@@ -419,7 +416,7 @@
             <HBox 
               justifyContent="Center" 
               width="50%"
-              visible="{= ${AppMainModel>/typeSize} &lt; 1240 ? false : true}">
+              visible="{= ${AppMainModel>/typeSize} &gt; 1240}">
               <Image src="/assets/images/footer/pyrobyte.svg" />
             </HBox>
             <HBox 
@@ -432,7 +429,6 @@
             </HBox>
           </HBox>
         </VBox>
-
 
       </VBox>
       </ScrollContainer>

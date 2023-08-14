@@ -2,7 +2,7 @@
   max-width: $container-width;
   position: relative;
 
-  padding: 91px 0 86px;
+  padding: 91px 0 71px;
 
   @include media(md) {
     padding: 48px 16px 40px;
@@ -36,6 +36,11 @@
     .sapMListUl {
       justify-content: center;
       gap: 32px 50px !important;
+      grid-auto-flow: column;
+
+      @include media(md) {
+        grid-auto-flow: row;
+      }
     }
     .sapFGLI {
       border: 1px solid $gray-blue;
@@ -51,14 +56,17 @@
     width: 300px;
     height: 280px;
     background-color: $light-gray;
-    order: 3;
 
-    &:first-child {
-      order: 1;
-    }
+    @include media(md) {
+      order: 3;
 
-    &:last-child {
-      order: 2;
+      &:first-child {
+        order: 1;
+      }
+
+      &:last-child {
+        order: 2;
+      }
     }
 
     &__pad {

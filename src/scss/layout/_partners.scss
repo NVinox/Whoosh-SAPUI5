@@ -1,7 +1,7 @@
 .partners {
   max-width: $container-width;
 
-  padding: 72px 0 41px;
+  padding: 90px 0 41px;
 
   @include media(md) {
     padding: 48px 0 44px;
@@ -49,7 +49,7 @@
 
     &__button {
       position: absolute;
-      top: -48px;
+      top: -82px;
       width: 184px;
       justify-content: center;
 
@@ -85,7 +85,7 @@
   }
 
   .logos {
-    padding-top: 80px;
+    padding-top: 44px;
     margin-left: -43px;
     justify-content: space-between;
 
