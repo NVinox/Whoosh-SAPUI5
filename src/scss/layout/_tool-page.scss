@@ -229,31 +229,13 @@
     }
   }
 
-  //Разделитель на странице в виде линии с посылкой
   .parcel {
-    margin-top: -12px;
-    &-line {
-      display: inline-block;
-      position: relative;
+    border-bottom: 2px solid $gray-blue;
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 35%;
-        height: 2px;
-        background: $gray-blue;
-      }
-
-      &::before {
-        right: 200%;
-        left: -2090%;
-      }
-
-      &:after {
-        left: 200%;
-        right: -2090%;
-      }
+    &__image {
+      background-color: $white;
+      margin-bottom: -18px;
+      padding: 0 34px;
     }
   }
 }
