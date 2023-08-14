@@ -26,6 +26,8 @@
   }
 
   .pads {
+    max-width: 1000px;
+
     @include media(md) {
       display: flex;
       justify-content: center;
