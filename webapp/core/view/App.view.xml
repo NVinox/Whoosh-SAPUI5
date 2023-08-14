@@ -107,10 +107,10 @@
     <tnt:mainContents>
 
     <!--MAIN CONTENT-->
-    <ScrollContainer vertical="true">
-      <VBox class="main-content" height="100%" alignItems="Center" justifyContent="Center">
+    <ScrollContainer width="100%" vertical="true" horizontal="false">
+      <VBox class="main-content" width="100%" height="100%" alignItems="Center" justifyContent="Center">
         <layoutData>
-          <FlexItemData growFactor="1" shrinkFactor="0" />
+          <FlexItemData growFactor="1" shrinkFactor="1" />
         </layoutData>
 
         <!--OFFER-->
@@ -178,7 +178,7 @@
           <f:GridList
             class="pads"
             items="{AppMainModel>/expressPads}"
-            width="1000px"
+            width="100%"
           >
             <f:GridListItem class="item">
               <VBox class="item__pad" height="100%" justifyContent="SpaceBetween">
@@ -200,7 +200,7 @@
 
         <!--PARCEL LINE-->
         <HBox class="parcel" width="100%" justifyContent="Center">
-          <HBox class="parcel-line">
+          <HBox class="parcel__image">
             <Image src="/assets/images/parcel.svg"/>
           </HBox>
         </HBox>
@@ -208,8 +208,23 @@
         <!--PARTNERS-->
         <VBox class="partners" width="100%" alignItems="Center">
         
-          <VBox width="100%" justifyContent="Center" alignItems="Center">
+          <!-- <VBox width="100%" justifyContent="Center" alignItems="Center"> -->
             <Text class="text text_h1" text="Our Partners" />
+            
+            <HBox 
+              class="partners-slider" 
+              width="100%" 
+              items="{AppMainModel>/partners}">
+              <HBox 
+                class="monochrome"
+                width="188px" 
+                height="56px" 
+                justifyContent="Center"
+                alignItems="Center">
+                <Image class="partners-slider__logo" src="{AppMainModel>logo}" />
+              </HBox>
+            </HBox>
+
             <HBox class="collaborate">
             <Button 
               class="collaborate__button button" 
@@ -217,13 +232,17 @@
               text="Let's collaborate"  
             />
             </HBox>
-          </VBox>
+          <!-- </VBox> -->
 
-          <HBox class="logos" width="100%" items="{AppMainModel>/partners}">
+          <HBox 
+            class="logos" 
+            width="100%" 
+            items="{AppMainModel>/partners}"
+            visible="{= ${AppMainModel>/typeSize} &lt; 1024 ? false : true}">
           <layoutData>
             <FlexItemData maxWidth="1104px" />
           </layoutData>
-            <HBox class="logos_monochrome" alignItems="Center">
+            <HBox class="monochrome" alignItems="Center">
               <Image class="logos__logo" src="{AppMainModel>logo}" />
             </HBox>
           </HBox>
@@ -277,7 +296,7 @@
 
         <!--PARCEL LINE-->
         <HBox class="parcel" width="100%" justifyContent="Center">
-          <HBox class="parcel-line">
+          <HBox class="parcel__image">
             <Image src="/assets/images/parcel.svg"/>
           </HBox>
         </HBox>
