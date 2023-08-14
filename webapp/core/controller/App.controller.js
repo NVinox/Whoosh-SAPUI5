@@ -9,8 +9,8 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     },
 
     onAfterRendering() {
+      this.partnersSliderInit();
       this.sliderInit();
-      this.setSliderSlidesToShow();
       let tapBox = this.byId("tapBox");
       let delegateObject = {
         onclick: () => this.onToggleSideMenu(),
@@ -26,10 +26,20 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     // Метод изменения размера экрана
     sizeChanged(params) {
       this.getModel("AppMainModel").setProperty("/typeSize", params.from);
-      this.setSliderSlidesToShow();
     },
 
-    // Инициализация slick
+    // Инициализация слайдера Partners
+    partnersSliderInit() {
+      $(".partners-slider").slick({
+        centerMode: true,
+        slidesToShow: 1,
+        arrows: false,
+        centerPadding: "77px",
+        initialSlide: 2,
+      });
+    },
+
+    // Инициализация слайдера Payment
     sliderInit() {
       $(".slider").slick({
         slidesToShow: 5,
@@ -37,18 +47,17 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
 
         prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
         nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
+
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              arrows: false,
+              slidesToShow: 3,
+            },
+          },
+        ],
       });
-    },
-
-    setSliderSlidesToShow() {
-      let mainModel = this.getModel("AppMainModel");
-      let typeSize = mainModel.getProperty("/typeSize");
-
-      if (typeSize < 1024) {
-        $(".slider").slick("setOption", "slidesToShow", 3);
-      } else {
-        $(".slider").slick("setOption", "slidesToShow", 5);
-      }
     },
 
     // Метод показа/скрытия дополнительной информации
@@ -63,7 +72,6 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     onToggleSideMenu() {
       let mainModel = this.getModel("AppMainModel");
       let sideMenu = this.byId("sideMenu");
-
       let isClosed = mainModel.getProperty("/sideMenu/isClosed");
       let sideMenuClass = (state) => (state ? "side-menu_closed" : "side-menu_opened");
 

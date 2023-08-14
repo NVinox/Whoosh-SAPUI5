@@ -10,9 +10,11 @@
   align-items: center;
   justify-content: center;
 
-  @include media(md) {
-    width: 64px;
-    height: 64px;
-    margin: 0;
+  &_small {
+    @include media(md) {
+      width: 64px;
+      height: 64px;
+      margin: 0;
+    }
   }
 }
