@@ -9,6 +9,7 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     },
 
     onAfterRendering() {
+      this.partnersSliderInit();
       this.sliderInit();
       let tapBox = this.byId("tapBox");
       let delegateObject = {
@@ -25,6 +26,17 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     // Метод изменения размера экрана
     sizeChanged(params) {
       this.getModel("AppMainModel").setProperty("/typeSize", params.from);
+    },
+
+    // Инициализация слайдера Partners
+    partnersSliderInit() {
+      $(".partners-slider").slick({
+        centerMode: true,
+        slidesToShow: 1,
+        arrows: false,
+        centerPadding: "77px",
+        initialSlide: 2,
+      });
     },
 
     // Инициализация слайдера Payment
@@ -60,7 +72,6 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     onToggleSideMenu() {
       let mainModel = this.getModel("AppMainModel");
       let sideMenu = this.byId("sideMenu");
-
       let isClosed = mainModel.getProperty("/sideMenu/isClosed");
       let sideMenuClass = (state) => (state ? "side-menu_closed" : "side-menu_opened");
 
