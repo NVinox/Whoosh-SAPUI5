@@ -5,6 +5,26 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       sideMenu: {
         isClosed: true,
       },
+      popUpCity: [
+        {
+          city: "NY, Manhattan",
+        },
+        {
+          city: "Chicago",
+        },
+        {
+          city: "Philadelphia",
+        },
+        {
+          city: "Dallas",
+        },
+        {
+          city: "Jacksonville",
+        },
+        {
+          city: "San Francisco",
+        },
+      ],
       footerMenu: [
         {
           text: "About company",
@@ -49,6 +69,23 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
         },
         {
           text: "The blog",
+        },
+      ],
+      autoFill: [
+        {
+          text: "502 86th St, Brooklyn, NY 11209",
+        },
+        {
+          text: "523 Fake Street. Seattle, WA 98112",
+        },
+        {
+          text: "516 SW. Country Ave. Bethpage, NY",
+        },
+        {
+          text: "578 Spring Street Hanover, PA 1733",
+        },
+        {
+          text: "516 SW. Country Ave. Bethpage, NY",
         },
       ],
       expressPads: [
