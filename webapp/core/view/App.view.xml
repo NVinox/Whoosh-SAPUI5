@@ -141,17 +141,17 @@
                       <IconTabFilter
                         key="Bike"
                         icon="assets/images/tabs/onFoot.svg"
-                        text="up to 10lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 10lb'}"
                       />
                       <IconTabFilter
                         key="Car"
                         icon="assets/images/tabs/car.svg"
-                        text="up to 130lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 130lb'}"
                       />
                       <IconTabFilter
                         key="Truck"
                         icon="assets/images/tabs/truck.svg"
-                        text="over 130lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over 130lb'}"
                       />
                     </items>
                   </IconTabBar>
