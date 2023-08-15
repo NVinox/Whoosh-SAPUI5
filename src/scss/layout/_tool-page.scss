@@ -35,12 +35,7 @@
       max-width: $container-width;
       padding: 0 32px;
     }
-    .subwrapper {
-      .sapMFlexItem {
-        height: 64px;
-        display: contents;
-      }
-    }
+
     &.sapContrast {
       &.sapTntToolHeader {
         &.sapMTB {
@@ -62,6 +57,7 @@
     }
 
     &__logo {
+      padding-top: 4px;
       .pin {
         &_blue,
         &_yellow {
@@ -106,15 +102,51 @@
           display: inline-block;
           content: url("../images/header/pin.svg");
           margin-right: 10px;
-          padding-bottom: 0;
           width: 12px;
           height: 16px;
         }
       }
     }
 
+    &__city {
+      height: 32px;
+      border: 0;
+      margin: 0 0 8px;
+      background: transparent;
+
+      .sapMSelectListItemText {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &.sapMSltHoverable:not(.sapMSltState):not(.sapMSltIconOnly):hover {
+        border: 0;
+        background: transparent;
+
+        .sapMSelectListItemText {
+          border-bottom: 1px dashed $link-dashes;
+        }
+      }
+      .sapMSltLabel {
+        padding: 0 0 0 22px;
+        color: $text-color;
+      }
+
+      .sapMSltArrow {
+        display: none;
+      }
+
+      &::before {
+        display: inline-block;
+        content: url("../images/header/pin.svg");
+        padding-top: 8px;
+        width: 12px;
+        height: 16px;
+      }
+    }
+
     &__search {
-      margin-right: 40px;
+      margin: 0 35px 2px 0;
 
       &:not(.sapMSFDisabled) > .sapMSFF:hover {
         border-color: $gray;
