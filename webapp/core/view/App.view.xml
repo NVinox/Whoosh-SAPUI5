@@ -171,13 +171,13 @@
                       </VBox>
                       <VBox class="input-pair">
                         <Text class="input-title text" text="Drop location" />
-                        <Input class="input" placeholder="location" showSuggestion="true" > 
+                        <Input 
+                          class="input" 
+                          placeholder="location" 
+                          showSuggestion="true" 
+                          suggestionItems="{AppMainModel>/autoFill}"> 
                           <suggestionItems>
-                            <core:ListItem text="502 86th St, Brooklyn, NY 11209" />
-                            <core:ListItem text="523 Fake Street. Seattle, WA 98112" />
-                            <core:ListItem text="516 SW. Country Ave. Bethpage, NY" />
-                            <core:ListItem text="578 Spring Street Hanover, PA 1733" />
-                            <core:ListItem text="516 SW. Country Ave. Bethpage, NY" />
+                            <core:ListItem text="{AppMainModel>text}" />
                           </suggestionItems>
                         </Input>
                       </VBox>
@@ -185,7 +185,7 @@
                   </HBox>
 
                   <VBox class="offer__form-buttons" alignItems="Center" width="100%">
-                    <Button class="button" text="Order" width="100%" height="48px" />
+                    <Button class="button" text="Order" width="100%" />
                     <Button 
                       class="button button_transparent" 
                       text="Clear All" 
