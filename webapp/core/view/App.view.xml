@@ -5,6 +5,7 @@
   xmlns="sap.m"
   xmlns:tnt="sap.tnt"
   xmlns:f="sap.f"
+  xmlns:html="http://www.w3.org/1999/xhtml"
   xmlns:grid="sap.ui.layout.cssgrid"
   displayBlock="true">
   <tnt:ToolPage
@@ -128,7 +129,9 @@
                 <Link class="left__link link_blue" text="Read more" />
                 <Text class="text text_h3" text="How it works" />
                 <!--VIDEO-->
-                <HBox class="blank left__video" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
+                <HBox class="left__video" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
+                  <html:iframe class="left__frame" src="https://www.youtube.com/embed/sJSYeUTfW6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true">
+                  </html:iframe>
                 </HBox>
             </VBox>
             <Image class="offer__graphic" src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : '/assets/images/offer/graphic.svg'}" />
