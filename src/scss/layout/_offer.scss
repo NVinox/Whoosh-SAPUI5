@@ -57,10 +57,22 @@
     }
 
     &__video {
+      overflow: hidden;
       margin-top: 23px;
+      border-radius: 8px;
 
       @include media(md) {
         margin-top: 19px;
+      }
+    }
+
+    &__frame {
+      width: 375px;
+      height: 232px;
+
+      @include media(md) {
+        width: 328px;
+        height: 200px;
       }
     }
   }
