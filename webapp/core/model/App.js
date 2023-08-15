@@ -5,6 +5,26 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       sideMenu: {
         isClosed: true,
       },
+      popUpCity: [
+        {
+          city: "NY, Manhattan",
+        },
+        {
+          city: "Chicago",
+        },
+        {
+          city: "Philadelphia",
+        },
+        {
+          city: "Dallas",
+        },
+        {
+          city: "Jacksonville",
+        },
+        {
+          city: "San Francisco",
+        },
+      ],
       footerMenu: [
         {
           text: "About company",
