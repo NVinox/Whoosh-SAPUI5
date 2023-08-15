@@ -136,31 +136,66 @@
               <!--SEND A PARCEL FORM-->
               <VBox class="offer__form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
                 <HBox class="offer__form-title" alignItems="Center">
-                  <Text class="text text_h3 sapUiTinyMarginEnd" text="Send a Parcel" />
+                  <Text class="text text_h3 sapUiSmallMarginEnd" text="Send a Parcel" />
                   <Button class="button-clue" icon="/assets/images/offer/clue.svg" />
                 </HBox>
                 <VBox class="offer__tabs">
-                  <IconTabBar class="tabs">
+                  <IconTabBar class="tabs" selectedKey="Car">
                     <items>
                       <IconTabFilter
                         key="Bike"
                         icon="assets/images/tabs/onFoot.svg"
-                        text="up to 10lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 10lb'}"
                       />
                       <IconTabFilter
                         key="Car"
                         icon="assets/images/tabs/car.svg"
-                        text="up to 130lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 130lb'}"
                       />
                       <IconTabFilter
                         key="Truck"
                         icon="assets/images/tabs/truck.svg"
-                        text="over 130lb"
+                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over 130lb'}"
                       />
                     </items>
                   </IconTabBar>
                 </VBox>
 
+                <VBox class="offer__form-inputs">
+                  <HBox>
+                    <VBox class="offer__form-side-icons" alignItems="Center">
+                      <Image src="assets/images/offer/circle.svg" />
+                      <Image src="assets/images/offer/vdots.svg" class="side-icon"/>
+                      <Image src="assets/images/offer/pin.svg" />
+                    </VBox>
+                    <VBox class="offer__form-text-inputs" width="100%">
+                      <VBox class="input-pair">
+                        <Text class="input-title text" text="Pickup location" />
+                        <Input class="input" placeholder="location" />
+                      </VBox>
+                      <VBox class="input-pair">
+                        <Text class="input-title text" text="Drop location" />
+                        <Input 
+                          class="input" 
+                          placeholder="location" 
+                          showSuggestion="true" 
+                          suggestionItems="{AppMainModel>/autoFill}"> 
+                          <suggestionItems>
+                            <core:ListItem text="{AppMainModel>text}" />
+                          </suggestionItems>
+                        </Input>
+                      </VBox>
+                    </VBox>
+                  </HBox>
+
+                  <VBox class="offer__form-buttons" alignItems="Center" width="100%">
+                    <Button class="button" text="Order" width="100%" />
+                    <Button 
+                      class="button button_transparent" 
+                      text="Clear All" 
+                      icon="assets/images/offer/clear.svg" />
+                  </VBox>
+                </VBox>
               </VBox>
               <VBox class="track" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
                 <Text class="text text_h3" text="Track a package" />

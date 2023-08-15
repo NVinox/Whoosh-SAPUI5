@@ -1,26 +1,28 @@
 //GLOBAL
-@import "./global/variables.scss";
-@import "./global/mixins/media.scss";
-@import "./global/fonts.scss";
-@import "./global/global.scss";
-@import "./components/core/text.scss";
+@import "./global/variables";
+@import "./global/mixins/media";
+@import "./global/fonts";
+@import "./global/global";
+@import "./components/core/text";
 
 //BASE ELEMENTS
-@import "./base/button.scss";
-@import "./base/link.scss";
+@import "./base/button";
+@import "./base/link";
 @import "./base/search-field";
 @import "./base/tabs";
+@import "./base/input";
+@import "./base/popover";
 
 //CUSTOM ELEMENTS
-@import "./custom/circle-pad.scss";
+@import "./custom/circle-pad";
 @import "custom/button-clue";
 
 //LAYOUT
-@import "./layout/tool-page.scss";
-@import "./layout/offer.scss";
-@import "./layout/express-delivery.scss";
-@import "./layout/partners.scss";
-@import "./layout/what-we-do.scss";
-@import "./layout/payment.scss";
-@import "./layout/info.scss";
-@import "./layout/footer.scss";
+@import "./layout/tool-page";
+@import "./layout/offer";
+@import "./layout/express-delivery";
+@import "./layout/partners";
+@import "./layout/what-we-do";
+@import "./layout/payment";
+@import "./layout/info";
+@import "./layout/footer";

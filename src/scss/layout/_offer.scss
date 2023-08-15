@@ -116,14 +116,58 @@
     @include media(md) {
       margin-bottom: 32px;
     }
-  }
 
-  &__form-title {
-    padding: 40px 32px 20px;
+    &-title {
+      padding: 23px 30px 20px;
+    }
+
+    &-inputs {
+      padding: 30px 30px 0;
+    }
+
+    &-side-icons {
+      margin-top: 27px;
+
+      .side-icon {
+        padding-top: 4px;
+      }
+    }
+
+    &-text-inputs {
+      padding-left: 16px;
+
+      .input-pair {
+        margin-bottom: 21px;
+
+        .input-title {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &-buttons {
+      margin-top: 3px;
+
+      .sapMFlexItem:first-child {
+        width: 100%;
+      }
+
+      .button {
+        .sapMBtnInner {
+          height: 48px;
+        }
+      }
+    }
   }
 
   &__tabs {
-    padding: 0 32px;
+    padding: 0 30px;
+
+    .sapMITBTab {
+      margin-top: -4px;
+    }
 
     .sapMITBSelected {
       .sapMITBFilterDefault {
@@ -159,6 +203,15 @@
       .sapMITBText {
         font-size: 12px;
         color: #8a91a1;
+      }
+    }
+
+    .sapMITBNoText {
+      .sapMITBFilter {
+        .sapMITBTab {
+          margin: 0;
+          width: auto;
+        }
       }
     }
 
