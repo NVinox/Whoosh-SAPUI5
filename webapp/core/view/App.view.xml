@@ -131,11 +131,11 @@
               <!--SEND A PARCEL FORM-->
               <VBox class="offer__form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
                 <HBox class="offer__form-title" alignItems="Center">
-                  <Text class="text text_h3 sapUiTinyMarginEnd" text="Send a Parcel" />
+                  <Text class="text text_h3 sapUiSmallMarginEnd" text="Send a Parcel" />
                   <Button class="button-clue" icon="/assets/images/offer/clue.svg" />
                 </HBox>
                 <VBox class="offer__tabs">
-                  <IconTabBar class="tabs">
+                  <IconTabBar class="tabs" selectedKey="Car">
                     <items>
                       <IconTabFilter
                         key="Bike"
@@ -157,18 +157,30 @@
                 </VBox>
 
                 <VBox class="offer__form-inputs">
-                  <VBox>
-                    <Text class="text" text="Pickup location" />
-                    <Input class="input" placeholder="location" />
-                  </VBox>
-                  <VBox>
-                    <Text class="text" text="Drop location" />
-                    <Input class="input" placeholder="location" />
-                  </VBox>
+                  <HBox>
+                    <VBox class="offer__form-side-icons" alignItems="Center">
+                      <Image src="assets/images/offer/circle.svg" />
+                      <Image src="assets/images/offer/vdots.svg" class="side-icon"/>
+                      <Image src="assets/images/offer/pin.svg" />
+                    </VBox>
+                    <VBox class="offer__form-text-inputs" width="100%">
+                      <VBox class="input-pair">
+                        <Text class="input-title text" text="Pickup location" />
+                        <Input class="input" placeholder="location" />
+                      </VBox>
+                      <VBox class="input-pair">
+                        <Text class="input-title text" text="Drop location" />
+                        <Input class="input" placeholder="location" />
+                      </VBox>
+                    </VBox>
+                  </HBox>
 
-                  <VBox class="offer__form-buttons">
-                    <Button class="button" text="Order" width="100%" />
-                    <Button class="button" text="Clear All" width="100%" />
+                  <VBox class="offer__form-buttons" alignItems="Center" width="100%">
+                    <Button class="button" text="Order" width="100%" height="48px" />
+                    <Button 
+                      class="button button_transparent" 
+                      text="Clear All" 
+                      icon="assets/images/offer/clear.svg" />
                   </VBox>
                 </VBox>
               </VBox>

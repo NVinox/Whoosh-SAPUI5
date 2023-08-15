@@ -21,11 +21,37 @@
 
   &.sapMBtn:hover > .sapMBtnHoverable {
     background-color: $blue-link-hover;
+    color: $white;
+  }
+
+  &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
+    > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
+    color: $white;
   }
 
   .sapMBtnIcon {
     &.sapMImg {
       height: auto;
+    }
+  }
+
+  &_transparent {
+    .sapMBtnInner {
+      background-color: transparent;
+      color: $gray-link;
+    }
+
+    &.sapMBtn:hover > .sapMBtnHoverable {
+      background-color: transparent;
+    }
+
+    &.sapMBtn:hover:not(.sapMBtnDisabled):not(.sapMSBActive)
+      > .sapMBtnHoverable:not(.sapMBtnDisabled):not(.sapMBtnActive):not(.sapMToggleBtnPressed):not(.sapMBtnTransparent).sapMBtnDefault {
+      color: $gray-link;
+    }
+
+    &:not(.sapMBtnDisabled) > .sapMBtnInner.sapMBtnActive {
+      color: $gray-link;
     }
   }
 }
