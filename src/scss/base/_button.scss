@@ -51,6 +51,7 @@
     }
 
     &:not(.sapMBtnDisabled) > .sapMBtnInner.sapMBtnActive {
+      background-color: transparent;
       color: $gray-link;
     }
   }
