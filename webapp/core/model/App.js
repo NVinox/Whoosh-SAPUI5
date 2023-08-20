@@ -1,54 +1,31 @@
 sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
   return {
+    ui: new BaseModel({
+      isLoading: false,
+    }),
+
     main: new BaseModel({
       typeSize: "",
       sideMenu: {
         isClosed: true,
       },
-      footerMenu: [
+      states: [],
+      footer: {},
+      autoFill: [
         {
-          text: "About company",
+          text: "502 86th St, Brooklyn, NY 11209",
         },
         {
-          text: "Contact",
+          text: "523 Fake Street. Seattle, WA 98112",
         },
         {
-          text: "Rules",
+          text: "516 SW. Country Ave. Bethpage, NY",
         },
         {
-          text: "FAQ",
+          text: "578 Spring Street Hanover, PA 1733",
         },
         {
-          text: "Reviews",
-        },
-        {
-          text: "Cargo transportation",
-        },
-        {
-          text: "Tariffs",
-        },
-      ],
-      footerServices: [
-        {
-          text: "Online stores",
-        },
-        {
-          text: "Legal entity",
-        },
-        {
-          text: "API Integration",
-        },
-        {
-          text: "Contract",
-        },
-        {
-          text: "Jobs",
-        },
-        {
-          text: "Courier job",
-        },
-        {
-          text: "The blog",
+          text: "516 SW. Country Ave. Bethpage, NY",
         },
       ],
       expressPads: [

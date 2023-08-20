@@ -1,0 +1,17 @@
+.input {
+  .sapMInputBaseContentWrapper {
+    border: 0;
+    padding-bottom: 8px;
+  }
+
+  .sapMInputBaseInner {
+    padding: 0;
+    border-bottom: 2px solid $gray-blue;
+
+    &::placeholder {
+      @extend .text;
+      letter-spacing: 1px;
+      font-style: normal;
+    }
+  }
+}

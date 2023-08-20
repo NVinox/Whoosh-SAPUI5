@@ -40,11 +40,15 @@
   }
 
   .sapMITBFilterIcon {
+    width: auto;
+    height: auto;
     border-color: transparent;
   }
 
   .sapMITBTab {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .sapMITBContentArrow {

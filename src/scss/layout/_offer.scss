@@ -4,14 +4,9 @@
 
   .content-wrapper {
     max-width: $container-width;
-    // background-image: url("/assets/images/offer/graphic.svg");
-    // background-repeat: no-repeat;
-    // background-position: center bottom;
 
     @include media(md) {
       flex-direction: column-reverse;
-      //   background-image: url("/assets/images/offer/city.svg");
-      //   background-position: center calc(bottom - 218px);
     }
   }
 
@@ -62,10 +57,22 @@
     }
 
     &__video {
+      overflow: hidden;
       margin-top: 23px;
+      border-radius: 8px;
 
       @include media(md) {
         margin-top: 19px;
+      }
+    }
+
+    &__frame {
+      width: 375px;
+      height: 232px;
+
+      @include media(md) {
+        width: 328px;
+        height: 200px;
       }
     }
   }
@@ -121,14 +128,58 @@
     @include media(md) {
       margin-bottom: 32px;
     }
-  }
 
-  &__form-title {
-    padding: 40px 32px 20px;
+    &-title {
+      padding: 23px 30px 20px;
+    }
+
+    &-inputs {
+      padding: 30px 30px 0;
+    }
+
+    &-side-icons {
+      margin-top: 27px;
+
+      .side-icon {
+        padding-top: 4px;
+      }
+    }
+
+    &-text-inputs {
+      padding-left: 16px;
+
+      .input-pair {
+        margin-bottom: 21px;
+
+        .input-title {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &-buttons {
+      margin-top: 3px;
+
+      .sapMFlexItem:first-child {
+        width: 100%;
+      }
+
+      .button {
+        .sapMBtnInner {
+          height: 48px;
+        }
+      }
+    }
   }
 
   &__tabs {
-    padding: 0 32px;
+    padding: 0 30px;
+
+    .sapMITBTab {
+      margin-top: -4px;
+    }
 
     .sapMITBSelected {
       .sapMITBFilterDefault {
@@ -147,6 +198,7 @@
 
       &.sapMITBItem {
         width: 33.2%;
+        overflow: hidden;
       }
 
       &.sapMITBSelected {
@@ -163,6 +215,15 @@
       .sapMITBText {
         font-size: 12px;
         color: #8a91a1;
+      }
+    }
+
+    .sapMITBNoText {
+      .sapMITBFilter {
+        .sapMITBTab {
+          margin: 0;
+          width: auto;
+        }
       }
     }
 

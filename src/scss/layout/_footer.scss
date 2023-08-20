@@ -4,7 +4,7 @@
   border-top: 1px solid $gray-blue;
 
   @include media(lg) {
-    padding: 39px 16px 52px;
+    padding: 41px 16px 52px;
   }
 
   .wrapper {
@@ -123,8 +123,11 @@
 
   .social {
     padding-top: 60px;
-
     max-width: 300px;
+
+    .social-button + .social-button {
+      margin-left: 24px;
+    }
 
     @include media(lg) {
       max-width: 301px;
