@@ -130,6 +130,13 @@ sap.ui.define(
         sideMenu.addStyleClass(sideMenuClass(!isClosed));
         sideMenu.removeStyleClass(sideMenuClass(isClosed));
       },
+
+      // Обработчик перехода на ссылку соц медиа
+      onNavSocial(oEvent) {
+        let { socialLink } = oEvent.getSource().data();
+
+        window.open(socialLink);
+      },
     });
   },
 );

@@ -411,23 +411,16 @@
                 <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
                 <Text class="footer__icon-text" text="{AppMainModel>/footer/address}"/>
               </HBox>
-              <HBox class="social" width="100%" justifyContent="SpaceBetween">
-                <Button 
-                class="button"
-                icon="/assets/images/footer/facebook.svg"
-                />
+              <HBox class="social" width="100%" justifyContent="SpaceBetween" items="{AppMainModel>/footer/socials}">
                 <Button 
                   class="button"
-                  icon="/assets/images/footer/vk.svg"
-                />
-                <Button 
-                  class="button"
-                  icon="/assets/images/footer/youtube.svg"
-                />
-                <Button 
-                  class="button"
-                  icon="/assets/images/footer/instagram.svg"
-                />
+                  icon="{AppMainModel>icon}"
+                  press="onNavSocial"
+                >
+                  <customData>
+                    <core:CustomData key="socialLink" value="{AppMainModel>icon}" />
+                  </customData>
+                </Button>
               </HBox>
             </VBox>
           </VBox>
