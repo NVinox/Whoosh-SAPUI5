@@ -123,8 +123,11 @@
 
   .social {
     padding-top: 60px;
-
     max-width: 300px;
+
+    .social-button + .social-button {
+      margin-left: 24px;
+    }
 
     @include media(lg) {
       max-width: 301px;

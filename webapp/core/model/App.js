@@ -1,76 +1,16 @@
 sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
   return {
+    ui: new BaseModel({
+      isLoading: false,
+    }),
+
     main: new BaseModel({
       typeSize: "",
       sideMenu: {
         isClosed: true,
       },
-      popUpCity: [
-        {
-          city: "NY, Manhattan",
-        },
-        {
-          city: "Chicago",
-        },
-        {
-          city: "Philadelphia",
-        },
-        {
-          city: "Dallas",
-        },
-        {
-          city: "Jacksonville",
-        },
-        {
-          city: "San Francisco",
-        },
-      ],
-      footerMenu: [
-        {
-          text: "About company",
-        },
-        {
-          text: "Contact",
-        },
-        {
-          text: "Rules",
-        },
-        {
-          text: "FAQ",
-        },
-        {
-          text: "Reviews",
-        },
-        {
-          text: "Cargo transportation",
-        },
-        {
-          text: "Tariffs",
-        },
-      ],
-      footerServices: [
-        {
-          text: "Online stores",
-        },
-        {
-          text: "Legal entity",
-        },
-        {
-          text: "API Integration",
-        },
-        {
-          text: "Contract",
-        },
-        {
-          text: "Jobs",
-        },
-        {
-          text: "Courier job",
-        },
-        {
-          text: "The blog",
-        },
-      ],
+      states: [],
+      footer: {},
       autoFill: [
         {
           text: "502 86th St, Brooklyn, NY 11209",
