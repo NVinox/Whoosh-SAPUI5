@@ -10,52 +10,7 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
         isClosed: true,
       },
       states: [],
-      footerMenu: [
-        {
-          text: "About company",
-        },
-        {
-          text: "Contact",
-        },
-        {
-          text: "Rules",
-        },
-        {
-          text: "FAQ",
-        },
-        {
-          text: "Reviews",
-        },
-        {
-          text: "Cargo transportation",
-        },
-        {
-          text: "Tariffs",
-        },
-      ],
-      footerServices: [
-        {
-          text: "Online stores",
-        },
-        {
-          text: "Legal entity",
-        },
-        {
-          text: "API Integration",
-        },
-        {
-          text: "Contract",
-        },
-        {
-          text: "Jobs",
-        },
-        {
-          text: "Courier job",
-        },
-        {
-          text: "The blog",
-        },
-      ],
+      footer: {},
       autoFill: [
         {
           text: "502 86th St, Brooklyn, NY 11209",

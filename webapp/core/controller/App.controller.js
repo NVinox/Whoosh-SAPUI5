@@ -9,6 +9,7 @@ sap.ui.define(
 
         this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
         this.setStatesModel();
+        this.setFooterModel();
       },
 
       // Метод установки моделей
@@ -28,6 +29,29 @@ sap.ui.define(
             let states = await AppServices.getStates();
 
             mainModel.setProperty("/states", states);
+          },
+          errCb: (err) => {
+            let errorAPI = err?.response?.data?.errors?.[0]?.text;
+
+            throw new Error(errorAPI);
+          },
+          finalCb: () => {
+            uiModel.setProperty("/isLoading", false);
+          },
+        });
+      },
+
+      // Метод установки данных футера в модель
+      setFooterModel() {
+        let uiModel = this.getModel("AppUiModel");
+        let mainModel = this.getModel("AppMainModel");
+
+        uiModel.setProperty("/isLoading", true);
+        Helpers.trackExec({
+          cb: async () => {
+            let navigations = await AppServices.getNavigation();
+
+            mainModel.setProperty("/footer", navigations);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;

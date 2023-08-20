@@ -359,7 +359,7 @@
     
 
       <!--FOOTER-->
-      <VBox class="footer" justifyContent="Center" alignItems="Center">
+      <VBox class="footer" justifyContent="Center" alignItems="Center" busy="{AppUiModel>/isLoading}" busyIndicatorDelay="0">
         <HBox 
           class="wrapper" 
           width="100%" 
@@ -373,7 +373,7 @@
 
             <HBox class="content">
               <Image src="/assets/images/footer/two-pins.svg" class="content__two-pins" />
-              <Text width="240px" text="Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases and other goods" />
+              <Text width="240px" text="{AppMainModel>/footer/about}" />
             </HBox>
           </VBox>
 
@@ -383,8 +383,8 @@
                 <Text text="Menu" />
               </HBox>
 
-              <List items="{path:'AppMainModel>/footerMenu'}">
-                <StandardListItem title="{AppMainModel>text}" class="link"/>
+              <List items="{AppMainModel>/footer/menu}">
+                <StandardListItem class="link" title="{AppMainModel>title}"/>
               </List>          
             </VBox>
 
@@ -393,9 +393,8 @@
                 <Text text="Services" />
               </HBox>
 
-              <List items="{AppMainModel>/footerServices}">
-                <StandardListItem title="{AppMainModel>text}" class="link"/>
-
+              <List items="{AppMainModel>/footer/services}">
+                <StandardListItem class="link" title="{AppMainModel>title}"/>
               </List>
 
             </VBox>
@@ -407,10 +406,10 @@
             </HBox>
 
             <VBox class="content">
-              <Text class="phone" text="8 800 934 5959" />
+              <Text class="phone" text="{AppMainModel>/footer/phone}" />
               <HBox>
                 <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
-                <Text class="footer__icon-text" text="2545 W. Diversey Ave.&#13;&#10;3rd Floor Chicago, IL 60647"/>
+                <Text class="footer__icon-text" text="{AppMainModel>/footer/address}"/>
               </HBox>
               <HBox class="social" width="100%" justifyContent="SpaceBetween">
                 <Button 
