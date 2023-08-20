@@ -1,30 +1,15 @@
 sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
   return {
+    ui: new BaseModel({
+      isLoading: false,
+    }),
+
     main: new BaseModel({
       typeSize: "",
       sideMenu: {
         isClosed: true,
       },
-      popUpCity: [
-        {
-          city: "NY, Manhattan",
-        },
-        {
-          city: "Chicago",
-        },
-        {
-          city: "Philadelphia",
-        },
-        {
-          city: "Dallas",
-        },
-        {
-          city: "Jacksonville",
-        },
-        {
-          city: "San Francisco",
-        },
-      ],
+      places: [],
       footerMenu: [
         {
           text: "About company",

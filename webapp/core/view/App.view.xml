@@ -11,7 +11,7 @@
   <tnt:ToolPage
     class="tool-page">
     <tnt:header>
-      <tnt:ToolHeader class="header">
+      <tnt:ToolHeader class="header" busy="{AppUiModel>/isLoading}" busyIndicatorDelay="0">
         <HBox 
           width="100%" 
           justifyContent="Center"
@@ -31,8 +31,8 @@
                 src="/assets/images/header/logo.svg" 
               />
               <ToolbarSpacer width="66px" />
-              <Select class="header__city" width="142px" items="{AppMainModel>/popUpCity}">
-                <core:ListItem text="{AppMainModel>city}" />
+              <Select class="header__city" width="200px" items="{AppMainModel>/places}">
+                <core:ListItem key="{AppMainModel>id}" text="{AppMainModel>name}" />
               </Select>
             </HBox>
 

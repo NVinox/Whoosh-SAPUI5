@@ -1,6 +1,6 @@
 sap.ui.define(
-  ["App/base/BaseController", "App/core/model/App", "sap/ui/Device", "App/services/App"],
-  function (BaseController, AppModel, Device, AppServices) {
+  ["App/base/BaseController", "App/core/model/App", "sap/ui/Device", "App/services/App", "App/helpers/index"],
+  function (BaseController, AppModel, Device, AppServices, Helpers) {
     return BaseController.extend("App.core.controller.App", {
       onInit() {
         this.setModels();
@@ -8,21 +8,36 @@ sap.ui.define(
         Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
 
         this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
-      },
-
-      onAfterRendering() {
-        this.partnersSliderInit();
-        this.sliderInit();
-        let tapBox = this.byId("tapBox");
-        let delegateObject = {
-          onclick: () => this.onToggleSideMenu(),
-        };
-        tapBox.addEventDelegate(delegateObject);
+        this.setPlacesModel();
       },
 
       // Метод установки моделей
       setModels() {
         this.setModel(AppModel.main, "AppMainModel");
+        this.setModel(AppModel.ui, "AppUiModel");
+      },
+
+      // Метод установки местоположений в модель
+      setPlacesModel() {
+        let uiModel = this.getModel("AppUiModel");
+        let mainModel = this.getModel("AppMainModel");
+
+        uiModel.setProperty("/isLoading", true);
+        Helpers.trackExec({
+          cb: async () => {
+            let places = await AppServices.getPlaces();
+
+            mainModel.setProperty("/places", places);
+          },
+          errCb: (err) => {
+            let errorAPI = err?.response?.data?.errors?.[0]?.text;
+
+            throw new Error(errorAPI);
+          },
+          finalCb: () => {
+            uiModel.setProperty("/isLoading", false);
+          },
+        });
       },
 
       // Метод изменения размера экрана
@@ -60,6 +75,16 @@ sap.ui.define(
             },
           ],
         });
+      },
+
+      onAfterRendering() {
+        this.partnersSliderInit();
+        this.sliderInit();
+        let tapBox = this.byId("tapBox");
+        let delegateObject = {
+          onclick: () => this.onToggleSideMenu(),
+        };
+        tapBox.addEventDelegate(delegateObject);
       },
 
       // Метод показа/скрытия дополнительной информации
