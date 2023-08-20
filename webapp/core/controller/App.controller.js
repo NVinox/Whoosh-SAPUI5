@@ -8,8 +8,7 @@ sap.ui.define(
         Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
 
         this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
-        this.setStatesModel();
-        this.setFooterModel();
+        this.setPageInfo();
       },
 
       // Метод установки моделей
@@ -18,8 +17,8 @@ sap.ui.define(
         this.setModel(AppModel.ui, "AppUiModel");
       },
 
-      // Метод установки штатов в модель
-      setStatesModel() {
+      // Метод установки данных страницы в модель
+      setPageInfo() {
         let uiModel = this.getModel("AppUiModel");
         let mainModel = this.getModel("AppMainModel");
 
@@ -27,30 +26,9 @@ sap.ui.define(
         Helpers.trackExec({
           cb: async () => {
             let states = await AppServices.getStates();
-
-            mainModel.setProperty("/states", states);
-          },
-          errCb: (err) => {
-            let errorAPI = err?.response?.data?.errors?.[0]?.text;
-
-            throw new Error(errorAPI);
-          },
-          finalCb: () => {
-            uiModel.setProperty("/isLoading", false);
-          },
-        });
-      },
-
-      // Метод установки данных футера в модель
-      setFooterModel() {
-        let uiModel = this.getModel("AppUiModel");
-        let mainModel = this.getModel("AppMainModel");
-
-        uiModel.setProperty("/isLoading", true);
-        Helpers.trackExec({
-          cb: async () => {
             let navigations = await AppServices.getNavigation();
 
+            mainModel.setProperty("/states", states);
             mainModel.setProperty("/footer", navigations);
           },
           errCb: (err) => {

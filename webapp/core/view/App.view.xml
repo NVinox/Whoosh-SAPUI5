@@ -411,7 +411,7 @@
                 <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
                 <Text class="footer__icon-text" text="{AppMainModel>/footer/address}"/>
               </HBox>
-              <HBox class="social" width="100%" justifyContent="SpaceBetween" items="{AppMainModel>/footer/socials}">
+              <HBox class="social" width="100%" items="{AppMainModel>/footer/socials}">
                 <Button 
                   class="button"
                   icon="{AppMainModel>icon}"
@@ -420,6 +420,10 @@
                   <customData>
                     <core:CustomData key="socialLink" value="{AppMainModel>icon}" />
                   </customData>
+
+                  <layoutData>
+                    <FlexItemData styleClass="social-button" />
+                  </layoutData>
                 </Button>
               </HBox>
             </VBox>
