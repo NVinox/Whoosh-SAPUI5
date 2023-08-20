@@ -31,8 +31,8 @@
                 src="/assets/images/header/logo.svg" 
               />
               <ToolbarSpacer width="66px" />
-              <Select class="header__city" width="200px" items="{AppMainModel>/places}">
-                <core:ListItem key="{AppMainModel>id}" text="{AppMainModel>name}" />
+              <Select class="header__city" width="200px" items="{AppMainModel>/states}">
+                <core:ListItem key="{AppMainModel>id}" text="{AppMainModel>code}, {AppMainModel>name}" />
               </Select>
             </HBox>
 

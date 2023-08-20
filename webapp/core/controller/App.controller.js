@@ -8,7 +8,7 @@ sap.ui.define(
         Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
 
         this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
-        this.setPlacesModel();
+        this.setStatesModel();
       },
 
       // Метод установки моделей
@@ -17,17 +17,17 @@ sap.ui.define(
         this.setModel(AppModel.ui, "AppUiModel");
       },
 
-      // Метод установки местоположений в модель
-      setPlacesModel() {
+      // Метод установки штатов в модель
+      setStatesModel() {
         let uiModel = this.getModel("AppUiModel");
         let mainModel = this.getModel("AppMainModel");
 
         uiModel.setProperty("/isLoading", true);
         Helpers.trackExec({
           cb: async () => {
-            let places = await AppServices.getPlaces();
+            let states = await AppServices.getStates();
 
-            mainModel.setProperty("/places", places);
+            mainModel.setProperty("/states", states);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;

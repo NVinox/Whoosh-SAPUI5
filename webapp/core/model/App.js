@@ -9,7 +9,7 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       sideMenu: {
         isClosed: true,
       },
-      places: [],
+      states: [],
       footerMenu: [
         {
           text: "About company",
