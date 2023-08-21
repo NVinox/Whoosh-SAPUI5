@@ -66,6 +66,14 @@ sap.ui.define(
         sideMenu.addStyleClass(sideMenuClass(!isClosed));
         sideMenu.removeStyleClass(sideMenuClass(isClosed));
       },
+
+      onLogoPress(oEvent) {
+        this.getRouter().navTo("Main");
+      },
+
+      onSendPress(oEvent) {
+        this.getRouter().navTo("Send");
+      },
     });
   },
 );

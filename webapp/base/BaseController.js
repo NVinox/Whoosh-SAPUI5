@@ -1,6 +1,12 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "sap/ui/core/Core", "App/constants/index", "App/services/Common/Fragments/Fragments"],
-  (Controller, Core, { FRAGMENT_TYPES }, FragmentsService) => {
+  [
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Core",
+    "App/constants/index",
+    "App/services/Common/Fragments/Fragments",
+    "sap/ui/core/UIComponent",
+  ],
+  (Controller, Core, { FRAGMENT_TYPES }, FragmentsService, UIComponent) => {
     return Controller.extend("App.base.BaseController", {
       // Пробрасывание имени модалки для её открытия
       onOpenDialog(oEvent) {

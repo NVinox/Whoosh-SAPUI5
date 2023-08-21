@@ -54,8 +54,8 @@ sap.ui.define(
       },
 
       onAfterRendering() {
-        this.partnersSliderInit();
-        this.sliderInit();
+        // this.partnersSliderInit();
+        // this.sliderInit();
       },
 
       // Метод показа/скрытия дополнительной информации

@@ -22,7 +22,8 @@
               alignItems="Center">
               <Image class="header__logo"
                 mode="InlineSvg"
-                src="/assets/images/header/logo.svg" />
+                src="/assets/images/header/logo.svg"
+                press="onLogoPress" />
               <ToolbarSpacer width="66px" />
               <Select class="header__city"
                 width="200px"
@@ -43,7 +44,8 @@
             <HBox class="subwrapper"
               alignItems="Center">
               <Link text="Send a Parcel"
-                class="header__link link" />
+                class="header__link link"
+                press="onSendPress" />
               <Link text="Become a Courier"
                 class="header__link link" />
               <Button class="header__login button"
@@ -113,7 +115,8 @@
                   placeholder="Track a Package"
                   width="242px" />
                 <Link text="Send a Parcel"
-                  class="header__link link" />
+                  class="header__link link"
+                  press="onSendPress" />
                 <Link text="Become a Courier"
                   class="header__link link" />
                 <Link text="Affiliate Program"
