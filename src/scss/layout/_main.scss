@@ -3,4 +3,10 @@
     display: flex;
     overflow: auto;
   }
+
+  &-content {
+    .slick-track {
+      min-width: 100vh;
+    }
+  }
 }
