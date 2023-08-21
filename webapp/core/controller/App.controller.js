@@ -47,54 +47,12 @@ sap.ui.define(
         this.getModel("AppMainModel").setProperty("/typeSize", params.from);
       },
 
-      // Инициализация слайдера Partners
-      partnersSliderInit() {
-        $(".partners-slider").slick({
-          centerMode: true,
-          slidesToShow: 1,
-          arrows: false,
-          centerPadding: "77px",
-          initialSlide: 2,
-        });
-      },
-
-      // Инициализация слайдера Payment
-      sliderInit() {
-        $(".slider").slick({
-          slidesToShow: 5,
-          swipeToSlide: true,
-
-          prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
-          nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
-
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                arrows: false,
-                slidesToShow: 3,
-              },
-            },
-          ],
-        });
-      },
-
       onAfterRendering() {
-        this.partnersSliderInit();
-        this.sliderInit();
         let tapBox = this.byId("tapBox");
         let delegateObject = {
           onclick: () => this.onToggleSideMenu(),
         };
         tapBox.addEventDelegate(delegateObject);
-      },
-
-      // Метод показа/скрытия дополнительной информации
-      onInfoToggle() {
-        let mainModel = this.getModel("AppMainModel");
-        let isSelected = mainModel.getProperty("/infoText/isVisible");
-
-        mainModel.setProperty("/infoText/isVisible", !isSelected);
       },
 
       // Метод показа/скрытия бокового меню
@@ -107,13 +65,6 @@ sap.ui.define(
         mainModel.setProperty("/sideMenu/isClosed", !isClosed);
         sideMenu.addStyleClass(sideMenuClass(!isClosed));
         sideMenu.removeStyleClass(sideMenuClass(isClosed));
-      },
-
-      // Обработчик перехода на ссылку соц медиа
-      onNavSocial(oEvent) {
-        let { socialLink } = oEvent.getSource().data();
-
-        window.open(socialLink);
       },
     });
   },

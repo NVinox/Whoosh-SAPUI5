@@ -15,6 +15,14 @@ sap.ui.define(
       },
 
       /**
+       * Доступ к роутеру текущего компонента.
+       * @returns {sap.ui.core.routing.Router} - роутер для this component
+       */
+      getRouter() {
+        return UIComponent.getRouterFor(this);
+      },
+
+      /**
        * Подгрузка и открытие фрагментов
        * @param {string} fragmentName имя фргмента для открытия
        * @param {string} fragmentType тип фргмента для открытия

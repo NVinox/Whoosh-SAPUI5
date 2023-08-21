@@ -7,16 +7,6 @@
     height: fit-content;
   }
 
-  .sapTntToolPageMainContentWrapper {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .main-content {
-    overflow: auto;
-    position: relative;
-  }
-
   .sapMIBar {
     &.sapMTB {
       .sapMBarChild:first-child[style*="width: 100%"] {
