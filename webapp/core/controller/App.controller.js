@@ -3,7 +3,6 @@ sap.ui.define(
   function (BaseController, AppModel, Device, AppServices, Helpers) {
     return BaseController.extend("App.core.controller.App", {
       onInit() {
-        // debugger;
         this.setModels();
 
         Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
@@ -73,7 +72,6 @@ sap.ui.define(
       },
 
       onSendPress(oEvent) {
-        // debugger;
         this.getRouter().navTo("Send");
       },
     });
