@@ -27,9 +27,12 @@ sap.ui.define(
           cb: async () => {
             let states = await AppServices.getCompanyCities();
             let navigations = await AppServices.getNavigation();
+            let promo = await AppServices.getPromo();
 
             mainModel.setProperty("/states", states);
             mainModel.setProperty("/footer", navigations);
+            mainModel.setProperty("/partners", promo.partners);
+            mainModel.setProperty("/paymentMethods", promo.paymentMethods);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;

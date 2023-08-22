@@ -22,6 +22,13 @@ sap.ui.define(["App/API/index"], (API) => {
       return this.parseNavigations(navigations);
     },
 
+    // Метод получения информации для страницы
+    async getPromo() {
+      let promo = await API.reference.promo();
+
+      return this.parsePromo(promo);
+    },
+
     /**
      * Метод парсинга данных о панели навигации
      * @param {Object} navigations - данные о панели навигации
@@ -41,6 +48,23 @@ sap.ui.define(["App/API/index"], (API) => {
         socials: navigations.socials,
         menu: menus.menu,
         services: menus.service,
+      };
+    },
+
+    /**
+     * Метод парсинга данных для промо-страцицы
+     */
+    parsePromo(promo) {
+      return {
+        backgroundImage: promo.backgroundImage,
+        promoTextBlock: promo.promoTextBlock,
+        video: promo.video,
+        whatWeDoText: promo.whatWeDoText,
+        expressDeliveryText: promo.expressDeliveryText,
+        partners: promo.partners,
+        paymentMethods: promo.paymentMethods,
+        promoParcelHint: promo.promoParcelHint,
+        deliveryWays: promo.deliveryWays,
       };
     },
   };
