@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core">
+  <Popover id="hintPopover"
+    class="hint-popover"
+    placement="VerticalPreferredBottom"
+    horizontalScrolling="false"
+    verticalScrolling="false"
+    showHeader="false"
+    showArrow="false"
+    contentMinWidth="250px"
+    offsetY="8">
+    <HBox class="hint-popover__wrapper"
+      width="250px">
+      <Text class="text"
+        text="{AppMainModel>/pageInfo/offer/promoParcelHint}">
+      </Text>
+    </HBox>
+  </Popover>
+</core:FragmentDefinition>
