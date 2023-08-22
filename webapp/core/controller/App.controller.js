@@ -31,8 +31,7 @@ sap.ui.define(
 
             mainModel.setProperty("/states", states);
             mainModel.setProperty("/footer", navigations);
-            mainModel.setProperty("/partners", promo.partners);
-            mainModel.setProperty("/paymentMethods", promo.paymentMethods);
+            mainModel.setProperty("/pageInfo", promo);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;

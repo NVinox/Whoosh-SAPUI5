@@ -153,7 +153,9 @@
 
           <HBox class="offer"
             justifyContent="Center"
-            width="100%">
+            width="100%"
+            busyIndicatorDelay="0"
+            busy="{AppUiModel>/isLoading}">
             <HBox class="content-wrapper"
               width="100%"
               alignItems="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}"
@@ -161,14 +163,14 @@
               <VBox class="left"
                 width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '375px'}">
                 <Text class="text text_h1"
-                  text="Our service started work in New York" />
+                  text="{AppMainModel>/pageInfo/offer/promoTextBlock/title}" />
                 <Text class="left__text text"
                   width="100%"
-                  text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
+                  text="{AppMainModel>/pageInfo/offer/promoTextBlock/text}" />
                 <Link class="left__link link_blue"
                   text="Read more" />
                 <Text class="text text_h3"
-                  text="How it works" />
+                  text="{AppMainModel>/pageInfo/offer/video/title}" />
                 <!--VIDEO-->
                 <HBox class="left__video"
                   width="100%"
@@ -183,7 +185,7 @@
                 </HBox>
               </VBox>
               <Image class="offer__graphic"
-                src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : '/assets/images/offer/graphic.svg'}" />
+                src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : ${AppMainModel>/pageInfo/offer/backgroundImage}}" />
               <VBox class="right"
                 width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
                 <!--SEND A PARCEL FORM-->
@@ -199,17 +201,17 @@
                   </HBox>
                   <VBox class="offer__tabs">
                     <IconTabBar class="tabs"
-                      selectedKey="Car">
+                      selectedKey="{AppMainModel>/pageInfo/offer/deliveryWays/car/code}">
                       <items>
-                        <IconTabFilter key="Bike"
+                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/foot/code}"
                           icon="assets/images/tabs/onFoot.svg"
-                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 10lb'}" />
-                        <IconTabFilter key="Car"
+                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to '+${AppMainModel>/pageInfo/offer/deliveryWays/foot/maximumWeight}+'lb'}" />
+                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/car/code}"
                           icon="assets/images/tabs/car.svg"
-                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 130lb'}" />
-                        <IconTabFilter key="Truck"
+                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to '+${AppMainModel>/pageInfo/offer/deliveryWays/car/maximumWeight}+'lb'}" />
+                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/truck/code}"
                           icon="assets/images/tabs/truck.svg"
-                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over 130lb'}" />
+                          text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over '+${AppMainModel>/pageInfo/offer/deliveryWays/truck/maximumWeight}+'lb'}" />
                       </items>
                     </IconTabBar>
                   </VBox>
@@ -328,7 +330,7 @@
 
             <HBox class="partners-slider"
               width="100%"
-              items="{AppMainModel>/partners}">
+              items="{AppMainModel>/pageInfo/partners}">
               <HBox class="monochrome"
                 width="188px"
                 height="56px"
@@ -347,7 +349,7 @@
 
             <HBox class="logos"
               width="100%"
-              items="{AppMainModel>/partners}"
+              items="{AppMainModel>/pageInfo/partners}"
               visible="{= ${AppMainModel>/typeSize} &gt; 1024}">
               <layoutData>
                 <FlexItemData maxWidth="1104px" />
@@ -416,7 +418,7 @@
 
             <HBox class="slider"
               width="100%"
-              items="{AppMainModel>/paymentMethods/items}">
+              items="{AppMainModel>/pageInfo/paymentMethods/items}">
               <layoutData>
                 <FlexItemData maxWidth="1172px" />
               </layoutData>

@@ -55,16 +55,26 @@ sap.ui.define(["App/API/index"], (API) => {
      * Метод парсинга данных для промо-страцицы
      */
     parsePromo(promo) {
+      let deliveryWays = promo.deliveryWays.reduce((acc, current) => {
+        let name = current.code.slice(3).toLowerCase();
+
+        acc[name] = current;
+
+        return acc;
+      }, {});
+
       return {
-        backgroundImage: promo.backgroundImage,
-        promoTextBlock: promo.promoTextBlock,
-        video: promo.video,
+        offer: {
+          backgroundImage: promo.backgroundImage,
+          promoTextBlock: promo.promoTextBlock,
+          video: promo.video,
+          promoParcelHint: promo.promoParcelHint,
+          deliveryWays,
+        },
         whatWeDoText: promo.whatWeDoText,
         expressDeliveryText: promo.expressDeliveryText,
         partners: promo.partners,
         paymentMethods: promo.paymentMethods,
-        promoParcelHint: promo.promoParcelHint,
-        deliveryWays: promo.deliveryWays,
       };
     },
   };

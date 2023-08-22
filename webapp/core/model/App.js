@@ -11,6 +11,7 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       },
       states: [],
       footer: {},
+      pageInfo: {},
       autoFill: [
         {
           text: "502 86th St, Brooklyn, NY 11209",
@@ -46,28 +47,6 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           text: "Use our service and feel \nnew quality of this traditional service!",
         },
       ],
-      partners: [
-        {
-          title: "Alva",
-          image: "/assets/images/partners/alva.svg",
-        },
-        {
-          title: "Tendo",
-          image: "/assets/images/partners/tendo.svg",
-        },
-        {
-          title: "Fagor",
-          image: "/assets/images/partners/fagor.svg",
-        },
-        {
-          title: "RadioShack",
-          image: "/assets/images/partners/radioshack.svg",
-        },
-        {
-          title: "Guitar Center",
-          image: "/assets/images/partners/guitar-center.svg",
-        },
-      ],
       whatWeDo: [
         {
           title: "Online",
@@ -87,34 +66,6 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           more: "/assets/images/what-we-do/arrow.svg",
         },
       ],
-      paymentMethods: {
-        items: [
-          {
-            title: "Google Pay",
-            image: "/assets/images/payment/google.svg",
-          },
-          {
-            title: "Sofort",
-            image: "/assets/images/payment/sofort.svg",
-          },
-          {
-            title: "UnionPay",
-            image: "/assets/images/payment/union-pay.svg",
-          },
-          {
-            title: "Visa",
-            image: "/assets/images/payment/visa.svg",
-          },
-          {
-            title: "MasterCard",
-            image: "/assets/images/payment/mastercard.svg",
-          },
-          {
-            title: "American Express",
-            image: "/assets/images/payment/amex.svg",
-          },
-        ],
-      },
 
       infoText: {
         isVisible: false,
