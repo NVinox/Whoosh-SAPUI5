@@ -65,7 +65,13 @@
                                 <Text class="text text_h3 sapUiSmallMarginEnd"
                                     text="Send a Parcel" />
                                 <Button class="button-clue"
-                                    icon="/assets/images/offer/clue.svg" />
+                                    icon="/assets/images/offer/clue.svg"
+                                    press="onOpenPopover">
+                                    <customData>
+                                        <core:CustomData key="popover-fragment-name"
+                                            value="hint" />
+                                    </customData>
+                                </Button>
                             </HBox>
                             <VBox class="offer__tabs">
                                 <IconTabBar class="tabs"
