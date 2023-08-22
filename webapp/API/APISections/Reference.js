@@ -10,5 +10,11 @@ sap.ui.define([], () => {
 
       return data;
     },
+
+    async promo() {
+      let { data } = await _API.get("promo");
+
+      return data;
+    },
   };
 });

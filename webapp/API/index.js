@@ -1,11 +1,11 @@
-sap.ui.define(["App/API/APISections/Location", "App/API/APISections/Navigation"], (Locations, Navigation) => {
+sap.ui.define(["App/API/APISections/Location", "App/API/APISections/Reference"], (Locations, Reference) => {
   return {
     get location() {
       return Locations;
     },
 
-    get navigation() {
-      return Navigation;
+    get reference() {
+      return Reference;
     },
   };
 });

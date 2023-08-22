@@ -17,7 +17,7 @@ sap.ui.define(["App/API/index"], (API) => {
 
     // Метод получения информации о навигации
     async getNavigation() {
-      let navigations = await API.navigation.navigation();
+      let navigations = await API.reference.navigation();
 
       return this.parseNavigations(navigations);
     },
