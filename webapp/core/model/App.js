@@ -14,6 +14,7 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       },
       states: [],
       footer: {},
+      pageInfo: {},
       autoFill: [
         {
           text: "502 86th St, Brooklyn, NY 11209",
@@ -49,28 +50,6 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           text: "Use our service and feel \nnew quality of this traditional service!",
         },
       ],
-      partners: [
-        {
-          title: "Alva",
-          logo: "/assets/images/partners/alva.svg",
-        },
-        {
-          title: "Tendo",
-          logo: "/assets/images/partners/tendo.svg",
-        },
-        {
-          title: "Fagor",
-          logo: "/assets/images/partners/fagor.svg",
-        },
-        {
-          title: "RadioShack",
-          logo: "/assets/images/partners/radioshack.svg",
-        },
-        {
-          title: "Guitar Center",
-          logo: "/assets/images/partners/guitar-center.svg",
-        },
-      ],
       whatWeDo: [
         {
           title: "Online",
@@ -90,32 +69,7 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
           more: "/assets/images/what-we-do/arrow.svg",
         },
       ],
-      payment: [
-        {
-          title: "Google Pay",
-          logo: "/assets/images/payment/google.svg",
-        },
-        {
-          title: "Sofort",
-          logo: "/assets/images/payment/sofort.svg",
-        },
-        {
-          title: "UnionPay",
-          logo: "/assets/images/payment/union-pay.svg",
-        },
-        {
-          title: "Visa",
-          logo: "/assets/images/payment/visa.svg",
-        },
-        {
-          title: "MasterCard",
-          logo: "/assets/images/payment/mastercard.svg",
-        },
-        {
-          title: "American Express",
-          logo: "/assets/images/payment/amex.svg",
-        },
-      ],
+
       infoText: {
         isVisible: false,
         text: `Since 2019, LibertyWalk has successfully provided express courier delivery services in the city for both individuals and legal entities, and is also a reliable logistics partner for delivery services for online stores and restaurants! Express delivery of documents and parcels for organizations, express delivery of correspondence, purchases, flowers, food, gifts and goods up to 1.5 tons - the most frequent orders in our company.

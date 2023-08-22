@@ -17,9 +17,16 @@ sap.ui.define(["App/API/index"], (API) => {
 
     // Метод получения информации о навигации
     async getNavigation() {
-      let navigations = await API.navigation.navigation();
+      let navigations = await API.reference.navigation();
 
       return this.parseNavigations(navigations);
+    },
+
+    // Метод получения информации для страницы
+    async getPromo() {
+      let promo = await API.reference.promo();
+
+      return this.parsePromo(promo);
     },
 
     /**
@@ -41,6 +48,33 @@ sap.ui.define(["App/API/index"], (API) => {
         socials: navigations.socials,
         menu: menus.menu,
         services: menus.service,
+      };
+    },
+
+    /**
+     * Метод парсинга данных для промо-страцицы
+     */
+    parsePromo(promo) {
+      let deliveryWays = promo.deliveryWays.reduce((acc, current) => {
+        let name = current.code.slice(3).toLowerCase();
+
+        acc[name] = current;
+
+        return acc;
+      }, {});
+
+      return {
+        offer: {
+          backgroundImage: promo.backgroundImage,
+          promoTextBlock: promo.promoTextBlock,
+          video: promo.video,
+          promoParcelHint: promo.promoParcelHint,
+          deliveryWays,
+        },
+        whatWeDoText: promo.whatWeDoText,
+        expressDeliveryText: promo.expressDeliveryText,
+        partners: promo.partners,
+        paymentMethods: promo.paymentMethods,
       };
     },
   };

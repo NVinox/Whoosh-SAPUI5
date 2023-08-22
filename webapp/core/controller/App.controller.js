@@ -25,11 +25,13 @@ sap.ui.define(
         uiModel.setProperty("/isLoading", true);
         Helpers.trackExec({
           cb: async () => {
-            let states = await AppServices.getStates();
+            let states = await AppServices.getCompanyCities();
             let navigations = await AppServices.getNavigation();
+            let promo = await AppServices.getPromo();
 
             mainModel.setProperty("/states", states);
             mainModel.setProperty("/footer", navigations);
+            mainModel.setProperty("/pageInfo", promo);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;
