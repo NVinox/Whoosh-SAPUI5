@@ -5,6 +5,10 @@ body {
   font-size: 16px;
   color: $text-color;
 
+  .part {
+    overflow: auto;
+  }
+
   .sapMText {
     font-family: "Intro Book";
     font-weight: 400;
