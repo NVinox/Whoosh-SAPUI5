@@ -197,7 +197,8 @@
                     <Text class="text text_h3 sapUiSmallMarginEnd"
                       text="Send a Parcel" />
                     <Button class="button-clue"
-                      icon="/assets/images/offer/clue.svg" />
+                      icon="/assets/images/offer/clue.svg"
+                      tooltip="{AppMainModel>/pageInfo/offer/promoParcelHint}" />
                   </HBox>
                   <VBox class="offer__tabs">
                     <IconTabBar class="tabs"
@@ -277,14 +278,16 @@
 
           <VBox class="express"
             width="100%"
-            alignItems="Center">
+            alignItems="Center"
+            busyIndicatorDelay="0"
+            busy="{AppUiModel>/isLoading}">
             <Text class="text text_h1"
               textAlign="Center"
               text="Express delivery market revolution" />
             <Text class="text text_h4"
               textAlign="Center"
               width="100%"
-              text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+              text="{AppMainModel>/pageInfo/expressDeliveryText}" />
 
             <f:GridList class="pads"
               items="{AppMainModel>/expressPads}"
@@ -324,7 +327,9 @@
           <!--PARTNERS-->
           <VBox class="partners"
             width="100%"
-            alignItems="Center">
+            alignItems="Center"
+            busyIndicatorDelay="0"
+            busy="{AppUiModel>/isLoading}">
             <Text class="text text_h1"
               text="Our Partners" />
 
@@ -367,7 +372,9 @@
 
           <VBox class="what-we-do"
             width="100%"
-            alignItems="Center">
+            alignItems="Center"
+            busyIndicatorDelay="0"
+            busy="{AppUiModel>/isLoading}">
             <HBox class="what-we-do__bgimage">
               <Image src="/assets/images/what-we-do/city.png" />
             </HBox>
@@ -377,7 +384,7 @@
             <Text class="text text_h4"
               textAlign="Center"
               width="100%"
-              text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
+              text="{AppMainModel>/pageInfo/whatWeDoText}" />
 
             <HBox class="pads"
               items="{AppMainModel>/whatWeDo}">
