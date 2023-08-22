@@ -1,476 +1,145 @@
-<mvc:View
-  controllerName="App.core.controller.App"
+<mvc:View controllerName="App.core.controller.App"
   xmlns:core="sap.ui.core"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m"
   xmlns:tnt="sap.tnt"
   xmlns:f="sap.f"
-  xmlns:html="http://www.w3.org/1999/xhtml"
-  xmlns:grid="sap.ui.layout.cssgrid"
   displayBlock="true">
-  <tnt:ToolPage
-    class="tool-page">
+  <tnt:ToolPage class="tool-page">
     <tnt:header>
-      <tnt:ToolHeader class="header" busy="{AppUiModel>/isLoading}" busyIndicatorDelay="0">
-        <HBox 
-          width="100%" 
+      <tnt:ToolHeader class="header"
+        busy="{AppUiModel>/isLoading}"
+        busyIndicatorDelay="0">
+        <HBox width="100%"
           justifyContent="Center"
-          visible="{= ${AppMainModel>/typeSize} &gt; 1240}"  
-          >
-          <HBox 
-            class="wrapper"
+          visible="{= ${AppMainModel>/typeSize} &gt; 1240}">
+          <HBox class="wrapper"
             width="100%"
             height="80px"
             justifyContent="SpaceBetween"
-            alignItems="Center"
-          >
-            <HBox class="subwrapper" alignItems="Center">
-              <Image 
-                class="header__logo"
+            alignItems="Center">
+            <HBox class="subwrapper"
+              alignItems="Center">
+              <Image class="header__logo"
                 mode="InlineSvg"
-                src="/assets/images/header/logo.svg" 
-              />
+                src="/assets/images/header/logo.svg"
+                press="onLogoPress" />
               <ToolbarSpacer width="66px" />
-              <Select class="header__city" width="200px" items="{AppMainModel>/states}" selectedKey="{AppMainModel>/selectedKeyState}">
-                <core:ListItem key="{AppMainModel>id}" text="{AppMainModel>code}, {AppMainModel>name}" />
+              <Select class="header__city"
+                width="200px"
+                items="{AppMainModel>/states}"
+                selectedKey="{AppMainModel>/selectedKeyState}">
+                <core:ListItem key="{AppMainModel>id}"
+                  text="{AppMainModel>code}, {AppMainModel>name}" />
               </Select>
             </HBox>
 
-            <HBox class="subwrapper" alignItems="Center">
-              <SearchField 
-                class="header__search search-field" 
-                placeholder="Track a Package" 
-                width="184px" 
-              />
+            <HBox class="subwrapper"
+              alignItems="Center">
+              <SearchField class="header__search search-field"
+                placeholder="Track a Package"
+                width="184px" />
             </HBox>
 
-            <HBox class="subwrapper" alignItems="Center">
-              <Link text="Send a Parcel" class="header__link link" />
-              <Link text="Become a Courier" class="header__link link" />
-              <Button 
-                class="header__login button"
-                icon="/assets/images/header/lock.svg"
-              />
+            <HBox class="subwrapper"
+              alignItems="Center">
+              <Link text="Send a Parcel"
+                class="header__link link"
+                press="onSendPress" />
+              <Link text="Become a Courier"
+                class="header__link link" />
+              <Button class="header__login button"
+                icon="/assets/images/header/lock.svg" />
             </HBox>
           </HBox>
         </HBox>
 
         <!--HEADER FOR ADAPTIVE-->
-        <HBox 
-          class="header-small" 
-          width="100%" 
+        <HBox class="header-small"
+          width="100%"
           height="64px"
-          alignItems="Center" 
-          justifyContent="SpaceBetween" 
+          alignItems="Center"
+          justifyContent="SpaceBetween"
           visible="{= ${AppMainModel>/typeSize} &lt; 1366}">
-          <Image class="header-small__profile" src="/assets/images/header/profile.svg" press=""/>
-          <Image class="header-small__logo" width="120px" src="/assets/images/header/logo.svg" />
-          <Image class="header-small__menu-btn" src="/assets/images/header/menu.svg" press="onToggleSideMenu"/>
+          <Image class="header-small__profile"
+            src="/assets/images/header/profile.svg"
+            press="" />
+          <Image class="header-small__logo"
+            width="120px"
+            src="/assets/images/header/logo.svg" />
+          <Image class="header-small__menu-btn"
+            src="/assets/images/header/menu.svg"
+            press="onToggleSideMenu" />
         </HBox>
 
-      <!--SIDE MENU-->
-      <HBox id="screenWrapper" class="screen-wrapper" width="{= ${AppMainModel>/sideMenu/isClosed} ? '0' : '100%'}" height="100%">
-        <VBox 
-          id="tapBox"
-          class="tap-box"
-          width="100%"
-          height="100vh">
-        </VBox>
-
-        <VBox id="sideMenu" class="side-menu" width="274px" height="100vh" justifyContent="SpaceBetween" alignItems="Center">
-          <VBox class="side-menu__wrapper" width="100%">
-            
-            <HBox class="side-menu-header" width="100%" height="64px" alignItems="Center" justifyContent="SpaceBetween">
-              <Select class="header__city" width="200px" items="{AppMainModel>/states}" selectedKey="{AppMainModel>/selectedKeyState}">
-                <core:ListItem key="{AppMainModel>id}" text="{AppMainModel>code}, {AppMainModel>name}" />
-              </Select>
-              <Image class="side-menu__menu-btn" src="/assets/images/header/x.svg" press="onToggleSideMenu"/>
-            </HBox>
-          
-            <VBox class="side-menu__subwrapper" width="100%">
-              <SearchField 
-                class="side-menu__search search-field" 
-                placeholder="Track a Package" 
-                width="242px" 
-              />
-              <Link text="Send a Parcel" class="header__link link" />
-              <Link text="Become a Courier" class="header__link link" />
-              <Link text="Affiliate Program" class="header__link link" />
-              <Link text="Help &amp; Support" class="header__link link" />
-            </VBox>
+        <!--SIDE MENU-->
+        <HBox id="screenWrapper"
+          class="screen-wrapper"
+          width="{= ${AppMainModel>/sideMenu/isClosed} ? '0' : '100%'}"
+          height="100%">
+          <VBox id="tapBox"
+            class="tap-box"
+            width="100%"
+            height="100vh">
           </VBox>
 
-          <Button 
-                class="side-menu__button button text_h5"
-                width="242px"
-                text="Take a complex order"
-              />
-        </VBox>
-      </HBox>
+          <VBox id="sideMenu"
+            class="side-menu"
+            width="274px"
+            height="100vh"
+            justifyContent="SpaceBetween"
+            alignItems="Center">
+            <VBox class="side-menu__wrapper"
+              width="100%">
+
+              <HBox class="side-menu-header"
+                width="100%"
+                height="64px"
+                alignItems="Center"
+                justifyContent="SpaceBetween">
+                <Select class="header__city"
+                  width="200px"
+                  items="{AppMainModel>/states}"
+                  selectedKey="{AppMainModel>/selectedKeyState}">
+                  <core:ListItem key="{AppMainModel>id}"
+                    text="{AppMainModel>code}, {AppMainModel>name}" />
+                </Select>
+                <Image class="side-menu__menu-btn"
+                  src="/assets/images/header/x.svg"
+                  press="onToggleSideMenu" />
+              </HBox>
+
+              <VBox class="side-menu__subwrapper"
+                width="100%">
+                <SearchField class="side-menu__search search-field"
+                  placeholder="Track a Package"
+                  width="242px" />
+                <Link text="Send a Parcel"
+                  class="header__link link"
+                  press="onSendPress" />
+                <Link text="Become a Courier"
+                  class="header__link link" />
+                <Link text="Affiliate Program"
+                  class="header__link link" />
+                <Link text="Help &amp; Support"
+                  class="header__link link" />
+              </VBox>
+            </VBox>
+
+            <Button class="side-menu__button button text_h5"
+              width="242px"
+              text="Take a complex order" />
+          </VBox>
+        </HBox>
       </tnt:ToolHeader>
     </tnt:header>
-    
+
     <tnt:mainContents>
 
-    <!--MAIN CONTENT-->
-    <ScrollContainer width="100%" vertical="true" horizontal="false">
-      <VBox class="main-content" width="100%" height="100%" alignItems="Center" justifyContent="Center">
-        <layoutData>
-          <FlexItemData growFactor="1" shrinkFactor="1" />
-        </layoutData>
+      <App id="app"
+        autoFocus="false"
+        backgroundColor="#FFFFFF" />
 
-        <!--OFFER-->
-
-        <HBox class="offer" justifyContent="Center" width="100%">
-          <HBox class="content-wrapper" width="100%" alignItems="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}" justifyContent="SpaceBetween">
-            <VBox class="left" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '375px'}">
-                <Text class="text text_h1" text="Our service started work in New York" />
-                <Text class="left__text text" width="100%" text="We make delivery exactly at the time you need - we can start to fulfill the order a few minutes after it arrives, or we can deliver on a specific day and hour." />
-                <Link class="left__link link_blue" text="Read more" />
-                <Text class="text text_h3" text="How it works" />
-                <!--VIDEO-->
-                <HBox class="left__video" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
-                  <html:iframe class="left__frame" src="https://www.youtube.com/embed/sJSYeUTfW6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true">
-                  </html:iframe>
-                </HBox>
-            </VBox>
-            <Image class="offer__graphic" src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : '/assets/images/offer/graphic.svg'}" />
-            <VBox class="right" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
-              <!--SEND A PARCEL FORM-->
-              <VBox class="offer__form" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
-                <HBox class="offer__form-title" alignItems="Center">
-                  <Text class="text text_h3 sapUiSmallMarginEnd" text="Send a Parcel" />
-                  <Button class="button-clue" icon="/assets/images/offer/clue.svg" />
-                </HBox>
-                <VBox class="offer__tabs">
-                  <IconTabBar class="tabs" selectedKey="Car">
-                    <items>
-                      <IconTabFilter
-                        key="Bike"
-                        icon="assets/images/tabs/onFoot.svg"
-                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 10lb'}"
-                      />
-                      <IconTabFilter
-                        key="Car"
-                        icon="assets/images/tabs/car.svg"
-                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to 130lb'}"
-                      />
-                      <IconTabFilter
-                        key="Truck"
-                        icon="assets/images/tabs/truck.svg"
-                        text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over 130lb'}"
-                      />
-                    </items>
-                  </IconTabBar>
-                </VBox>
-
-                <VBox class="offer__form-inputs">
-                  <HBox>
-                    <VBox class="offer__form-side-icons" alignItems="Center">
-                      <Image src="assets/images/offer/circle.svg" />
-                      <Image src="assets/images/offer/vdots.svg" class="side-icon"/>
-                      <Image src="assets/images/offer/pin.svg" />
-                    </VBox>
-                    <VBox class="offer__form-text-inputs" width="100%">
-                      <VBox class="input-pair">
-                        <Text class="input-title text" text="Pickup location" />
-                        <Input class="input" placeholder="location" />
-                      </VBox>
-                      <VBox class="input-pair">
-                        <Text class="input-title text" text="Drop location" />
-                        <Input 
-                          class="input" 
-                          placeholder="location" 
-                          showSuggestion="true" 
-                          suggestionItems="{AppMainModel>/autoFill}"> 
-                          <suggestionItems>
-                            <core:ListItem text="{AppMainModel>text}" />
-                          </suggestionItems>
-                        </Input>
-                      </VBox>
-                    </VBox>
-                  </HBox>
-
-                  <VBox class="offer__form-buttons" alignItems="Center" width="100%">
-                    <Button class="button" text="Order" width="100%" />
-                    <Button 
-                      class="button button_transparent" 
-                      text="Clear All" 
-                      icon="assets/images/offer/clear.svg" />
-                  </VBox>
-                </VBox>
-              </VBox>
-              <VBox class="track" width="100%" height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
-                <Text class="text text_h3" text="Track a package" />
-                <SearchField 
-                  class="track__search search-field"
-                  placeholder="Enter code"  
-                  width="100%"
-                />
-              </VBox>
-            </VBox>
-          </HBox>  
-        </HBox>
-
-      <!--EXPRESS DELIVERY-->
-
-        <VBox class="express" width="100%" alignItems="Center">
-          <Text class="text text_h1" textAlign="Center" text="Express delivery market revolution" />
-          <Text class="text text_h4" textAlign="Center" width="100%" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
-
-          <f:GridList
-            class="pads"
-            items="{AppMainModel>/expressPads}"
-            width="100%"
-          >
-            <f:GridListItem class="item">
-              <VBox class="item__pad" height="100%" justifyContent="SpaceBetween">
-              <layoutData>
-                <FlexItemData growFactor="1" shrinkFactor="0" />
-              </layoutData>
-                <Text class="text text_h3" text="{AppMainModel>title}" />
-                <HBox class="item__image">
-                  <HBox class="circle-pad" >
-                    <Image src="{AppMainModel>icon}" />
-                  </HBox>
-                    <Image src="{AppMainModel>icon2}" />
-                </HBox>
-                <Text class="text" text="{AppMainModel>text}" />
-              </VBox>
-            </f:GridListItem>
-          </f:GridList>
-        </VBox>
-
-        <!--PARCEL LINE-->
-        <HBox class="parcel" width="100%" justifyContent="Center">
-          <HBox class="parcel__image">
-            <Image src="/assets/images/parcel.svg"/>
-          </HBox>
-        </HBox>
-
-        <!--PARTNERS-->
-        <VBox class="partners" width="100%" alignItems="Center">
-          <Text class="text text_h1" text="Our Partners" />
-
-          <HBox 
-            class="partners-slider" 
-            width="100%" 
-            items="{AppMainModel>/partners}">
-            <HBox 
-              class="monochrome"
-              width="188px" 
-              height="56px" 
-              justifyContent="Center"
-              alignItems="Center">
-              <Image class="partners-slider__logo" src="{AppMainModel>logo}" />
-            </HBox>
-          </HBox>
-
-          <HBox class="collaborate">
-          <Button 
-            class="collaborate__button button" 
-            icon="/assets/images/partners/collaborate.svg"
-            text="Let's collaborate"  
-          />
-          </HBox>
-
-          <HBox 
-            class="logos" 
-            width="100%" 
-            items="{AppMainModel>/partners}"
-            visible="{= ${AppMainModel>/typeSize} &gt; 1024}">
-          <layoutData>
-            <FlexItemData maxWidth="1104px" />
-          </layoutData>
-            <HBox class="monochrome" alignItems="Center">
-              <Image class="logos__logo" src="{AppMainModel>logo}" />
-            </HBox>
-          </HBox>
-
-        </VBox>
-
-        <!--WHAT WE DO-->
-
-        <VBox class="what-we-do" width="100%" alignItems="Center">
-          <HBox class="what-we-do__bgimage">
-            <Image src="/assets/images/what-we-do/city.png" />
-          </HBox>
-          <Text class="text text_h1" textAlign="Center" text="What we do" />
-          <Text class="text text_h4" textAlign="Center" width="100%" text="Express courier service in the city. We are a reliable logistics partner for delivery services for online stores and restaurants!" />
-
-          <HBox class="pads" items="{AppMainModel>/whatWeDo}">
-            <VBox 
-              class="pad" 
-              width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
-              height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}"
-            >
-              <HBox class="circle-pad circle-pad_small">
-                <Image src="{AppMainModel>icon}" width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
-              </HBox>
-              <HBox class="pad__title" alignItems="Center">
-                <Text class="text text_h3" text="{AppMainModel>title}" />
-                <Link class="link link_blue link_blue_underlined" text="{AppMainModel>link}" />
-              </HBox>
-              <Text class="text" textAlign="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Left'}" text="{AppMainModel>text}" />
-            </VBox>
-
-          </HBox>
-
-          <Button class="what-we-do__button button" text="Get started!" width="296px" />
-
-        </VBox>
-
-        <!--PAYMENT METHODS-->
-
-        <VBox class="payment" width="100%" alignItems="Center">
-          <Text class="text text_h1" text="Payment methods" />
-
-          <HBox class="slider" width="100%" items="{AppMainModel>/payment}">
-            <layoutData>
-              <FlexItemData maxWidth="1172px" />
-            </layoutData>
-            <Image src="{AppMainModel>logo}" width="84px" />
-          </HBox>
-
-        </VBox>
-
-        <!--PARCEL LINE-->
-        <HBox class="parcel" width="100%" justifyContent="Center">
-          <HBox class="parcel__image">
-            <Image src="/assets/images/parcel.svg"/>
-          </HBox>
-        </HBox>
-
-        <!--INFO-->
-
-        <VBox class="info" alignItems="Center">
-          <VBox class="info__text" width="100%" alignItems="End">
-            <Text id="info__test" class="text" binding="{AppMainModel>/infoText}" text="{= ${AppMainModel>text} + (!!${AppMainModel>isVisible} ? ('\n\n' + ${AppMainModel>textHideable}) : '' )}" />
-            <Button class="info__etc" width="25px" icon="/assets/images/info/etc.svg" press="onInfoToggle"/>
-            <layoutData>
-              <FlexItemData maxWidth="1160px" />
-            </layoutData>
-          </VBox>
-        </VBox>
-
-
-      </VBox>
-      <!--/MAIN CONTENT-->
-    
-
-      <!--FOOTER-->
-      <VBox class="footer" justifyContent="Center" alignItems="Center" busy="{AppUiModel>/isLoading}" busyIndicatorDelay="0">
-        <HBox 
-          class="wrapper" 
-          width="100%" 
-          alignItems="{= ${AppMainModel>/typeSize} &lt; 1240 ? 'Center' : 'Start'}" 
-          justifyContent="SpaceBetween"
-        >
-          <VBox class="column">
-            <HBox class="title title_lineless">
-              <Text text="About Whoosh" />
-            </HBox>
-
-            <HBox class="content">
-              <Image src="/assets/images/footer/two-pins.svg" class="content__two-pins" />
-              <Text width="240px" text="{AppMainModel>/footer/about}" />
-            </HBox>
-          </VBox>
-
-          <HBox class="links">
-            <VBox class="links-column">
-              <HBox class="title" >
-                <Text text="Menu" />
-              </HBox>
-
-              <List items="{AppMainModel>/footer/menu}">
-                <StandardListItem class="link" title="{AppMainModel>title}"/>
-              </List>          
-            </VBox>
-
-            <VBox class="links-column">
-              <HBox class="title">
-                <Text text="Services" />
-              </HBox>
-
-              <List items="{AppMainModel>/footer/services}">
-                <StandardListItem class="link" title="{AppMainModel>title}"/>
-              </List>
-
-            </VBox>
-          </HBox>
-
-          <VBox class="column" width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : 'auto'}">
-            <HBox class="title">
-              <Text text="Contact Us" />
-            </HBox>
-
-            <VBox class="content">
-              <Text class="phone" text="{AppMainModel>/footer/phone}" />
-              <HBox>
-                <Image class="footer__icon" src="/assets/images/footer/pin-blue.svg"/>
-                <Text class="footer__icon-text" text="{AppMainModel>/footer/address}"/>
-              </HBox>
-              <HBox class="social" width="100%" items="{AppMainModel>/footer/socials}">
-                <Button 
-                  class="button"
-                  icon="{AppMainModel>icon}"
-                  press="onNavSocial"
-                >
-                  <customData>
-                    <core:CustomData key="socialLink" value="{AppMainModel>icon}" />
-                  </customData>
-
-                  <layoutData>
-                    <FlexItemData styleClass="social-button" />
-                  </layoutData>
-                </Button>
-              </HBox>
-            </VBox>
-          </VBox>
-        </HBox>
-        
-        <!--Made by line-->
-
-        <VBox class="madeby" width="100%">
-          <layoutData>
-            <FlexItemData maxWidth="1160px" />
-          </layoutData>
-          <HBox 
-              justifyContent="Center" 
-              alignItems="Center"
-              width="100%"
-              visible="{= ${AppMainModel>/typeSize} &lt; 1240}">
-              <Image src="/assets/images/footer/pyrobyte_red.svg" />
-            </HBox>
-          <Text class="madeby__line" text="Made by"/>
-          <HBox class="madeby__content" justifyContent="Center" alignItems="Center">
-            <HBox 
-              class="madeby__text madeby__text_left" 
-              justifyContent="Center" 
-              width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}"
-            >
-              <Text text="© 2022. All rights reserved." />
-            </HBox>
-            <HBox 
-              justifyContent="Center" 
-              width="50%"
-              visible="{= ${AppMainModel>/typeSize} &gt; 1240}">
-              <Image src="/assets/images/footer/pyrobyte.svg" />
-            </HBox>
-            <HBox 
-              class="madeby__text madeby__text_right" 
-              justifyContent="Center" 
-              width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}"
-            >
-              <Image class="footer__icon" src="/assets/images/footer/flower.svg" />
-              <Text class="footer__icon-text" text="Privacy policy" />
-            </HBox>
-          </HBox>
-        </VBox>
-
-      </VBox>
-      </ScrollContainer>
     </tnt:mainContents>
   </tnt:ToolPage>
 </mvc:View>
