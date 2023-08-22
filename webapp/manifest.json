@@ -43,8 +43,28 @@
         "transition": "slide",
         "async": true
       },
-      "routes": [],
-      "targets": []
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Main",
+          "target": "Main"
+        },
+        {
+          "pattern": "send",
+          "name": "Send",
+          "target": "Send"
+        }
+      ],
+      "targets": {
+        "Main": {
+          "viewId": "Main",
+          "viewName": "Main"
+        },
+        "Send": {
+          "viewId": "Send",
+          "viewName": "Send"
+        }
+      }
     },
     "resources": {
       "css": [

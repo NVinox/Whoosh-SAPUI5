@@ -9,6 +9,9 @@ sap.ui.define(["App/base/BaseModel"], (BaseModel) => {
       sideMenu: {
         isClosed: true,
       },
+      sliders: {
+        isInit: 0,
+      },
       states: [],
       footer: {},
       pageInfo: {},
