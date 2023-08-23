@@ -16,7 +16,7 @@
             height="100vh"
             visible="{= ${AppUiModel>/isLoading}}"
             busy="{AppUiModel>/isLoading}"
-            busyIndicatorDelay="0"/>
+            busyIndicatorDelay="0" />
 
         <VBox class="main-content"
             width="100%"
@@ -51,13 +51,9 @@
                         <HBox class="left__video"
                             width="100%"
                             height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
-                            <html:iframe class="left__frame"
-                                src="https://www.youtube.com/embed/sJSYeUTfW6o"
-                                title="YouTube video player"
+                            <html:iframe src="https://player.vimeo.com/video/452448160?h=7690ed6dd4"
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen="true">
-                            </html:iframe>
+                                allowfullscreen="true"></html:iframe>
                         </HBox>
                     </VBox>
                     <Image class="offer__graphic"
