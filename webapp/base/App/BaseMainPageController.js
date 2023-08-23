@@ -1,17 +1,16 @@
 sap.ui.define(
-  ["App/base/BaseController", "App/base/App/BaseMainPageModel", "sap/ui/Device"],
-  function (BaseController, BaseMainPageModel, Device) {
+  ["App/base/BaseController", "App/base/App/BaseMainPageModel", "App/services/App", "sap/ui/Device", "App/helpers/index"],
+  function (BaseController, BaseMainPageModel, AppServices, Device, Helpers) {
     return BaseController.extend("App.base.BaseMainPageController", {
       onInit() {
-        console.log("Main");
         this.setModels();
 
         Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
 
         this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
+        this.setMainInfo();
 
-        let slidersF = this.slidersInit.bind(this);
-        setTimeout(slidersF, 3000);
+        setTimeout(this.slidersInit.bind(this), 1000);
       },
 
       // Метод установки моделей
@@ -33,6 +32,28 @@ sap.ui.define(
       // Метод изменения размера экрана
       sizeChanged(params) {
         BaseMainPageModel.main.setProperty("/typeSize", params.from);
+      },
+
+      // Установка основной информации в модель
+      setMainInfo() {
+        BaseMainPageModel.ui.setProperty("/isLoading", true);
+        Helpers.trackExec({
+          cb: async () => {
+            let navigations = await AppServices.getNavigation();
+            let promo = await AppServices.getPromo();
+
+            BaseMainPageModel.main.setProperty("/footer", navigations);
+            BaseMainPageModel.main.setProperty("/pageInfo", promo);
+          },
+          errCb: (err) => {
+            let errorAPI = err?.response?.data?.errors?.[0]?.text;
+
+            throw new Error(errorAPI);
+          },
+          finalCb: () => {
+            BaseMainPageModel.ui.setProperty("/isLoading", false);
+          },
+        });
       },
 
       // Инициализация слайдера Partners

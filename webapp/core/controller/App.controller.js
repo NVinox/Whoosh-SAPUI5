@@ -1,13 +1,6 @@
 sap.ui.define(
-  [
-    "App/base/BaseController",
-    "App/core/model/App",
-    "App/base/App/BaseMainPageModel",
-    "App/services/App",
-    "App/helpers/index",
-    "sap/ui/Device",
-  ],
-  function (BaseController, AppModel, BaseMainPageModel, AppServices, Helpers, Device) {
+  ["App/base/BaseController", "App/core/model/App", "App/services/App", "App/helpers/index", "sap/ui/Device"],
+  function (BaseController, AppModel, AppServices, Helpers, Device) {
     return BaseController.extend("App.core.controller.App", {
       onInit() {
         this.setModels();
@@ -33,12 +26,8 @@ sap.ui.define(
         Helpers.trackExec({
           cb: async () => {
             let states = await AppServices.getCompanyCities();
-            let navigations = await AppServices.getNavigation();
-            let promo = await AppServices.getPromo();
 
             mainModel.setProperty("/states", states);
-            BaseMainPageModel.main.setProperty("/footer", navigations);
-            BaseMainPageModel.main.setProperty("/pageInfo", promo);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;
