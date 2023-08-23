@@ -1,23 +1,25 @@
 //GLOBAL
-@import "./global/variables";
-@import "./global/mixins/media";
-@import "./global/fonts";
-@import "./global/global";
+@import "./abstracts/variables";
+@import "./abstracts/mixins/media";
+
+@import "./base/fonts";
+@import "./base/general";
+
 @import "./components/core/text";
 
-//BASE ELEMENTS
-@import "./base/busy";
-@import "./base/busy-overlay";
-@import "./base/button";
-@import "./base/link";
-@import "./base/search-field";
-@import "./base/tabs";
-@import "./base/input";
-@import "./base/popover";
+//CORE ELEMENTS
+@import "./components/core/busy";
+@import "./components/core/busy-overlay";
+@import "./components/core/button";
+@import "./components/core/link";
+@import "./components/core/search-field";
+@import "./components/core/tabs";
+@import "./components/core/input";
+@import "./components/core/popover";
 
 //CUSTOM ELEMENTS
-@import "./custom/circle-pad";
-@import "custom/button-clue";
+@import "./components/custom/circle-pad";
+@import "./components/custom/button-clue";
 
 //LAYOUT
 @import "./layout/tool-page";
