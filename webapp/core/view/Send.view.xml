@@ -1,0 +1,12 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    displayBlock="true">
+    <VBox height="100%"
+        class="part">
+        <mvc:XMLView viewName="App.core.view.Parts.MainPage" />
+    </VBox>
+</mvc:View>

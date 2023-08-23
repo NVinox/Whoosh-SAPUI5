@@ -1,0 +1,467 @@
+<mvc:View controllerName="App.core.controller.Main"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:grid="sap.ui.layout.cssgrid"
+    displayBlock="true">
+    <!--MAIN CONTENT-->
+    <VBox class="main-wrapper"
+        height="100%"
+        width="100%">
+
+        <VBox class="busy-overlay"
+            width="100%"
+            height="100vh"
+            visible="{= ${BaseUiModel>/isLoading}}"
+            busy="{BaseUiModel>/isLoading}"
+            busyIndicatorDelay="0" />
+
+        <VBox class="main-content"
+            width="100%"
+            alignItems="Center"
+            justifyContent="Center">
+            <layoutData>
+                <FlexItemData growFactor="1"
+                    shrinkFactor="1" />
+            </layoutData>
+
+            <!--OFFER-->
+
+            <HBox class="offer"
+                justifyContent="Center"
+                width="100%">
+                <HBox class="content-wrapper"
+                    width="100%"
+                    alignItems="{= ${BaseMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}"
+                    justifyContent="SpaceBetween">
+                    <VBox class="left"
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '375px'}">
+                        <Text class="text text_h1"
+                            text="{BaseMainModel>/pageInfo/offer/promoTextBlock/title}" />
+                        <Text class="left__text text"
+                            width="100%"
+                            text="{BaseMainModel>/pageInfo/offer/promoTextBlock/text}" />
+                        <Link class="left__link link_blue"
+                            text="Read more" />
+                        <Text class="text text_h3"
+                            text="{BaseMainModel>/pageInfo/offer/video/title}" />
+                        <!--VIDEO-->
+                        <HBox class="left__video"
+                            width="100%"
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
+                            <html:iframe src="https://player.vimeo.com/video/452448160?h=7690ed6dd4"
+                                frameborder="0"
+                                allowfullscreen="true"></html:iframe>
+                        </HBox>
+                    </VBox>
+                    <Image class="offer__graphic"
+                        src="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : ${BaseMainModel>/pageInfo/offer/backgroundImage}}" />
+                    <VBox class="right"
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
+                        <!--SEND A PARCEL FORM-->
+                        <VBox class="offer__form"
+                            width="100%"
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
+                            <HBox class="offer__form-title"
+                                alignItems="Center">
+                                <Text class="text text_h3 sapUiSmallMarginEnd"
+                                    text="Send a Parcel" />
+                                <Button class="button-clue"
+                                    icon="/assets/images/offer/clue.svg"
+                                    press="onOpenPopover">
+                                    <customData>
+                                        <core:CustomData key="popover-fragment-name"
+                                            value="hint" />
+                                    </customData>
+                                </Button>
+                            </HBox>
+                            <VBox class="offer__tabs">
+                                <IconTabBar class="tabs"
+                                    selectedKey="{BaseMainModel>/pageInfo/offer/deliveryWays/car/code}">
+                                    <items>
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/foot/code}"
+                                            icon="assets/images/tabs/onFoot.svg"
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'up to '+ ${BaseMainModel>/pageInfo/offer/deliveryWays/foot/maximumWeight} +'lb'}" />
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/car/code}"
+                                            icon="assets/images/tabs/car.svg"
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'up to ' + ${BaseMainModel>/pageInfo/offer/deliveryWays/car/maximumWeight} + 'lb'}" />
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/truck/code}"
+                                            icon="assets/images/tabs/truck.svg"
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'over ' + ${BaseMainModel>/pageInfo/offer/deliveryWays/truck/maximumWeight} + 'lb'}" />
+                                    </items>
+                                </IconTabBar>
+                            </VBox>
+
+                            <VBox class="offer__form-inputs">
+                                <HBox>
+                                    <VBox class="offer__form-side-icons"
+                                        alignItems="Center">
+                                        <Image src="assets/images/offer/circle.svg" />
+                                        <Image src="assets/images/offer/vdots.svg"
+                                            class="side-icon" />
+                                        <Image src="assets/images/offer/pin.svg" />
+                                    </VBox>
+                                    <VBox class="offer__form-text-inputs"
+                                        width="100%">
+                                        <VBox class="input-pair">
+                                            <Text class="input-title text"
+                                                text="Pickup location" />
+                                            <Input class="input"
+                                                placeholder="location" />
+                                        </VBox>
+                                        <VBox class="input-pair">
+                                            <Text class="input-title text"
+                                                text="Drop location" />
+                                            <Input class="input"
+                                                placeholder="location"
+                                                showSuggestion="true"
+                                                suggestionItems="{BaseMainModel>/autoFill}">
+                                                <suggestionItems>
+                                                    <core:ListItem text="{BaseMainModel>text}" />
+                                                </suggestionItems>
+                                            </Input>
+                                        </VBox>
+                                    </VBox>
+                                </HBox>
+
+                                <VBox class="offer__form-buttons"
+                                    alignItems="Center"
+                                    width="100%">
+                                    <Button class="button"
+                                        text="Order"
+                                        width="100%" />
+                                    <Button class="button button_transparent"
+                                        text="Clear All"
+                                        icon="assets/images/offer/clear.svg" />
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                        <VBox class="track"
+                            width="100%"
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
+                            <Text class="text text_h3"
+                                text="Track a package" />
+                            <SearchField class="track__search search-field"
+                                placeholder="Enter code"
+                                width="100%" />
+                        </VBox>
+                    </VBox>
+                </HBox>
+            </HBox>
+
+            <!--EXPRESS DELIVERY-->
+
+            <VBox class="express"
+                width="100%"
+                alignItems="Center">
+                <Text class="text text_h1"
+                    textAlign="Center"
+                    text="Express delivery market revolution" />
+                <Text class="text text_h4"
+                    textAlign="Center"
+                    width="100%"
+                    text="{BaseMainModel>/pageInfo/expressDeliveryText}" />
+
+                <f:GridList class="pads"
+                    items="{BaseMainModel>/expressPads}"
+                    width="100%">
+                    <f:GridListItem class="item">
+                        <VBox class="item__pad"
+                            height="100%"
+                            justifyContent="SpaceBetween">
+                            <layoutData>
+                                <FlexItemData growFactor="1"
+                                    shrinkFactor="0" />
+                            </layoutData>
+                            <Text class="text text_h3"
+                                text="{BaseMainModel>title}" />
+                            <HBox class="item__image">
+                                <HBox class="circle-pad">
+                                    <Image src="{BaseMainModel>icon}" />
+                                </HBox>
+                                <Image src="{BaseMainModel>icon2}" />
+                            </HBox>
+                            <Text class="text"
+                                text="{BaseMainModel>text}" />
+                        </VBox>
+                    </f:GridListItem>
+                </f:GridList>
+            </VBox>
+
+            <!--PARCEL LINE-->
+            <HBox class="parcel"
+                width="100%"
+                justifyContent="Center">
+                <HBox class="parcel__image">
+                    <Image src="/assets/images/parcel.svg" />
+                </HBox>
+            </HBox>
+
+            <!--PARTNERS-->
+            <VBox class="partners"
+                width="100%"
+                alignItems="Center">
+                <Text class="text text_h1"
+                    text="Our Partners" />
+
+                <HBox class="partners-slider"
+                    width="100%"
+                    items="{BaseMainModel>/pageInfo/partners}">
+                    <HBox class="monochrome"
+                        width="188px"
+                        height="56px"
+                        justifyContent="Center"
+                        alignItems="Center">
+                        <Image class="partners-slider__logo"
+                            src="{BaseMainModel>image}" />
+                    </HBox>
+                </HBox>
+
+                <HBox class="collaborate">
+                    <Button class="collaborate__button button"
+                        icon="/assets/images/partners/collaborate.svg"
+                        text="Let's collaborate" />
+                </HBox>
+
+                <HBox class="logos"
+                    width="100%"
+                    items="{BaseMainModel>/pageInfo/partners}"
+                    visible="{= ${BaseMainModel>/typeSize} &gt; 1024}">
+                    <layoutData>
+                        <FlexItemData maxWidth="1104px" />
+                    </layoutData>
+                    <HBox class="monochrome"
+                        alignItems="Center">
+                        <Image class="logos__logo"
+                            src="{BaseMainModel>image}" />
+                    </HBox>
+                </HBox>
+
+            </VBox>
+
+            <!--WHAT WE DO-->
+
+            <VBox class="what-we-do"
+                width="100%"
+                alignItems="Center">
+                <HBox class="what-we-do__bgimage">
+                    <Image src="/assets/images/what-we-do/city.png" />
+                </HBox>
+                <Text class="text text_h1"
+                    textAlign="Center"
+                    text="What we do" />
+                <Text class="text text_h4"
+                    textAlign="Center"
+                    width="100%"
+                    text="{BaseMainModel>/pageInfo/whatWeDoText}" />
+
+                <HBox class="pads"
+                    items="{BaseMainModel>/whatWeDo}">
+                    <VBox class="pad"
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
+                        height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}">
+                        <HBox class="circle-pad circle-pad_small">
+                            <Image src="{BaseMainModel>icon}"
+                                width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
+                        </HBox>
+                        <HBox class="pad__title"
+                            alignItems="Center">
+                            <Text class="text text_h3"
+                                text="{BaseMainModel>title}" />
+                            <Link class="link link_blue link_blue_underlined"
+                                text="{BaseMainModel>link}" />
+                        </HBox>
+                        <Text class="text"
+                            textAlign="{= ${BaseMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Left'}"
+                            text="{BaseMainModel>text}" />
+                    </VBox>
+
+                </HBox>
+
+                <Button class="what-we-do__button button"
+                    text="Get started!"
+                    width="296px" />
+
+            </VBox>
+
+            <!--PAYMENT METHODS-->
+
+            <VBox class="payment"
+                width="100%"
+                alignItems="Center">
+                <Text class="text text_h1"
+                    text="Payment methods" />
+
+                <HBox class="slider"
+                    width="100%"
+                    items="{BaseMainModel>/pageInfo/paymentMethods/items}">
+                    <layoutData>
+                        <FlexItemData maxWidth="1172px" />
+                    </layoutData>
+                    <Image src="{BaseMainModel>image}"
+                        width="84px" />
+                </HBox>
+
+            </VBox>
+
+            <!--PARCEL LINE-->
+            <HBox class="parcel"
+                width="100%"
+                justifyContent="Center">
+                <HBox class="parcel__image">
+                    <Image src="/assets/images/parcel.svg" />
+                </HBox>
+            </HBox>
+
+            <!--INFO-->
+
+            <VBox class="info"
+                alignItems="Center">
+                <VBox class="info__text"
+                    width="100%"
+                    alignItems="End">
+                    <Text id="info__test"
+                        class="text"
+                        binding="{BaseMainModel>/infoText}"
+                        text="{= ${BaseMainModel>text} + (!!${BaseMainModel>isVisible} ? ('\n\n' + ${BaseMainModel>textHideable}) : '' )}" />
+                    <Button class="info__etc"
+                        width="25px"
+                        icon="/assets/images/info/etc.svg"
+                        press="onInfoToggle" />
+                    <layoutData>
+                        <FlexItemData maxWidth="1160px" />
+                    </layoutData>
+                </VBox>
+            </VBox>
+
+
+        </VBox>
+        <!--/MAIN CONTENT-->
+
+        <!--FOOTER-->
+        <VBox class="footer"
+            justifyContent="Center"
+            alignItems="Center"
+            busy="{BaseUiModel>/isLoading}"
+            busyIndicatorDelay="0">
+            <HBox class="wrapper"
+                width="100%"
+                alignItems="{= ${BaseMainModel>/typeSize} &lt; 1240 ? 'Center' : 'Start'}"
+                justifyContent="SpaceBetween">
+                <VBox class="column">
+                    <HBox class="title title_lineless">
+                        <Text text="About Whoosh" />
+                    </HBox>
+
+                    <HBox class="content">
+                        <Image src="/assets/images/footer/two-pins.svg"
+                            class="content__two-pins" />
+                        <Text width="240px"
+                            text="{BaseMainModel>/footer/about}" />
+                    </HBox>
+                </VBox>
+
+                <HBox class="links">
+                    <VBox class="links-column">
+                        <HBox class="title">
+                            <Text text="Menu" />
+                        </HBox>
+
+                        <List items="{BaseMainModel>/footer/menu}">
+                            <StandardListItem class="link"
+                                title="{BaseMainModel>title}" />
+                        </List>
+                    </VBox>
+
+                    <VBox class="links-column">
+                        <HBox class="title">
+                            <Text text="Services" />
+                        </HBox>
+
+                        <List items="{BaseMainModel>/footer/services}">
+                            <StandardListItem class="link"
+                                title="{BaseMainModel>title}" />
+                        </List>
+
+                    </VBox>
+                </HBox>
+
+                <VBox class="column"
+                    width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : 'auto'}">
+                    <HBox class="title">
+                        <Text text="Contact Us" />
+                    </HBox>
+
+                    <VBox class="content">
+                        <Text class="phone"
+                            text="{BaseMainModel>/footer/phone}" />
+                        <HBox>
+                            <Image class="footer__icon"
+                                src="/assets/images/footer/pin-blue.svg" />
+                            <Text class="footer__icon-text"
+                                text="{BaseMainModel>/footer/address}" />
+                        </HBox>
+                        <HBox class="social"
+                            width="100%"
+                            items="{BaseMainModel>/footer/socials}">
+                            <Button class="button"
+                                icon="{BaseMainModel>icon}"
+                                press="onNavSocial">
+                                <customData>
+                                    <core:CustomData key="socialLink"
+                                        value="{BaseMainModel>icon}" />
+                                </customData>
+
+                                <layoutData>
+                                    <FlexItemData styleClass="social-button" />
+                                </layoutData>
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </HBox>
+
+            <!--Made by line-->
+
+            <VBox class="madeby"
+                width="100%">
+                <layoutData>
+                    <FlexItemData maxWidth="1160px" />
+                </layoutData>
+                <HBox justifyContent="Center"
+                    alignItems="Center"
+                    width="100%"
+                    visible="{= ${BaseMainModel>/typeSize} &lt; 1240}">
+                    <Image src="/assets/images/footer/pyrobyte_red.svg" />
+                </HBox>
+                <Text class="madeby__line"
+                    text="Made by" />
+                <HBox class="madeby__content"
+                    justifyContent="Center"
+                    alignItems="Center">
+                    <HBox class="madeby__text madeby__text_left"
+                        justifyContent="Center"
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
+                        <Text text="© 2022. All rights reserved." />
+                    </HBox>
+                    <HBox justifyContent="Center"
+                        width="50%"
+                        visible="{= ${BaseMainModel>/typeSize} &gt; 1240}">
+                        <Image src="/assets/images/footer/pyrobyte.svg" />
+                    </HBox>
+                    <HBox class="madeby__text madeby__text_right"
+                        justifyContent="Center"
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
+                        <Image class="footer__icon"
+                            src="/assets/images/footer/flower.svg" />
+                        <Text class="footer__icon-text"
+                            text="Privacy policy" />
+                    </HBox>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </VBox>
+</mvc:View>

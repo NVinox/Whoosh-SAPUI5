@@ -1,3 +1,8 @@
 sap.ui.define([], () => {
-  return {};
+  return {
+    hint: {
+      id: "hintPopover",
+      path: "App/core/view/Fragments/Popovers/Hint",
+    },
+  };
 });
