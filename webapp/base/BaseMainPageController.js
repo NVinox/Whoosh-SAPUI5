@@ -1,5 +1,5 @@
 sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"], function (BaseController, AppModel, Device) {
-  return BaseController.extend("App.core.controller.App", {
+  return BaseController.extend("App.base.BaseMainPageController", {
     onInit() {
       this.setModels();
 
