@@ -1,6 +1,13 @@
 sap.ui.define(
-  ["App/base/BaseController", "App/core/model/App", "sap/ui/Device", "App/services/App", "App/helpers/index"],
-  function (BaseController, AppModel, Device, AppServices, Helpers) {
+  [
+    "App/base/BaseController",
+    "App/core/model/App",
+    "App/base/App/BaseMainPageModel",
+    "App/services/App",
+    "App/helpers/index",
+    "sap/ui/Device",
+  ],
+  function (BaseController, AppModel, BaseMainPageModel, AppServices, Helpers, Device) {
     return BaseController.extend("App.core.controller.App", {
       onInit() {
         this.setModels();
@@ -30,8 +37,8 @@ sap.ui.define(
             let promo = await AppServices.getPromo();
 
             mainModel.setProperty("/states", states);
-            mainModel.setProperty("/footer", navigations);
-            mainModel.setProperty("/pageInfo", promo);
+            BaseMainPageModel.main.setProperty("/footer", navigations);
+            BaseMainPageModel.main.setProperty("/pageInfo", promo);
           },
           errCb: (err) => {
             let errorAPI = err?.response?.data?.errors?.[0]?.text;
@@ -69,11 +76,11 @@ sap.ui.define(
         sideMenu.removeStyleClass(sideMenuClass(isClosed));
       },
 
-      onLogoPress(oEvent) {
+      onLogoPress() {
         this.getRouter().navTo("Main");
       },
 
-      onSendPress(oEvent) {
+      onSendPress() {
         this.getRouter().navTo("Send");
       },
     });
