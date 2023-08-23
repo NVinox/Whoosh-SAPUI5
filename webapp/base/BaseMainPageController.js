@@ -6,6 +6,9 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
       Device.media.attachHandler(this.sizeChanged, this, "MainRangeSet");
 
       this.sizeChanged(Device.media.getCurrentRange("MainRangeSet"));
+
+      let slidersF = this.slidersInit.bind(this);
+      setTimeout(slidersF, 3000);
     },
 
     // Метод установки моделей
@@ -15,13 +18,13 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     },
 
     onAfterRendering() {
-      let mainModel = this.getModel("AppMainModel");
-      let i = mainModel.getProperty("/sliders/isInit");
-      if (i != 1 && i != 2) {
-        this.partnersSliderInit();
-        this.sliderInit();
-      }
-      mainModel.setProperty("/sliders/isInit", ++i);
+      this.slidersInit();
+    },
+
+    //Метод инициализации слайдеров
+    slidersInit() {
+      this.partnersSliderInit();
+      this.sliderInit();
     },
 
     // Метод изменения размера экрана
@@ -31,33 +34,41 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
 
     // Инициализация слайдера Partners
     partnersSliderInit() {
-      $(".partners-slider").slick({
-        centerMode: true,
-        slidesToShow: 1,
-        arrows: false,
-        centerPadding: "77px",
-        initialSlide: 2,
+      let sliders = $(".partners-slider:not(.slick-initialized)");
+      sliders.each(function () {
+        $(this).slick({
+          centerMode: true,
+          slidesToShow: 1,
+          arrows: false,
+          centerPadding: "77px",
+          initialSlide: 2,
+          autoplay: true,
+        });
       });
     },
 
     // Инициализация слайдера Payment
     sliderInit() {
-      $(".slider").slick({
-        slidesToShow: 5,
-        swipeToSlide: true,
+      let sliders = $(".slider:not(.slick-initialized)");
+      sliders.each(function () {
+        $(this).slick({
+          slidesToShow: 5,
+          swipeToSlide: true,
+          autoplay: true,
 
-        prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
-        nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
+          prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
+          nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
 
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              arrows: false,
-              slidesToShow: 3,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                arrows: false,
+                slidesToShow: 3,
+              },
             },
-          },
-        ],
+          ],
+        });
       });
     },
 
