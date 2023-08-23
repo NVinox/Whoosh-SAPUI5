@@ -1,18 +1,8 @@
 sap.ui.define(["App/API/index"], (API) => {
   return {
-    // Метод получения местоположений
-    async getPlaces() {
-      return await API.location.places();
-    },
-
     // Метод получения списка городов в котором работает компания
     async getCompanyCities() {
       return await API.location.companyCities();
-    },
-
-    // Метод получения штатов
-    async getStates() {
-      return await API.location.states();
     },
 
     // Метод получения информации о навигации
@@ -32,7 +22,7 @@ sap.ui.define(["App/API/index"], (API) => {
     /**
      * Метод парсинга данных о панели навигации
      * @param {Object} navigations - данные о панели навигации
-     * @returns {Object} - объект навигации
+     * @returns {Object} объект навигации
      */
     parseNavigations(navigations) {
       let menus = navigations.menus.reduce((acc, current) => {
@@ -52,7 +42,9 @@ sap.ui.define(["App/API/index"], (API) => {
     },
 
     /**
-     * Метод парсинга данных для промо-страцицы
+     * Метод парсинга данных для промо-страницы
+     * @param {Object} promo - данные для промо-страницы
+     * @returns {Object} объект промо-страницы
      */
     parsePromo(promo) {
       let deliveryWays = promo.deliveryWays.reduce((acc, current) => {

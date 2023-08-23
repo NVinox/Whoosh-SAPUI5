@@ -14,9 +14,9 @@
         <VBox class="busy-overlay"
             width="100%"
             height="100vh"
-            visible="{= ${AppUiModel>/isLoading}}"
-            busy="{AppUiModel>/isLoading}"
-            busyIndicatorDelay="0"/>
+            visible="{= ${BaseUiModel>/isLoading}}"
+            busy="{BaseUiModel>/isLoading}"
+            busyIndicatorDelay="0" />
 
         <VBox class="main-content"
             width="100%"
@@ -34,40 +34,36 @@
                 width="100%">
                 <HBox class="content-wrapper"
                     width="100%"
-                    alignItems="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}"
+                    alignItems="{= ${BaseMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Inherit'}"
                     justifyContent="SpaceBetween">
                     <VBox class="left"
-                        width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '375px'}">
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '375px'}">
                         <Text class="text text_h1"
-                            text="{AppMainModel>/pageInfo/offer/promoTextBlock/title}" />
+                            text="{BaseMainModel>/pageInfo/offer/promoTextBlock/title}" />
                         <Text class="left__text text"
                             width="100%"
-                            text="{AppMainModel>/pageInfo/offer/promoTextBlock/text}" />
+                            text="{BaseMainModel>/pageInfo/offer/promoTextBlock/text}" />
                         <Link class="left__link link_blue"
                             text="Read more" />
                         <Text class="text text_h3"
-                            text="{AppMainModel>/pageInfo/offer/video/title}" />
+                            text="{BaseMainModel>/pageInfo/offer/video/title}" />
                         <!--VIDEO-->
                         <HBox class="left__video"
                             width="100%"
-                            height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
-                            <html:iframe class="left__frame"
-                                src="https://www.youtube.com/embed/sJSYeUTfW6o"
-                                title="YouTube video player"
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '200px' : '232px'}">
+                            <html:iframe src="https://player.vimeo.com/video/452448160?h=7690ed6dd4"
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen="true">
-                            </html:iframe>
+                                allowfullscreen="true"></html:iframe>
                         </HBox>
                     </VBox>
                     <Image class="offer__graphic"
-                        src="{= ${AppMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : ${AppMainModel>/pageInfo/offer/backgroundImage}}" />
+                        src="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '/assets/images/offer/city.svg' : ${BaseMainModel>/pageInfo/offer/backgroundImage}}" />
                     <VBox class="right"
-                        width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '360px'}">
                         <!--SEND A PARCEL FORM-->
                         <VBox class="offer__form"
                             width="100%"
-                            height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '472px' : '500px'}">
                             <HBox class="offer__form-title"
                                 alignItems="Center">
                                 <Text class="text text_h3 sapUiSmallMarginEnd"
@@ -83,17 +79,17 @@
                             </HBox>
                             <VBox class="offer__tabs">
                                 <IconTabBar class="tabs"
-                                    selectedKey="{AppMainModel>/pageInfo/offer/deliveryWays/car/code}">
+                                    selectedKey="{BaseMainModel>/pageInfo/offer/deliveryWays/car/code}">
                                     <items>
-                                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/foot/code}"
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/foot/code}"
                                             icon="assets/images/tabs/onFoot.svg"
-                                            text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to '+ ${AppMainModel>/pageInfo/offer/deliveryWays/foot/maximumWeight} +'lb'}" />
-                                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/car/code}"
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'up to '+ ${BaseMainModel>/pageInfo/offer/deliveryWays/foot/maximumWeight} +'lb'}" />
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/car/code}"
                                             icon="assets/images/tabs/car.svg"
-                                            text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'up to ' + ${AppMainModel>/pageInfo/offer/deliveryWays/car/maximumWeight} + 'lb'}" />
-                                        <IconTabFilter key="{AppMainModel>/pageInfo/offer/deliveryWays/truck/code}"
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'up to ' + ${BaseMainModel>/pageInfo/offer/deliveryWays/car/maximumWeight} + 'lb'}" />
+                                        <IconTabFilter key="{BaseMainModel>/pageInfo/offer/deliveryWays/truck/code}"
                                             icon="assets/images/tabs/truck.svg"
-                                            text="{= ${AppMainModel>/typeSize} &lt; 1024 ? '' : 'over ' + ${AppMainModel>/pageInfo/offer/deliveryWays/truck/maximumWeight} + 'lb'}" />
+                                            text="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '' : 'over ' + ${BaseMainModel>/pageInfo/offer/deliveryWays/truck/maximumWeight} + 'lb'}" />
                                     </items>
                                 </IconTabBar>
                             </VBox>
@@ -121,9 +117,9 @@
                                             <Input class="input"
                                                 placeholder="location"
                                                 showSuggestion="true"
-                                                suggestionItems="{AppMainModel>/autoFill}">
+                                                suggestionItems="{BaseMainModel>/autoFill}">
                                                 <suggestionItems>
-                                                    <core:ListItem text="{AppMainModel>text}" />
+                                                    <core:ListItem text="{BaseMainModel>text}" />
                                                 </suggestionItems>
                                             </Input>
                                         </VBox>
@@ -144,7 +140,7 @@
                         </VBox>
                         <VBox class="track"
                             width="100%"
-                            height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
+                            height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '128px' : '144px'}">
                             <Text class="text text_h3"
                                 text="Track a package" />
                             <SearchField class="track__search search-field"
@@ -166,10 +162,10 @@
                 <Text class="text text_h4"
                     textAlign="Center"
                     width="100%"
-                    text="{AppMainModel>/pageInfo/expressDeliveryText}" />
+                    text="{BaseMainModel>/pageInfo/expressDeliveryText}" />
 
                 <f:GridList class="pads"
-                    items="{AppMainModel>/expressPads}"
+                    items="{BaseMainModel>/expressPads}"
                     width="100%">
                     <f:GridListItem class="item">
                         <VBox class="item__pad"
@@ -180,15 +176,15 @@
                                     shrinkFactor="0" />
                             </layoutData>
                             <Text class="text text_h3"
-                                text="{AppMainModel>title}" />
+                                text="{BaseMainModel>title}" />
                             <HBox class="item__image">
                                 <HBox class="circle-pad">
-                                    <Image src="{AppMainModel>icon}" />
+                                    <Image src="{BaseMainModel>icon}" />
                                 </HBox>
-                                <Image src="{AppMainModel>icon2}" />
+                                <Image src="{BaseMainModel>icon2}" />
                             </HBox>
                             <Text class="text"
-                                text="{AppMainModel>text}" />
+                                text="{BaseMainModel>text}" />
                         </VBox>
                     </f:GridListItem>
                 </f:GridList>
@@ -212,14 +208,14 @@
 
                 <HBox class="partners-slider"
                     width="100%"
-                    items="{AppMainModel>/pageInfo/partners}">
+                    items="{BaseMainModel>/pageInfo/partners}">
                     <HBox class="monochrome"
                         width="188px"
                         height="56px"
                         justifyContent="Center"
                         alignItems="Center">
                         <Image class="partners-slider__logo"
-                            src="{AppMainModel>image}" />
+                            src="{BaseMainModel>image}" />
                     </HBox>
                 </HBox>
 
@@ -231,15 +227,15 @@
 
                 <HBox class="logos"
                     width="100%"
-                    items="{AppMainModel>/pageInfo/partners}"
-                    visible="{= ${AppMainModel>/typeSize} &gt; 1024}">
+                    items="{BaseMainModel>/pageInfo/partners}"
+                    visible="{= ${BaseMainModel>/typeSize} &gt; 1024}">
                     <layoutData>
                         <FlexItemData maxWidth="1104px" />
                     </layoutData>
                     <HBox class="monochrome"
                         alignItems="Center">
                         <Image class="logos__logo"
-                            src="{AppMainModel>image}" />
+                            src="{BaseMainModel>image}" />
                     </HBox>
                 </HBox>
 
@@ -259,27 +255,27 @@
                 <Text class="text text_h4"
                     textAlign="Center"
                     width="100%"
-                    text="{AppMainModel>/pageInfo/whatWeDoText}" />
+                    text="{BaseMainModel>/pageInfo/whatWeDoText}" />
 
                 <HBox class="pads"
-                    items="{AppMainModel>/whatWeDo}">
+                    items="{BaseMainModel>/whatWeDo}">
                     <VBox class="pad"
-                        width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
-                        height="{= ${AppMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}">
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '328px' : '300px'}"
+                        height="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '212px' : '236px'}">
                         <HBox class="circle-pad circle-pad_small">
-                            <Image src="{AppMainModel>icon}"
-                                width="{= ${AppMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
+                            <Image src="{BaseMainModel>icon}"
+                                width="{= ${BaseMainModel>/typeSize} &lt; 1024 ? '32px' : '40px'}" />
                         </HBox>
                         <HBox class="pad__title"
                             alignItems="Center">
                             <Text class="text text_h3"
-                                text="{AppMainModel>title}" />
+                                text="{BaseMainModel>title}" />
                             <Link class="link link_blue link_blue_underlined"
-                                text="{AppMainModel>link}" />
+                                text="{BaseMainModel>link}" />
                         </HBox>
                         <Text class="text"
-                            textAlign="{= ${AppMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Left'}"
-                            text="{AppMainModel>text}" />
+                            textAlign="{= ${BaseMainModel>/typeSize} &lt; 1024 ? 'Center' : 'Left'}"
+                            text="{BaseMainModel>text}" />
                     </VBox>
 
                 </HBox>
@@ -300,11 +296,11 @@
 
                 <HBox class="slider"
                     width="100%"
-                    items="{AppMainModel>/pageInfo/paymentMethods/items}">
+                    items="{BaseMainModel>/pageInfo/paymentMethods/items}">
                     <layoutData>
                         <FlexItemData maxWidth="1172px" />
                     </layoutData>
-                    <Image src="{AppMainModel>image}"
+                    <Image src="{BaseMainModel>image}"
                         width="84px" />
                 </HBox>
 
@@ -328,8 +324,8 @@
                     alignItems="End">
                     <Text id="info__test"
                         class="text"
-                        binding="{AppMainModel>/infoText}"
-                        text="{= ${AppMainModel>text} + (!!${AppMainModel>isVisible} ? ('\n\n' + ${AppMainModel>textHideable}) : '' )}" />
+                        binding="{BaseMainModel>/infoText}"
+                        text="{= ${BaseMainModel>text} + (!!${BaseMainModel>isVisible} ? ('\n\n' + ${BaseMainModel>textHideable}) : '' )}" />
                     <Button class="info__etc"
                         width="25px"
                         icon="/assets/images/info/etc.svg"
@@ -348,11 +344,11 @@
         <VBox class="footer"
             justifyContent="Center"
             alignItems="Center"
-            busy="{AppUiModel>/isLoading}"
+            busy="{BaseUiModel>/isLoading}"
             busyIndicatorDelay="0">
             <HBox class="wrapper"
                 width="100%"
-                alignItems="{= ${AppMainModel>/typeSize} &lt; 1240 ? 'Center' : 'Start'}"
+                alignItems="{= ${BaseMainModel>/typeSize} &lt; 1240 ? 'Center' : 'Start'}"
                 justifyContent="SpaceBetween">
                 <VBox class="column">
                     <HBox class="title title_lineless">
@@ -363,7 +359,7 @@
                         <Image src="/assets/images/footer/two-pins.svg"
                             class="content__two-pins" />
                         <Text width="240px"
-                            text="{AppMainModel>/footer/about}" />
+                            text="{BaseMainModel>/footer/about}" />
                     </HBox>
                 </VBox>
 
@@ -373,9 +369,9 @@
                             <Text text="Menu" />
                         </HBox>
 
-                        <List items="{AppMainModel>/footer/menu}">
+                        <List items="{BaseMainModel>/footer/menu}">
                             <StandardListItem class="link"
-                                title="{AppMainModel>title}" />
+                                title="{BaseMainModel>title}" />
                         </List>
                     </VBox>
 
@@ -384,38 +380,38 @@
                             <Text text="Services" />
                         </HBox>
 
-                        <List items="{AppMainModel>/footer/services}">
+                        <List items="{BaseMainModel>/footer/services}">
                             <StandardListItem class="link"
-                                title="{AppMainModel>title}" />
+                                title="{BaseMainModel>title}" />
                         </List>
 
                     </VBox>
                 </HBox>
 
                 <VBox class="column"
-                    width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : 'auto'}">
+                    width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : 'auto'}">
                     <HBox class="title">
                         <Text text="Contact Us" />
                     </HBox>
 
                     <VBox class="content">
                         <Text class="phone"
-                            text="{AppMainModel>/footer/phone}" />
+                            text="{BaseMainModel>/footer/phone}" />
                         <HBox>
                             <Image class="footer__icon"
                                 src="/assets/images/footer/pin-blue.svg" />
                             <Text class="footer__icon-text"
-                                text="{AppMainModel>/footer/address}" />
+                                text="{BaseMainModel>/footer/address}" />
                         </HBox>
                         <HBox class="social"
                             width="100%"
-                            items="{AppMainModel>/footer/socials}">
+                            items="{BaseMainModel>/footer/socials}">
                             <Button class="button"
-                                icon="{AppMainModel>icon}"
+                                icon="{BaseMainModel>icon}"
                                 press="onNavSocial">
                                 <customData>
                                     <core:CustomData key="socialLink"
-                                        value="{AppMainModel>icon}" />
+                                        value="{BaseMainModel>icon}" />
                                 </customData>
 
                                 <layoutData>
@@ -437,7 +433,7 @@
                 <HBox justifyContent="Center"
                     alignItems="Center"
                     width="100%"
-                    visible="{= ${AppMainModel>/typeSize} &lt; 1240}">
+                    visible="{= ${BaseMainModel>/typeSize} &lt; 1240}">
                     <Image src="/assets/images/footer/pyrobyte_red.svg" />
                 </HBox>
                 <Text class="madeby__line"
@@ -447,17 +443,17 @@
                     alignItems="Center">
                     <HBox class="madeby__text madeby__text_left"
                         justifyContent="Center"
-                        width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
                         <Text text="© 2022. All rights reserved." />
                     </HBox>
                     <HBox justifyContent="Center"
                         width="50%"
-                        visible="{= ${AppMainModel>/typeSize} &gt; 1240}">
+                        visible="{= ${BaseMainModel>/typeSize} &gt; 1240}">
                         <Image src="/assets/images/footer/pyrobyte.svg" />
                     </HBox>
                     <HBox class="madeby__text madeby__text_right"
                         justifyContent="Center"
-                        width="{= ${AppMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
+                        width="{= ${BaseMainModel>/typeSize} &lt; 1240 ? '100%' : '25%'}">
                         <Image class="footer__icon"
                             src="/assets/images/footer/flower.svg" />
                         <Text class="footer__icon-text"
