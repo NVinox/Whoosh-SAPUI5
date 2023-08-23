@@ -42,7 +42,6 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
           arrows: false,
           centerPadding: "77px",
           initialSlide: 2,
-          autoplay: true,
         });
       });
     },
@@ -50,11 +49,14 @@ sap.ui.define(["App/base/BaseController", "App/core/model/App", "sap/ui/Device"]
     // Инициализация слайдера Payment
     sliderInit() {
       let sliders = $(".slider:not(.slick-initialized)");
+      let delay = +this.getModel("AppMainModel").getProperty("/pageInfo/paymentMethods/sliderTimeout") * 1000;
+      debugger;
       sliders.each(function () {
         $(this).slick({
           slidesToShow: 5,
           swipeToSlide: true,
           autoplay: true,
+          autoplaySpeed: delay,
 
           prevArrow: `<Button class="button button_left" ><img src="/assets/images/payment/left.svg" /></button>`,
           nextArrow: `<Button class="button button_right" ><img src="/assets/images/payment/right.svg" /></button>`,
