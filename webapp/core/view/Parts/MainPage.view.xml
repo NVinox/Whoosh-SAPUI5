@@ -7,9 +7,17 @@
     xmlns:grid="sap.ui.layout.cssgrid"
     displayBlock="true">
     <!--MAIN CONTENT-->
-    <VBox width="100%"
+    <VBox class="main-wrapper"
         height="100%"
-        class="main-wrapper">
+        width="100%">
+
+        <VBox class="busy-overlay"
+            width="100%"
+            height="100vh"
+            visible="{= ${AppUiModel>/isLoading}}"
+            busy="{AppUiModel>/isLoading}"
+            busyIndicatorDelay="0"/>
+
         <VBox class="main-content"
             width="100%"
             alignItems="Center"
@@ -335,7 +343,6 @@
 
         </VBox>
         <!--/MAIN CONTENT-->
-
 
         <!--FOOTER-->
         <VBox class="footer"
