@@ -1,18 +1,8 @@
 sap.ui.define(["App/API/index"], (API) => {
   return {
-    // Метод получения местоположений
-    async getPlaces() {
-      return await API.location.places();
-    },
-
     // Метод получения списка городов в котором работает компания
     async getCompanyCities() {
       return await API.location.companyCities();
-    },
-
-    // Метод получения штатов
-    async getStates() {
-      return await API.location.states();
     },
 
     // Метод получения информации о навигации

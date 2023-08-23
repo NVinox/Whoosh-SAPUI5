@@ -12,7 +12,7 @@
     <HBox class="hint-popover__wrapper"
       width="250px">
       <Text class="text"
-        text="{AppMainModel>/pageInfo/offer/promoParcelHint}">
+        text="{BaseMainModel>/pageInfo/offer/promoParcelHint}">
       </Text>
     </HBox>
   </Popover>

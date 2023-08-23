@@ -4,23 +4,9 @@ sap.ui.define([], () => {
   });
 
   return {
-    // Получение штатов
-    async states() {
-      let { data } = await _API.get("states");
-
-      return data;
-    },
-
     // Получение списка городов в которых работает компания
     async companyCities() {
       let { data } = await _API.get("company-cities");
-
-      return data;
-    },
-
-    // Получение местоположений
-    async places() {
-      let { data } = await _API.get("places");
 
       return data;
     },
